@@ -1,0 +1,417 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>exp.layer.sales</groupId>
+    <artifactId>sale-app</artifactId>
+    <version>develop</version>
+
+    <properties>
+        <mobile.os>android</mobile.os>
+        <mobile.app.package>run.er.ecom.assist.dev</mobile.app.package>
+        <mobile.app.activity>run.er.ecom.assist.MainActivity</mobile.app.activity>
+        <mobile.uuid>emulator-5554</mobile.uuid>
+        <test.env>$(test.env)</test.env>
+        <tags>$(tags)</tags>
+        <remote.execution>$(remote.execution)</remote.execution>
+        <parallel.test.count>$(parallel.test.count)</parallel.test.count>
+        <parallelScheme>FEATURE</parallelScheme>
+        <submodule.name></submodule.name>
+        <token></token>
+        <!--suppress UnresolvedMavenProperty -->
+        <email.sentToList></email.sentToList>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <er.automation.engine.version>2.10.3</er.automation.engine.version>
+        <appium.version>8.3.0</appium.version>
+        <selenium.version>4.3.0</selenium.version>
+        <webdriver.manager.version>5.3.2</webdriver.manager.version>
+        <restassured.version>5.3.0</restassured.version>
+        <guava.version>31.0.1-jre</guava.version>
+        <java.version>11</java.version>
+        <cucumber.version>4.8.1</cucumber.version>
+        <junit.version>4.13.2</junit.version>
+        <jackson.databind>2.14.2</jackson.databind>
+        <poi.version>5.2.3</poi.version>
+        <log4j.version>2.20.0</log4j.version>
+        <slf4j-simple.version>2.0.6</slf4j-simple.version>
+        <curl.logger.version>2.1.0</curl.logger.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.er.automation</groupId>
+            <artifactId>er-automation-engine</artifactId>
+            <version>${er.automation.engine.version}</version>
+            <scope>system</scope>
+            <!-- <systemPath>${basedir}/src/test/resources/lib/er-automation-engine-${er.automation.engine.version}.jar
+             </systemPath>-->
+            <systemPath>/Users/user/Documents/git/er-automation-engine/target/er-automation-engine-2.26.8.jar
+            </systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+       <!-- <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${appium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdriver.manager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.databind}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.dzieciou.testing</groupId>
+            <artifactId>curl-logger</artifactId>
+            <version>${curl.logger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.7.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-cucumber4</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220924</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v110</artifactId>
+            <version>4.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.10.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>5.0.0-alpha.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.70</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.ashwithpoojary98</groupId>
+            <artifactId>appium_flutterfinder_java</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>4.9.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>cucumber</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.kuali.maven.plugins</groupId>
+                        <artifactId>properties-maven-plugin</artifactId>
+                        <version>2.0.1</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>write-project-properties</goal>
+                                </goals>
+                                <configuration>
+                                    <includeStandardMavenProperties>true</includeStandardMavenProperties>
+                                    <outputFile>
+                                        ${project.build.directory}/classes/automation.properties
+                                    </outputFile>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.8.1</version>
+                        <configuration>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.22.2</version>
+                        <configuration>
+                            <forkCount>${parallel.test.count}</forkCount>
+                            <testFailureIgnore>true</testFailureIgnore>
+                            <additionalClasspathElements>
+                                <additionalClasspathElement>resources</additionalClasspathElement>
+                            </additionalClasspathElements>
+                            <includes>
+                                <include>**/*IT.class</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>com.github.temyers</groupId>
+                        <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+                        <version>5.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>generateRunners</id>
+                                <phase>generate-test-sources</phase>
+                                <goals>
+                                    <goal>generateRunners</goal>
+                                </goals>
+                                <configuration>
+                                    <glue>
+                                        <package>er.automation</package>
+                                        <package>exp.layer</package>
+                                    </glue>
+                                    <outputDirectory>${project.build.directory}/generated-test-sources/cucumber
+                                    </outputDirectory>
+                                    <featuresDirectory>src/test/resources/</featuresDirectory>
+                                    <cucumberOutputDir>target/cucumber-reports</cucumberOutputDir>
+                                    <plugins>
+                                        <plugin>
+                                            <name>json</name>
+                                        </plugin>
+                                    </plugins>
+                                    <monochrome>true</monochrome>
+                                    <tags>
+                                        <tag>${tags}</tag>
+                                        <tag>not @ignore</tag>
+                                    </tags>
+                                    <useTestNG>false</useTestNG>
+                                    <namingScheme>simple</namingScheme>
+                                    <namingPattern>Parallel{c}IT</namingPattern>
+                                    <parallelScheme>${parallelScheme}</parallelScheme>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>net.masterthought</groupId>
+                        <artifactId>maven-cucumber-reporting</artifactId>
+                        <version>5.6.0</version>
+                        <executions>
+                            <execution>
+                                <id>execution</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <projectName>${project.name}</projectName>
+                                    <checkBuildResult>false</checkBuildResult>
+                                    <skip>false</skip>
+                                    <outputDirectory>target/reports/html-reports</outputDirectory>
+                                    <inputDirectory>target/cucumber-reports</inputDirectory>
+                                    <jsonFiles>
+                                        <param>**/*.json</param>
+                                    </jsonFiles>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+        <profile>
+            <id>dashboard</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.kuali.maven.plugins</groupId>
+                        <artifactId>properties-maven-plugin</artifactId>
+                        <version>2.0.1</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>write-project-properties</goal>
+                                </goals>
+                                <configuration>
+                                    <includeStandardMavenProperties>true</includeStandardMavenProperties>
+                                    <outputFile>
+                                        ${project.build.directory}/classes/automation.properties
+                                    </outputFile>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.8.1</version>
+                        <configuration>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M5</version>
+                        <configuration>
+                            <forkCount>${parallel.test.count}</forkCount>
+                            <testFailureIgnore>true</testFailureIgnore>
+                            <additionalClasspathElements>
+                                <additionalClasspathElement>resources</additionalClasspathElement>
+                            </additionalClasspathElements>
+                            <includes>
+                                <include>**/*${tags}.class</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>first-execution</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                                <configuration>
+                                    <cleanupDaemonThreads>false</cleanupDaemonThreads>
+                                    <classpathScope>test</classpathScope>
+                                    <mainClass>er.automation.mail.SendMail</mainClass>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
