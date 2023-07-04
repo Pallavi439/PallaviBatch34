@@ -1,5 +1,7 @@
 package exp.layer.automation.pages;
 
+import er.automation.engine.helpers.AutomationProperties;
+import er.automation.engine.helpers.AutomationUtils;
 import er.automation.engine.setup.Step;
 
 import io.github.ashwith.flutter.FlutterElement;
@@ -16,6 +18,8 @@ public class LoginPage extends Step {
 
     public static By ENV_DROP_DOWN = By.xpath("//*[@content-desc='Prod' or @content-desc='PROD' or @content-desc='Doha' or @content-desc='DOHA' or @content-desc='Pre Prod' or @content-desc='PRE PROD']");
     public static By DOHA_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Doha' or @content-desc='DOHA']");
+    public static By PP_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Pre Prod' or @content-desc='PRE PROD']");
+
     public static By DEVICE_LOCATION = By.xpath("//*[@text='While using the app']");
     public static By SALES_APP_CONTINUE_BUTTON = By.xpath("//android.widget.Button[@content-desc='Continue']");
 
@@ -62,6 +66,13 @@ public class LoginPage extends Step {
             getFlutterActions().type(SALES_DEV_LOGIN_PASSWORD_TEXT_BOX, password);
 
             getMobileActions().click(ENV_DROP_DOWN);
+
+            if (AutomationProperties.TEST_ENV.equalsIgnoreCase("doha")) {
+                getMobileActions().click(DOHA_ENV_DROP_DOWN_LIST_VALUE);
+
+            } else if (AutomationProperties.TEST_ENV.equalsIgnoreCase("preprod")) {
+                getMobileActions().click(PP_ENV_DROP_DOWN_LIST_VALUE);
+            }
             getMobileActions().click(DOHA_ENV_DROP_DOWN_LIST_VALUE);
             getMobileActions().click(SALES_APP_CONTINUE_BUTTON);
         }
