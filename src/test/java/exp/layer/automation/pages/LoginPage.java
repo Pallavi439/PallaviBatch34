@@ -10,6 +10,10 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public class LoginPage extends Step {
@@ -26,7 +30,7 @@ public class LoginPage extends Step {
     public static FlutterElement SALES_DEV_LOGIN_MOBILE_NO_TEXT_BOX = getFlutterActions().getFlutterFinder().byValueKey("dev_mobile_number_text_field");
     public static FlutterElement SALES_DEV_LOGIN_PASSWORD_TEXT_BOX = getFlutterActions().getFlutterFinder().byValueKey("dev_password_text_field");
     public static FlutterElement SALES_ENV_DROP_DOWN = getFlutterActions().getFlutterFinder().byValueKey("dev_env_change_dropdown");
-    public static FlutterElement LANGUAGE_NEXT_ARROW = getFlutterActions().getFlutterFinder().byValueKey("locale_next_icon");
+    public static FlutterElement LANGUAGE_NEXT_ARROW = getFlutterActions().getFlutterFinder().byValueKey("settings_locale_next_icon");
     public static FlutterElement DEV_LOGIN_ICON = getFlutterActions().getFlutterFinder().byValueKey("dev_login_button");
 
     public static void allowDeviceLocation() {
@@ -65,15 +69,13 @@ public class LoginPage extends Step {
             getFlutterActions().click(SALES_DEV_LOGIN_PASSWORD_TEXT_BOX);
             getFlutterActions().type(SALES_DEV_LOGIN_PASSWORD_TEXT_BOX, password);
 
+            //code to select env
             getMobileActions().click(ENV_DROP_DOWN);
-
             if (AutomationProperties.TEST_ENV.equalsIgnoreCase("doha")) {
                 getMobileActions().click(DOHA_ENV_DROP_DOWN_LIST_VALUE);
-
             } else if (AutomationProperties.TEST_ENV.equalsIgnoreCase("preprod")) {
                 getMobileActions().click(PP_ENV_DROP_DOWN_LIST_VALUE);
             }
-            getMobileActions().click(DOHA_ENV_DROP_DOWN_LIST_VALUE);
             getMobileActions().click(SALES_APP_CONTINUE_BUTTON);
         }
     }
