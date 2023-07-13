@@ -37,6 +37,11 @@ public class ExpLayerCommonSteps {
         CategoriesPage.addRandomOneItemToCart();
     }
 
+    @Given("{word} add item to cart")
+    public void add_item_cart(String word, List<List<String>> list) throws Exception {
+        CategoriesPage.productSearch(list);
+    }
+
     @Given("{word} click on cart next button")
     public void click_on_cart_next_button(String word) throws Exception {
         CartPage.clickOnNextButton();

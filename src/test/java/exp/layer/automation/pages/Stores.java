@@ -27,7 +27,7 @@ public class Stores extends Step {
     public static void clickOnStore(String storeName) throws Exception {
         getMobileActions().click(By.xpath(String.format(STORE_NAME,storeName)));
         //getMobileActions().click(By.xpath("//android.view.View[@content-desc='" + storeName + "']"));
-        getMobileActions().click(INFORMED_CUSTOMER_BUTTON);
+        getMobileActions().clickIfAvailable(INFORMED_CUSTOMER_BUTTON);
     }
 
     public static void captureStoreImage() throws Exception {
