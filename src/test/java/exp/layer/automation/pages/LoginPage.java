@@ -14,14 +14,11 @@ public class LoginPage extends Step {
 
     public static By DOHA_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Doha' or @content-desc='DOHA']");
     public static By PP_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Pre Prod' or @content-desc='PRE PROD']");
-
     public static By DEVICE_LOCATION = By.xpath("//*[@text='While using the app']");
-
     public static FlutterElement DEV_LOGIN_ER_LOGO = getFlutterActions().getFlutterFinder().byValueKey("open_dev_login_button");
     public static FlutterElement SALES_DEV_LOGIN_MOBILE_NO_TEXT_BOX = getFlutterActions().getFlutterFinder().byValueKey("dev_mobile_number_text_field");
     public static FlutterElement SALES_DEV_LOGIN_PASSWORD_TEXT_BOX = getFlutterActions().getFlutterFinder().byValueKey("dev_password_text_field");
     public static FlutterElement DEV_LOGIN_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("dev_login_button");
-
     public static FlutterElement ENV_DROP_DOWN = getFlutterActions().getFlutterFinder().byValueKey("dev_env_change_dropdown");
     public static FlutterElement LANGUAGE_NEXT_ARROW = getFlutterActions().getFlutterFinder().byValueKey("settings_locale_next_icon");
 
@@ -30,7 +27,6 @@ public class LoginPage extends Step {
             WebElement we = getMobileActions().waitForVisibilityOfElementLocated(DEVICE_LOCATION, 3);
             we.click();
         } catch (Exception ignore) {
-
         }
         try {
             getFlutterActions().click(LANGUAGE_NEXT_ARROW);
