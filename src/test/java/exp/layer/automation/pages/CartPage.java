@@ -24,6 +24,7 @@ public class CartPage extends Step {
     public static FlutterElement EMPTY_CART_POP_UP_YES_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
     public static FlutterElement EMPTY_CART_POP_UP_NO_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("reject_button");
     public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
+    public static FlutterElement MINIMUM_TIME_SPENT_POPUP=getFlutterActions().getFlutterFinder().byValueKey("cart_minimum_time_spent");
     public static final By EMPTY_CART_TEXT = By.xpath("//android.view.View[@content-desc='Your shopping cart is empty!']");
     public static String ITEMS_COUNT = "//android.view.View[@content-desc='Items %s']";
     public static FlutterElement CART_NEXT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_next_buttom");
@@ -42,6 +43,7 @@ public class CartPage extends Step {
     }
 
     public static void placeRemoteOrder() throws Exception {
+        clickOnCartPageButton();
         clickOnNextButton();
         placeOrderButton();
         clickOnRemoteOrderButton();
@@ -50,7 +52,6 @@ public class CartPage extends Step {
 
 
     public static void clickOnNextButton() throws Exception {
-        clickOnCartPageButton();
         getFlutterActions().click(CART_NEXT_BUTTON);
     }
 
@@ -99,5 +100,10 @@ public class CartPage extends Step {
         getFlutterActions().click(REJECT_BUTTON);
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
+    }
+    public static void verifyPresenceOfMinimumTimeSpent(){
+        getFlutterActions().waitForVisibility(MINIMUM_TIME_SPENT_POPUP);
+        getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey("reject_button"));
+
     }
 }

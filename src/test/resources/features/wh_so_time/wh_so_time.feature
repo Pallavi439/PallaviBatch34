@@ -44,7 +44,7 @@ Feature: WH SO time
       | ${wh3-sp1.locality} | ${wh3-customer-1-title} |
     * user captures store image
     * user clicks on take a remote order button
-    * user add item to cart
+    * user add items to cart
       | Automation-Category-2       | Bag  | 7  |
       | Automation-Test-Item-Name-1 | Case | 10 |
     * user click on cart next button

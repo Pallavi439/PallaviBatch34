@@ -41,6 +41,14 @@ Feature: Happy flow for order time by placing order with specific time
     * user clicks on take a remote order button
     * user add items to cart
       | Automation-Category-2 | Bag | 7 |
-    *
+    * user click on cart button
+    * user click on cart next button
+    * user click on place order button
+    * user verifies presence of minimum time spent
+    * user wait for 120 seconds
+    * user click on place order button
+    * user click on cart remote order button
+    
+
 
 

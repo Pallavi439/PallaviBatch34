@@ -18,4 +18,13 @@ public class CartPageSteps {
     public static void place_remote_order(String word) throws Exception {
         CartPage.placeRemoteOrder();
     }
+
+    @Given("{word} click on cart button")
+    public static void click_on_cart_button(String word) throws Exception{
+        CartPage.clickOnCartPageButton();
+    }
+    @Given("{word} verifies presence of minimum time spent")
+    public static void verify_minimum_time_spent_presence(String word){
+        CartPage.verifyPresenceOfMinimumTimeSpent();
+    }
 }
