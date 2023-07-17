@@ -58,9 +58,8 @@
             <artifactId>er-automation-engine</artifactId>
             <version>${er.automation.engine.version}</version>
             <scope>system</scope>
-           <!-- <systemPath>${basedir}/src/test/resources/lib/er-automation-engine-${er.automation.engine.version}.jar
-            </systemPath>-->
-            <systemPath>/Users/user/Documents/git/er-automation-engine/target/er-automation-engine-3.0.3.jar</systemPath>
+            <systemPath>${basedir}/src/test/resources/lib/er-automation-engine-${er.automation.engine.version}.jar
+            </systemPath>
         </dependency>
 
         <dependency>
