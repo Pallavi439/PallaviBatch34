@@ -22,6 +22,11 @@ public class ExpLayerCommonSteps {
         LocalityPage.clickOnLocalityAndCustomer(list.get(0), list.get(1));
     }
 
+    @Given("{word} captures store image if available")
+    public void capture_store_image_if_available(String word) throws Exception {
+        Stores.captureStoreImageIfAvailable();
+    }
+
     @Given("{word} captures store image")
     public void capture_store_image(String word) throws Exception {
         Stores.captureStoreImage();
@@ -32,9 +37,9 @@ public class ExpLayerCommonSteps {
         Stores.clickOnRemoteOrderButton();
     }
 
-    @Given("{word} add one random item to cart")
-    public void add_item_cart(String word) throws Exception {
-        CategoriesPage.addRandomOneItemToCart();
+    @Given("{word} add item to cart")
+    public void add_item_cart(String word, List<List<String>> list) throws Exception {
+        CategoriesPage.addItemToCart(list);
     }
 
     @Given("{word} click on cart next button")
@@ -51,4 +56,31 @@ public class ExpLayerCommonSteps {
     public void click_on_cart_remote_order_button(String word) throws Exception {
         CartPage.clickOnRemoteOrderButton();
     }
+
+    @Given("{word} click on cart local place order button")
+    public void click_on_cart_local_order_button(String word) throws Exception {
+        CartPage.popUpPlaceOrderButton();
+    }
+
+    @Given("{word} click on cart back button")
+    public void click_on_cart_back_button(String word) {
+        CartPage.clickOnCartGoBackButton();
+    }
+
+    @Given("{word} click on order constraints strip")
+    public void click_oc_strip(String word) {
+        OcPage.clickOnOcStrip();
+    }
+
+    @Given("{word} click on order constraints title {string}")
+    public void click_oc_title(String word, String index) {
+        OcPage.clickOnOcTitle(index);
+    }
+
+    @Given("{word} verify absence of order constraint strip")
+    public void verify_absence_of_oc_strip(String word) throws Exception {
+        OcPage.verifyAbsenceOfOcStrip();
+    }
+
+
 }
