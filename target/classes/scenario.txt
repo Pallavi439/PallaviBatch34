@@ -1,1 +1,5 @@
-e2e/cash-order-placement.feature:::::::Verify cash order placement flow=============FAILED
+Order%20Constrain/unique_SKU_isnot.feature:::::::Create Customer tag from document tag doctype=============PASSED
+Order%20Constrain/unique_SKU_isnot.feature:::::::Create Parameterized document metric=============PASSED
+Order%20Constrain/unique_SKU_isnot.feature:::::::Create Parameterized document metric=============PASSED
+Order%20Constrain/unique_SKU_isnot.feature:::::::Create Parameterized document metric=============PASSED
+Order%20Constrain/unique_SKU_isnot.feature:::::::Delete document tag=============PASSED

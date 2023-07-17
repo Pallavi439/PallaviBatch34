@@ -1,11 +1,11 @@
+exp/layer/automation/steps/ExpLayerCommonSteps.class
+exp/layer/automation/pages/CartPage.class
+exp/layer/automation/pages/ItemListPage.class
 exp/layer/automation/pages/CategoriesPage.class
 exp/layer/automation/pages/LocalityPage.class
 exp/layer/automation/pages/DashboardPage.class
 Parallel01IT.class
-exp/layer/automation/steps/ExpLayerCommonSteps.class
 exp/layer/automation/pages/LoginPage.class
-exp/layer/automation/pages/CartPage.class
-exp/layer/automation/pages/ItemListPage.class
 exp/layer/automation/pages/HomePage.class
 exp/layer/automation/pages/ExpLayerCommonPage.class
 exp/layer/automation/pages/Stores.class
