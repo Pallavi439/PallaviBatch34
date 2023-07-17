@@ -79,15 +79,6 @@ public class CartPage extends Step {
     public static void clickOnCartPageButton(){
         getFlutterActions().clickIfAvailable(CART_ICON);
     }
-    public static void verifyTotalItemCount() throws Exception {
-        clickOnCartPageButton();
-        String item_count = ExpLayerCommonPage.getCartItemQuantity("items");
-        if (Integer.parseInt(item_count) == 0) {
-            getMobileActions().verifyVisibilityOfWebElement(EMPTY_CART_TEXT);
-        } else {
-            getMobileActions().verifyVisibilityOfWebElement(By.xpath(String.format(ITEMS_COUNT, item_count)));
-        }
-    }
     public static void removeALLItemFromCart() throws Exception {
         clickOnCartPageButton();
         getFlutterActions().click(REMOVE_ALL_ITEM_FROM_CART_BUTTON);
@@ -104,6 +95,9 @@ public class CartPage extends Step {
     public static void verifyPresenceOfMinimumTimeSpent(){
         getFlutterActions().waitForVisibility(MINIMUM_TIME_SPENT_POPUP);
         getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey("reject_button"));
+        getUiActions().waitForSeconds(2);
+        getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
+
 
     }
 }
