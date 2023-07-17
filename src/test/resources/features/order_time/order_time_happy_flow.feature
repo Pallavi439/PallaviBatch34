@@ -26,8 +26,8 @@ Feature: Happy flow for order time by placing order with specific time
 
   Scenario: Verify order time and order placement from app side for 1st order
 
-#    * user login to the experience layer sales app with valid details
-#      | ${wh2-se1} | ${common-password} |
+    * user login to the experience layer sales app with valid details
+      | ${wh2-se1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
       | ${wh2-sp1.locality} | Sdfgrotuyb |
@@ -41,17 +41,6 @@ Feature: Happy flow for order time by placing order with specific time
     * user clicks on take a remote order button
     * user add items to cart
       | Automation-Category-2 | Bag | 7 |
-
-  @somee
-  Scenario: Try frappe
-    * user set api headers
-      | Authorization | token ${token_key}:${token_secret} |
-
-    * user hit get api call with query param
-      | experience-layer-onboarding | frappe_get_doc |
-      | doctype                     | Customer       |
-      | name                        | CUST-04511     |
-    * response status code should be 200
-    * get response "docs[0].otp" string attribute and store into session "po_otp"
+    *
 
 

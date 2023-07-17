@@ -36,8 +36,8 @@ Feature: WH SO time
 
 #    * user wait for 60 seconds
 
-#    * user login to the experience layer sales app with valid details
-#      | ${wh2-se1} | ${common-password} |
+    * user login to the experience layer sales app with valid details
+      | ${wh2-se1} | ${common-password} |
     * user click on beat button
     * user reset store for "${wh3-sp1.locality}"
     * user click on locality and store
@@ -84,7 +84,9 @@ Feature: WH SO time
       | ${wh3-sales-person-1-username} | ${wh3-sales-person-1-password} | ${warehouse-3} |
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_start_time" attribute value should be null
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_end_time" attribute value should be null
+
     * user wait for 60 seconds
+
     * user click on beat button
     * user reset store for "${wh3-sp1.locality}"
     * user click on locality and store
@@ -94,8 +96,7 @@ Feature: WH SO time
     * user add item to cart
       | Automation-Category-2       | Bag  | 7  |
       | Automation-Test-Item-Name-1 | Case | 10 |
-    * user place order
-    * user opens new tab
+    * user place remote order
 
     Examples:
       | Location | StartTime | EndTime |

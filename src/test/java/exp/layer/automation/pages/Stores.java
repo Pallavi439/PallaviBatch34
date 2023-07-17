@@ -51,25 +51,23 @@ public class Stores extends Step {
     }
 
     public static void captureStoreImage() {
-        try {
-            getUiActions().waitForSeconds(5);
-            getFlutterActions().click(ADD_STORE_IMAGE_LINK);
-            getMobileActions().verifyContextAndSwitchToNativeContext();
-            KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
-            AndroidDriver driver = (AndroidDriver) getMobileActions().appiumDriver;
-            driver.pressKey(event);
-            getMobileActions().click(By.xpath("//android.widget.ImageButton[@content-desc='Done']"));
-            getMobileActions().click(STORE_IMAGE_SUBMIT_BUTTON);
-        }
-        catch (Exception ignore){}
+        getFlutterActions().waitForVisibility(ADD_STORE_IMAGE_LINK);
+        getFlutterActions().click(ADD_STORE_IMAGE_LINK);
+        getMobileActions().verifyContextAndSwitchToNativeContext();
+        KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
+        AndroidDriver driver = (AndroidDriver) getMobileActions().appiumDriver;
+        driver.pressKey(event);
+        getMobileActions().click(By.xpath("//android.widget.ImageButton[@content-desc='Done']"));
+        getMobileActions().click(STORE_IMAGE_SUBMIT_BUTTON);
+
     }
 
-        public static void clickOnRemoteOrderButton () {
-            getFlutterActions().click(REMOTE_ORDER_BUTTON);
-        }
-        public static void clickOnTakeOrderButton () {
-            try{getFlutterActions().clickIfAvailable(TAKE_ORDER_BUTTON);}
-            catch (Exception ignore){}
-
-        }
+    public static void clickOnRemoteOrderButton() {
+        getFlutterActions().click(REMOTE_ORDER_BUTTON);
     }
+
+    public static void clickOnTakeOrderButton() {
+        getFlutterActions().click(TAKE_ORDER_BUTTON);
+
+    }
+}

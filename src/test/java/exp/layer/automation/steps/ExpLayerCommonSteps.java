@@ -39,7 +39,6 @@ public class ExpLayerCommonSteps {
     public void capture_store_image(String word) throws Exception {
         Stores.captureStoreImage();
     }
-
     @Given("{word} clicks on take a remote order button")
     public void take_a_remote_order(String word) throws Exception {
         Stores.clickOnRemoteOrderButton();
