@@ -22,7 +22,7 @@
         <mobile.os>android</mobile.os>
         <mobile.app.package>run.er.ecom.assist.dev</mobile.app.package>
         <mobile.app.activity>run.er.ecom.assist.MainActivity</mobile.app.activity>
-        <mobile.uuid>emulator-5554</mobile.uuid>
+        <mobile.uuid>emulator-5556</mobile.uuid>
         <test.env>$(test.env)</test.env>
         <tags>$(tags)</tags>
         <remote.execution>$(remote.execution)</remote.execution>
@@ -297,8 +297,7 @@
                                 </goals>
                                 <configuration>
                                     <glue>
-                                        <package>er.automation</package>
-                                        <package>exp.layer</package>
+                                        <package>er.automation,exp.layer</package>
                                     </glue>
                                     <outputDirectory>${project.build.directory}/generated-test-sources/cucumber
                                     </outputDirectory>

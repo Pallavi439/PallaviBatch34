@@ -1,11 +1,10 @@
-/Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/HomePage.java
 /Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/LoginPage.java
 /Users/user/Documents/Java_Automation/sales-app/target/generated-test-sources/cucumber/Parallel01IT.java
 /Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/Stores.java
 /Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/CartPage.java
-/Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/ItemListPage.java
+/Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/steps/ExpLayerBaseStep.java
 /Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/CategoriesPage.java
 /Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/LocalityPage.java
 /Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/DashboardPage.java
+/Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/OcPage.java
 /Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/steps/ExpLayerCommonSteps.java
-/Users/user/Documents/Java_Automation/sales-app/src/test/java/exp/layer/automation/pages/ExpLayerCommonPage.java

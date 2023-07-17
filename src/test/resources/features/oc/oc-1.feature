@@ -7,7 +7,7 @@ Feature: Order constraint
       | ${oc-wh1-se-1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
-      | ${wh1-oc.locality} | ${oc-wh1-customer-1-title} |
+      | ${wh1-oc.locality} | ${customer-1-title} |
     * user captures store image if available
     * user clicks on take a remote order button
 
