@@ -36,7 +36,6 @@ public class CartPage extends Step {
 
     public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("er_info_screen_primary_button");
 
-    public static final By PLACE_ORDER_BUTTON = new AppiumBy.ByAccessibilityId("Place Order");
 
     public static void removeAllItemFromCartIfAvailable() {
         WebElement we = getMobileActions().waitForVisibilityOfElementLocated(CategoriesPage.BOTTOM_CART_EMPTY_ICON, 2);
