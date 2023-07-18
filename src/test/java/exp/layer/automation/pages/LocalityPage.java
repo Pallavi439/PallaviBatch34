@@ -30,7 +30,6 @@ public class LocalityPage extends Step {
     public static void clickOnLocality(String locality){
         locality = AutomationUtils.getTestData(locality);
         store = AutomationUtils.getTestData(store);
-        
         getMobileActions().click(By.xpath(String.format(LOCALITY, locality)));
     }
 

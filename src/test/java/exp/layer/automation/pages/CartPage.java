@@ -23,7 +23,9 @@ public class CartPage extends Step {
     public static FlutterElement REMOVE_ALL_ITEM_FROM_CART_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_show_delete_all_warning_popup");
     public static FlutterElement EMPTY_CART_POP_UP_YES_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
     public static FlutterElement EMPTY_CART_POP_UP_NO_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("reject_button");
-    public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
+
+    // public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
+
     public static FlutterElement MINIMUM_TIME_SPENT_POPUP=getFlutterActions().getFlutterFinder().byValueKey("cart_minimum_time_spent");
     public static final By EMPTY_CART_TEXT = By.xpath("//android.view.View[@content-desc='Your shopping cart is empty!']");
     public static String ITEMS_COUNT = "//android.view.View[@content-desc='Items %s']";
@@ -31,6 +33,10 @@ public class CartPage extends Step {
     public static FlutterElement ACCEPT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
     public static FlutterElement CUTOFF_TIME=getFlutterActions().getFlutterFinder().byValueKey("cart_warehouse_cutoff_time");
     public static FlutterElement REJECT_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("reject_button");
+
+    public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("er_info_screen_primary_button");
+
+    public static final By PLACE_ORDER_BUTTON = new AppiumBy.ByAccessibilityId("Place Order");
 
     public static void removeAllItemFromCartIfAvailable() {
         WebElement we = getMobileActions().waitForVisibilityOfElementLocated(CategoriesPage.BOTTOM_CART_EMPTY_ICON, 2);
