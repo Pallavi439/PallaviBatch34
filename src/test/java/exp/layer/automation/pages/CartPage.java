@@ -24,7 +24,7 @@ public class CartPage extends Step {
 
     public static FlutterElement EMPTY_CART_POP_UP_YES_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
     public static FlutterElement EMPTY_CART_POP_UP_NO_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("reject_button");
-    public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
+    public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("er_info_screen_primary_button");
 
     public static final By PLACE_ORDER_BUTTON = new AppiumBy.ByAccessibilityId("Place Order");
 
