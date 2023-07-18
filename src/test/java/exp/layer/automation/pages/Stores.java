@@ -1,5 +1,6 @@
 package exp.layer.automation.pages;
 
+import er.automation.engine.actions.FlutterActions;
 import er.automation.engine.helpers.AutomationUtils;
 import er.automation.engine.setup.Step;
 import io.appium.java_client.android.AndroidDriver;
@@ -50,7 +51,7 @@ public class Stores extends Step {
 
     public static void captureStoreImageIfAvailable() {
         try {
-            getMobileActions().waitForVisibilityOfElementLocated(STORE_IMAGE_LINK, 1);
+            getMobileActions().waitForVisibilityOfElementLocated(STORE_IMAGE_LINK, 3);
             getFlutterActions().click(ADD_STORE_IMAGE_LINK);
             getMobileActions().verifyContextAndSwitchToNativeContext();
             KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
@@ -92,6 +93,7 @@ public class Stores extends Step {
         getFlutterActions().type(MARK_VISIT_TEXT_FIELD,AutomationUtils.getTestData("${mark_visit_reason}"));
         getUiActions().waitForSeconds(10);
         getFlutterActions().click(MARK_VISIT_SUBMIT_BUTTON);
+        getUiActions().waitForSeconds(5);
     }
     public static void getMarkVisitReason(String reason){
         getMobileActions().verifyContextAndSwitchToNativeContext();

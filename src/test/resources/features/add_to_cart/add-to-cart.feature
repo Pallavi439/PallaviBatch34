@@ -9,7 +9,7 @@ Feature: Add items to cart flow
     * user click on beat button
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
-#    * user captures store image
+    * user captures store image if available
     * user clicks on take a remote order button
     * user add items to cart
       | Automation-Category-2       | Bag  | 7  |

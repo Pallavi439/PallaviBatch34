@@ -75,9 +75,10 @@ public class ExpLayerCommonPage extends Step {
         getFlutterActions().click(HAMBURGER_MENU_BUTTON);
         getUiActions().waitForSeconds(3);
         getMobileActions().click(AppiumBy.accessibilityId("Logout"));
-//        getFlutterActions().click(LOGOUT_BUTTON);
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[@content-desc='Yes']"));
+        getUiActions().waitForSeconds(2);
+        getFlutterActions().waitForVisibility(LoginPage.DEV_LOGIN_ER_LOGO);
     }
 
 

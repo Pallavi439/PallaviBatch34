@@ -25,5 +25,6 @@ Feature: User verifies sales person mark visit functionality
       | ${wh3-se1} | ${common-password} |
     * user wait for 5 seconds
     * user click on beat button
-    * user mark visit "${wh3-sp1.locality}" locality "${wh3-customer-1-title}" store with reason "${NUMBER-0-7}"
+    * user mark visit "${wh3-sp1.locality}" locality store
+    |${wh3-customer-1-title}|${NUMBER-0-7}|
     * user wait for 10 seconds

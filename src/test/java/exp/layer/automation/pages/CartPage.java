@@ -85,7 +85,13 @@ public class CartPage extends Step {
         getMobileActions().waitForSeconds(5);
     }
     public static void clickOnCartPageButton(){
-        getFlutterActions().clickIfAvailable(CART_ICON);
+        try {
+            getMobileActions().verifyContextAndSwitchToFlutterContext();
+            AndroidDriver driver = (AndroidDriver)Step.getMobileActions().appiumDriver;
+            driver.executeScript("flutter:waitFor", new Object[]{CART_ICON, 5000});
+            getFlutterActions().clickIfAvailable(CART_ICON);
+        }
+        catch (Exception ignored){}
     }
     public static void removeALLItemFromCart() throws Exception {
         clickOnCartPageButton();
