@@ -1,0 +1,13 @@
+{
+  "docstatus": 1,
+  "doctype": "Custom Field",
+  "name": "New Custom Field 1",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "pranali.mulay@elastic.run",
+  "fieldtype": "Data",
+  "precision": "",
+  "permlevel": 0,
+  "dt": "FAQ",
+  "label": "automation"
+}
