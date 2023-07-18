@@ -3,6 +3,7 @@ package exp.layer.automation.steps;
 import exp.layer.automation.pages.*;
 import io.cucumber.java.en.Given;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ExpLayerCommonSteps {
@@ -10,6 +11,11 @@ public class ExpLayerCommonSteps {
     @Given("{word} login to the experience layer sales app with valid details")
     public void experience_layer_sales_dev_login(String word, List<String> list) throws Exception {
         LoginPage.salesAppLoginByUserDetails(list.get(0), list.get(1));
+    }
+
+    @Given("{word} login to the experience layer sales app with valid mobile number")
+    public void cas_login(String word, List<String> list) throws IOException {
+        LoginPage.caseLogin(list);
     }
 
     @Given("{word} click on beat button")

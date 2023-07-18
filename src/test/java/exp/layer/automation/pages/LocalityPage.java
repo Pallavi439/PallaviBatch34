@@ -12,6 +12,8 @@ public class LocalityPage extends Step {
         locality = AutomationUtils.getTestData(locality);
         store = AutomationUtils.getTestData(store);
 
+
+
         getMobileActions().click(By.xpath(String.format(LOCALITY, locality)));
         Stores.clickOnStore(store);
     }
