@@ -88,4 +88,19 @@ public class ExpLayerCommonSteps {
     public void userVerifyFinalPriceOnCartPageWith(String grand_total, String oc_name) {
         OcPage.verifyFinalPriceOnCartPage(grand_total,oc_name);
     }
+
+    @And("user get grand total")
+    public void userGetGrandTotal() {
+        CartPage.getGrandTotal();
+    }
+
+    @And("click on place order button remote order popup")
+    public void clickOnPlaceOrderButtonRemoteOrderPopup() {
+        CartPage.clickOnPlaceOrderButtonRemoteOrderPopup();
+    }
+
+    @And("user click on add more item button from cart page")
+    public void userClickOnAddMoreItemButtonFromCartPage() {
+        CartPage.clickOnAddMoreItemButtonFromCartPage();
+    }
 }

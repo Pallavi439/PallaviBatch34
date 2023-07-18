@@ -20,6 +20,7 @@ public class CartPage extends Step {
     public static FlutterElement ADD_MORE_ITEMS_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_add_more_item");
     public static FlutterElement NEXT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_next_buttom");
     public static FlutterElement POP_UP_PLACE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_click_local");
+    public static FlutterElement POPUP_REMOTE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_remote_order");
     public static FlutterElement REMOVE_ALL_ITEM_FROM_CART_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_show_delete_all_warning_popup");
 
     public static FlutterElement EMPTY_CART_POP_UP_YES_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
@@ -67,4 +68,24 @@ public class CartPage extends Step {
         getMobileActions().waitForSeconds(5);
     }
 
+    public static void getGrandTotal() {
+        getMobileActions().verifyContextAndSwitchToNativeContext();
+        List<WebElement> s = getMobileActions().appiumDriver.findElements(By.xpath("//android.view.View"));
+        String grandTotal = s.get(s.size() - 3).getAttribute("content-desc");
+        grandTotal = grandTotal.split("\\.")[0];
+        grandTotal = grandTotal.replaceAll(",", "");
+        grandTotal = AutomationUtils.extractNumbers(grandTotal);
+        System.out.println("GRAND_TOTAL_AMOUNT -> " + grandTotal);
+        AutomationUtils.getTestContext().put("GRAND_TOTAL_AMOUNT", grandTotal);
+    }
+
+    public static void clickOnPlaceOrderButtonRemoteOrderPopup() {
+        getMobileActions().click(PLACE_ORDER_BUTTON);
+        getFlutterActions().click(POPUP_REMOTE_ORDER_BUTTON);
+    }
+
+    public static void clickOnAddMoreItemButtonFromCartPage() {
+        getFlutterActions().click(ADD_MORE_ITEMS_BUTTON);
+
+    }
 }
