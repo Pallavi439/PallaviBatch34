@@ -23,9 +23,19 @@ public class LocalityPage extends Step {
     }
 
     public static void clickOnLocalityAndCustomer(String locality, String store) throws Exception {
-        locality = AutomationUtils.getTestData(locality);
-        store = AutomationUtils.getTestData(store);
-        getMobileActions().click(By.xpath(String.format(LOCALITY, locality)));
+        clickOnLocality(locality);
         Stores.clickOnStore(store);
+        Stores.informCUSTOMER();
+    }
+    public static void clickOnLocality(String locality){
+        locality = AutomationUtils.getTestData(locality);
+        getMobileActions().click(By.xpath(String.format(LOCALITY, locality)));
+    }
+
+    public static void markVisitStore(String locality,String store,String reason) throws Exception {
+        clickOnLocality(locality);
+        Stores.clickOnStore(store);
+        Stores.captureStoreImage();
+        Stores.markVisitCustomer(reason);
     }
 }

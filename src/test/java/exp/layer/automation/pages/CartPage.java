@@ -97,7 +97,5 @@ public class CartPage extends Step {
         getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey("reject_button"));
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
-
-
     }
 }

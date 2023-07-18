@@ -1,11 +1,16 @@
 package exp.layer.automation.pages;
 
 import er.automation.engine.setup.Step;
+import io.appium.java_client.AppiumBy;
+import io.github.ashwith.flutter.FlutterElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 
 public class ExpLayerCommonPage extends Step {
+
+    public static FlutterElement HAMBURGER_MENU_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("home_hamburger_menu");
+    public static FlutterElement LOGOUT_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("logout_widget");
 
     static Logger log = LogManager.getLogger(ExpLayerCommonPage.class);
 
@@ -52,6 +57,16 @@ public class ExpLayerCommonPage extends Step {
 
     public static void log_out(){
 
+    }
+
+    public static void logOut(){
+        getFlutterActions().waitForVisibility(HAMBURGER_MENU_BUTTON);
+        getFlutterActions().click(HAMBURGER_MENU_BUTTON);
+        getUiActions().waitForSeconds(3);
+        getMobileActions().click(AppiumBy.accessibilityId("Logout"));
+//        getFlutterActions().click(LOGOUT_BUTTON);
+        getUiActions().waitForSeconds(2);
+        getMobileActions().click(By.xpath("//*[@content-desc='Yes']"));
     }
 
 

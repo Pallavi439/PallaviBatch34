@@ -95,4 +95,9 @@ public class ExpLayerCommonSteps {
     public void verify_presence_of_cuttoff_popup (String word) throws Exception {
         CartPage.verifyPresenceOfWarehouseCutoffTime();
     }
+
+    @Given("{word} log out of sales app")
+    public void log_out_of_sales_app(String word){
+        ExpLayerCommonPage.logOut();
+    }
 }
