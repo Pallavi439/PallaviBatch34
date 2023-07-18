@@ -13,9 +13,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="Maven: com.er.automation:er-automation-engine:3.0.3">
+      <library name="Maven: com.er.automation:er-automation-engine:3.0.4">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/test/resources/lib/er-automation-engine-3.0.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/test/resources/lib/er-automation-engine-3.0.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

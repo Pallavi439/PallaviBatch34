@@ -25,7 +25,8 @@ public class Stores extends Step {
     public static FlutterElement ADD_STORE_IMAGE_LINK = getFlutterActions().getFlutterFinder().byValueKey("beat_plan_add_store_image_card");
 
     public static void clickOnStore(String storeName) {
-
+        getMobileActions().verifyContextAndSwitchToNativeContext();
+        getMobileActions().scrollToElement(By.xpath(String.format(STORE_NAME, storeName)));
         getMobileActions().click(By.xpath(String.format(STORE_NAME, storeName)));
         getMobileActions().clickIfAvailable(INFORMED_CUSTOMER_BUTTON);
     }
