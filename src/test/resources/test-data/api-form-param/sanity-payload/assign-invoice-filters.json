@@ -1,0 +1,8 @@
+{
+  "warehouse": "${si_warehouse}",
+  "scannedinvoiceChecked": 0,
+  "oorInvoiceChecked": 0,
+  "as_dict": 1,
+  "collection_due_date": "${si_collection_due_date}",
+  "mark_rfp": 1
+}

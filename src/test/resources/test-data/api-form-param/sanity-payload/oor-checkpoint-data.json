@@ -1,0 +1,10 @@
+{
+  "chkpt": "Out On Road",
+  "category": "NP",
+  "doctype": "Check Point",
+  "code": "OR",
+  "handling_type": "Delivery",
+  "location": "Field",
+  "ref_doctype": "Sales Invoice",
+  "ref_docname": "${SALES_ORDER_INVOICE_ID}"
+}

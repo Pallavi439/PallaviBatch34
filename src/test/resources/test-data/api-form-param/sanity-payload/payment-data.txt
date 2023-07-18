@@ -1,0 +1,16 @@
+{
+  "doctype": "Payment Entry",
+  "payment_type": "Receive",
+  "party_type": "Customer",
+  "party": "${customer_id}",
+  "party_name": "${customer_id}",
+  "mode_of_payment": "Cash",
+  "references": [{
+    "reference_doctype": "Sales Invoice",
+    "reference_name": "${SALES_ORDER_INVOICE_ID}",
+    "allocated_amount": ${GRAND_TOTAL_AMOUNT}
+  }],
+  "paid_amount": ${GRAND_TOTAL_AMOUNT},
+  "received_amount": ${GRAND_TOTAL_AMOUNT},
+  "coords": "{\"latitude\": -4.448784,\"longitude\": -171.24832,\"accuracy\": 10}"
+}
