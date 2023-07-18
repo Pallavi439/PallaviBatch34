@@ -86,6 +86,5 @@ public class CartPage extends Step {
 
     public static void clickOnAddMoreItemButtonFromCartPage() {
         getFlutterActions().click(ADD_MORE_ITEMS_BUTTON);
-
     }
 }
