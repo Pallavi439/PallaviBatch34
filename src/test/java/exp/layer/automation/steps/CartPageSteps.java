@@ -14,6 +14,11 @@ public class CartPageSteps {
         CartPage.placeRemoteOrder();
     }
 
+    @Given("{word} place local order")
+    public static void place_local_order(String word) throws Exception {
+        CartPage.placeLocalOrder();
+    }
+
     @Given("{word} click on cart button")
     public static void click_on_cart_button(String word) throws Exception{
         CartPage.clickOnCartPageButton();

@@ -115,6 +115,9 @@ public class CategoriesPage extends Step {
     }
 
     public static void addItem(String item_detail, String item_type, String item_quantity) throws Exception {
+        item_detail = AutomationUtils.replaceTestDataVariable(item_detail);
+        item_type = AutomationUtils.replaceTestDataVariable(item_type);
+        item_quantity=AutomationUtils.replaceTestDataVariable(item_quantity);
         if (item_detail.contains("Category")) {
             searchItem(item_detail);
             int catNo = AutomationUtils.generateRandomNoByRange(0, 4);
@@ -126,6 +129,7 @@ public class CategoriesPage extends Step {
             item_detail = item_detail.concat(" @");
             searchItemDetails(item_detail);
         }
+
         if (item_type.equalsIgnoreCase("Bag")) {
             getFlutterActions().getFlutterFinder().byValueKey("product_0_add_button_1").click();
             if (Integer.parseInt(item_quantity) > 1) {
