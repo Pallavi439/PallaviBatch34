@@ -10,6 +10,6 @@ import cucumber.api.junit.Cucumber;
         plugin = {"json:/Users/user/Documents/Java_Automation/sales-app/target/cucumber-reports/1.json"},
         monochrome = true,
         tags = {"@oc", "not @ignore"},
-        glue = {"er.automation,exp.layer"})
+        glue = {"er.automation", "exp.layer"})
 public class Parallel01IT {
 }

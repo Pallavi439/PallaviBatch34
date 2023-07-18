@@ -1,6 +1,7 @@
 package exp.layer.automation.steps;
 
 import exp.layer.automation.pages.*;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 import java.util.List;
@@ -68,7 +69,7 @@ public class ExpLayerCommonSteps {
     }
 
     @Given("{word} click on order constraints strip")
-    public void click_oc_strip(String word) {
+    public void click_oc_strip(String word) throws Exception {
         OcPage.clickOnOcStrip();
     }
 
@@ -83,4 +84,8 @@ public class ExpLayerCommonSteps {
     }
 
 
+    @And("user verify final price on cart page with {string} for {string} order")
+    public void userVerifyFinalPriceOnCartPageWith(String grand_total, String oc_name) {
+        OcPage.verifyFinalPriceOnCartPage(grand_total,oc_name);
+    }
 }

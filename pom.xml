@@ -297,7 +297,8 @@
                                 </goals>
                                 <configuration>
                                     <glue>
-                                        <package>er.automation,exp.layer</package>
+                                        <package>er.automation</package>
+                                        <package>exp.layer</package>
                                     </glue>
                                     <outputDirectory>${project.build.directory}/generated-test-sources/cucumber
                                     </outputDirectory>

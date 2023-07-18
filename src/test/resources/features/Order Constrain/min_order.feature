@@ -50,7 +50,4 @@ Feature: Min order
       | title | Automation Min Order C1 | /min_order_C1-default-payload.json |
     * response status code should be 200
 
-  Scenario: Delete document tag
-    * user delete doc type
-      | Document Tag | ${Document Tag.name} |
 

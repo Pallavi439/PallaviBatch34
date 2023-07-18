@@ -51,7 +51,6 @@ public class CartPage extends Step {
         grandTotal = AutomationUtils.extractNumbers(grandTotal);
         System.out.println("GRAND_TOTAL_AMOUNT -> " + grandTotal);
         AutomationUtils.getTestContext().put("GRAND_TOTAL_AMOUNT", grandTotal);
-        getMobileActions().click(PLACE_ORDER_BUTTON);
     }
 
     public static void clickOnRemoteOrderButton() {
@@ -63,6 +62,7 @@ public class CartPage extends Step {
     }
 
     public static void popUpPlaceOrderButton() throws Exception {
+        getMobileActions().click(PLACE_ORDER_BUTTON);
         getFlutterActions().click(POP_UP_PLACE_ORDER_BUTTON);
         getMobileActions().waitForSeconds(5);
     }
