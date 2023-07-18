@@ -103,8 +103,6 @@ public class ExpLayerCommonSteps {
         CartPage.verifyPresenceOfWarehouseCutoffTime();
     }
 
-<<<<<<< HEAD
-
     @And("user verify final price on cart page with {string} for {string} order")
     public void userVerifyFinalPriceOnCartPageWith(String grand_total, String oc_name) {
         OcPage.verifyFinalPriceOnCartPage(grand_total,oc_name);
@@ -123,10 +121,10 @@ public class ExpLayerCommonSteps {
     @And("user click on add more item button from cart page")
     public void userClickOnAddMoreItemButtonFromCartPage() {
         CartPage.clickOnAddMoreItemButtonFromCartPage();
-=======
+    }
+
     @Given("{word} log out of sales app")
     public void log_out_of_sales_app(String word){
         ExpLayerCommonPage.logOut();
->>>>>>> 591593fc72f47823df29c5a5bd911fcb7c52c9c8
     }
 }

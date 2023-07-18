@@ -18,14 +18,12 @@ public class CartPage extends Step {
     public static FlutterElement PLACE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("order_details_button");
     public static FlutterElement CART_BACK_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_back_button");
     public static FlutterElement ADD_MORE_ITEMS_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_add_more_item");
-<<<<<<< HEAD
+
     public static FlutterElement NEXT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_next_buttom");
     public static FlutterElement POP_UP_PLACE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_click_local");
     public static FlutterElement POPUP_REMOTE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_remote_order");
-=======
     public static FlutterElement PLACE_ORDER_REMOTE_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("place_order_remote_order");
     public static FlutterElement PLACE_ORDER_LOCAL_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_click_local");
->>>>>>> 591593fc72f47823df29c5a5bd911fcb7c52c9c8
     public static FlutterElement REMOVE_ALL_ITEM_FROM_CART_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_show_delete_all_warning_popup");
     public static FlutterElement EMPTY_CART_POP_UP_YES_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
     public static FlutterElement EMPTY_CART_POP_UP_NO_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("reject_button");
@@ -75,10 +73,7 @@ public class CartPage extends Step {
         grandTotal = AutomationUtils.extractNumbers(grandTotal);
         System.out.println("GRAND_TOTAL_AMOUNT -> " + grandTotal);
         AutomationUtils.getTestContext().put("GRAND_TOTAL_AMOUNT", grandTotal);
-<<<<<<< HEAD
-=======
         getFlutterActions().click(PLACE_ORDER_BUTTON);
->>>>>>> 591593fc72f47823df29c5a5bd911fcb7c52c9c8
     }
     public static void clickOnRemoteOrderButton() {
         getFlutterActions().click(PLACE_ORDER_REMOTE_BUTTON);
@@ -87,8 +82,7 @@ public class CartPage extends Step {
         getFlutterActions().click(CART_BACK_BUTTON);
     }
     public static void popUpPlaceOrderButton() throws Exception {
-<<<<<<< HEAD
-        getMobileActions().click(PLACE_ORDER_BUTTON);
+        getFlutterActions().click(PLACE_ORDER_BUTTON);
         getFlutterActions().click(POP_UP_PLACE_ORDER_BUTTON);
         getMobileActions().waitForSeconds(5);
     }
@@ -105,13 +99,12 @@ public class CartPage extends Step {
     }
 
     public static void clickOnPlaceOrderButtonRemoteOrderPopup() {
-        getMobileActions().click(PLACE_ORDER_BUTTON);
+        getFlutterActions().click(PLACE_ORDER_BUTTON);
         getFlutterActions().click(POPUP_REMOTE_ORDER_BUTTON);
     }
 
     public static void clickOnAddMoreItemButtonFromCartPage() {
         getFlutterActions().click(ADD_MORE_ITEMS_BUTTON);
-=======
         getFlutterActions().click(PLACE_ORDER_LOCAL_BUTTON);
         getMobileActions().waitForSeconds(5);
     }
@@ -136,6 +129,5 @@ public class CartPage extends Step {
         getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey("reject_button"));
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
->>>>>>> 591593fc72f47823df29c5a5bd911fcb7c52c9c8
     }
 }

@@ -30,14 +30,11 @@ public class LocalityPage extends Step {
     public static void clickOnLocality(String locality){
         locality = AutomationUtils.getTestData(locality);
         getMobileActions().click(By.xpath(String.format(LOCALITY, locality)));
-<<<<<<< HEAD
         getUiActions().waitForSeconds(2);
-=======
     }
 
     public static void markVisitStore(String locality,String store,String reason) throws Exception {
         clickOnLocality(locality);
->>>>>>> 591593fc72f47823df29c5a5bd911fcb7c52c9c8
         Stores.clickOnStore(store);
         Stores.captureStoreImage();
         Stores.markVisitCustomer(reason);
