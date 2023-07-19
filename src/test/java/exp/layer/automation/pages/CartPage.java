@@ -3,6 +3,9 @@ package exp.layer.automation.pages;
 import er.automation.engine.helpers.AutomationUtils;
 import er.automation.engine.setup.Step;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.github.ashwith.flutter.FlutterElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +26,7 @@ public class CartPage extends Step {
     public static FlutterElement REMOVE_ALL_ITEM_FROM_CART_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_show_delete_all_warning_popup");
     public static FlutterElement EMPTY_CART_POP_UP_YES_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
     public static FlutterElement EMPTY_CART_POP_UP_NO_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("reject_button");
+    public static FlutterElement PLACE_ORDER_WITH_STORE_IMAGE=getFlutterActions().getFlutterFinder().byValueKey("work_with_capture_photo_submit_button");
 
     // public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("accept_button");
 
@@ -54,7 +58,6 @@ public class CartPage extends Step {
         clickOnRemoteOrderButton();
         getFlutterActions().waitForVisibility(Stores.CLICK_STORE);
     }
-
 
     public static void clickOnNextButton() throws Exception {
         getFlutterActions().click(CART_NEXT_BUTTON);
@@ -102,5 +105,18 @@ public class CartPage extends Step {
         getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey("reject_button"));
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
+    }
+
+    public static void placeLocalOrder() throws Exception {
+        clickOnCartPageButton();
+        clickOnNextButton();
+        placeOrderButton();
+        popUpPlaceOrderButton();
+
+        ExpLayerCommonPage.captureImage();
+
+        getUiActions().waitForSeconds(3);
+        getFlutterActions().click(PLACE_ORDER_WITH_STORE_IMAGE);
+        getFlutterActions().waitForVisibility(Stores.CLICK_STORE);
     }
 }

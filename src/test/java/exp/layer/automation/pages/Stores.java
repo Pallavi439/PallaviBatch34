@@ -88,9 +88,10 @@ public class Stores extends Step {
         getFlutterActions().waitForVisibility(MARK_VISIT_LOG);
         getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey(String.format(MARK_VISIT_REASON,reason)));
         getMarkVisitReason(reason);
+        getMobileActions().performScroll();
         getFlutterActions().type(MARK_VISIT_TEXT_FIELD,AutomationUtils.getTestData("${mark_visit_reason}"));
         getUiActions().waitForSeconds(10);
-//        getFlutterActions().click(MARK_VISIT_SUBMIT_BUTTON);
+        getFlutterActions().click(MARK_VISIT_SUBMIT_BUTTON);
     }
     public static void getMarkVisitReason(String reason){
         getMobileActions().verifyContextAndSwitchToNativeContext();

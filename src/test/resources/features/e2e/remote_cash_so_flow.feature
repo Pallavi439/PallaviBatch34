@@ -1,8 +1,8 @@
-@e2e @cash_so_flow
-Feature: E2E Cash Flow
+@e2e @remote_cash_so_flow
+Feature: E2E Remote Cash Flow
 
 
-  Scenario: Verify order placement flow
+  Scenario: Verify remote order placement flow
 
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
