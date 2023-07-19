@@ -1,6 +1,5 @@
 package exp.layer.automation.pages;
 
-import er.automation.engine.actions.FlutterActions;
 import er.automation.engine.helpers.AutomationUtils;
 import er.automation.engine.setup.Step;
 import io.appium.java_client.android.AndroidDriver;
@@ -12,9 +11,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
-public class Stores extends Step {
+public class StorePage extends Step {
     public static final By STORE_IMAGE_LINK = By.xpath("//android.view.View[@content-desc='Add Store Image']");
     public static final By STORE_IMAGE_SUBMIT_BUTTON = By.xpath("//android.widget.Button[@content-desc='Submit']");
     public static final By INFORMED_CUSTOMER_BUTTON = By.xpath("//android.widget.Button[@content-desc='Informed Customer']");
@@ -31,16 +28,18 @@ public class Stores extends Step {
     public static final String MARK_VISIT_REASON_TEXT="(//android.widget.RadioButton[@content-desc])[%s]";
     public static final FlutterElement MARK_VISIT_TEXT_FIELD=getFlutterActions().getFlutterFinder().byValueKey("mark_visit_er_text_field");
     public static FlutterElement MARK_VISIT_SUBMIT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("mark_visit_app_button");
-    static Logger log = LogManager.getLogger(Stores.class);
+    static Logger log = LogManager.getLogger(StorePage.class);
 
-    public static void clickOnStore(String storeName) throws Exception {
+    public static void clickOnStore() throws Exception {
+        getFlutterActions().click(CLICK_STORE);
+        getUiActions().waitForSeconds(2);
+    }
+    public static void searchStore(String storeName){
         storeName = AutomationUtils.getTestData(storeName);
         getUiActions().waitForSeconds(2);
         getFlutterActions().click(STORE_SEARCH);
         getMobileActions().click(By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
         getMobileActions().type(storeName, By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
-        getUiActions().waitForSeconds(2);
-        getFlutterActions().click(CLICK_STORE);
         getUiActions().waitForSeconds(2);
     }
 
@@ -51,7 +50,7 @@ public class Stores extends Step {
 
     public static void captureStoreImageIfAvailable() {
         try {
-            getMobileActions().waitForVisibilityOfElementLocated(STORE_IMAGE_LINK, 3);
+            getMobileActions().waitForVisibilityOfElementLocated(STORE_IMAGE_LINK, 8);
             getFlutterActions().click(ADD_STORE_IMAGE_LINK);
             getMobileActions().verifyContextAndSwitchToNativeContext();
             KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
@@ -102,5 +101,9 @@ public class Stores extends Step {
         String vist_reason = s.getAttribute("content-desc");
         System.out.println("Visit Reason -> " + vist_reason);
         AutomationUtils.getTestContext().put("mark_visit_reason", vist_reason);
+    }
+
+    public static void visibilityOfStoreListPage(){
+        getFlutterActions().waitForVisibility(CLICK_STORE);
     }
 }

@@ -2,6 +2,8 @@
 Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow
+    * user sets mobile geolocation
+      |18.5068|73.9299|
 
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
@@ -9,14 +11,14 @@ Feature: E2E Local Cash Flow
     * user click on beat button
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
-#    * user captures store image
-    * user clicks on take a remote order button
+    * user captures store image if available
+    * user click on take order button
     * user add items to cart
       | Automation-Category-1        |
       | Automation-Test-Item-Name-17 |
     * user increase item quantity
       | Automation-Test-Item-Name-17 | Bag | 10 |
-    * user place local order
+    * user place order with local
 
   Scenario: Get Quotation Log in exp Layer
     * user generate random value " " and store into session "cookie"
@@ -50,7 +52,6 @@ Feature: E2E Local Cash Flow
     * user get "${wh2-customer-1-title}" customer details by api
 
     * "User" retries and get details by frappe client get api with filters
-#      | Quotation | {"transaction_date": "${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}", "customer_name": "${wh2-customer-1-title}", "owner": "${wh2-sales-person-1-username}"} |
       | Quotation | {"transaction_date": "${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}", "customer_name": "${wh2-customer-1-title}"} |
     * response status code should be 200
     * get response "message.name" string attribute and store into session "Quotation_Id"

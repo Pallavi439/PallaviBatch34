@@ -29,12 +29,12 @@ public class ExpLayerCommonSteps {
     }
     @Given("{word} captures store image if available")
     public void capture_store_image_if_available(String word) throws Exception {
-        Stores.captureStoreImageIfAvailable();
+        StorePage.captureStoreImageIfAvailable();
     }
 
     @Given("{word} click on take order button")
     public void click_on_take_order_button(String word){
-        Stores.clickOnTakeOrderButton();
+        StorePage.clickOnTakeOrderButton();
     }
 
     @Given("{word} reset store for {string}")
@@ -43,11 +43,11 @@ public class ExpLayerCommonSteps {
 
     }@Given("{word} captures store image")
     public void capture_store_image(String word) throws Exception {
-        Stores.captureStoreImage();
+        StorePage.captureStoreImage();
     }
     @Given("{word} clicks on take a remote order button")
     public void take_a_remote_order(String word) throws Exception {
-        Stores.clickOnRemoteOrderButton();
+        StorePage.clickOnRemoteOrderButton();
     }
     @Given("{word} add one random item to cart")
     public void add_random_category_item_cart(String word) throws Exception {
