@@ -19,6 +19,11 @@ public class CartPageSteps {
         CartPage.placeLocalOrder();
     }
 
+    @Given("{word} place order with local")
+    public static void place_order_local(String word) throws Exception {
+        CartPage.placeOrderWithLocal();
+    }
+
     @Given("{word} click on cart button")
     public static void click_on_cart_button(String word) throws Exception{
         CartPage.clickOnCartPageButton();
@@ -26,5 +31,10 @@ public class CartPageSteps {
     @Given("{word} verifies presence of minimum time spent")
     public static void verify_minimum_time_spent_presence(String word){
         CartPage.verifyPresenceOfMinimumTimeSpent();
+    }
+
+    @Given("{word} wait for {int} seconds on cart page")
+    public static void wait_for_seconds_on_cart_page(String word, int wait_time){
+        CartPage.waitOnCartPage(wait_time);
     }
 }
