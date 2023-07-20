@@ -13,7 +13,6 @@ Feature: Min order validation section IS
       | tag_title | ${customer-6-title} | /default-payload.json |
     * response status code should be 200
 
-
   Scenario Outline: Create Parameterized document metric
 
     * user login to application by api
