@@ -21,6 +21,7 @@ public class StorePage extends Step {
     public static FlutterElement RETRY_LOCATION_CAPTURE_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("beat_plan_retry_location_capture");
     public static FlutterElement ADD_STORE_IMAGE_LINK = getFlutterActions().getFlutterFinder().byValueKey("beat_plan_add_store_image_card");
     public static FlutterElement STORE_SEARCH = getFlutterActions().getFlutterFinder().byValueKey("store_search");
+    public static FlutterElement STORE_SEARCH_TEXT_BOX=getFlutterActions().getFlutterFinder().byValueKey("beat_plan_search_text_field");
     public static FlutterElement CLICK_STORE = getFlutterActions().getFlutterFinder().byValueKey("beat_store_view_0");
     public static FlutterElement REPORT_ISSUE_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("customer_selected_popup_report_issue_button");
     public static FlutterElement MARK_VISIT_LOG= getFlutterActions().getFlutterFinder().byValueKey("mark_visit_log");
@@ -38,8 +39,9 @@ public class StorePage extends Step {
         storeName = AutomationUtils.getTestData(storeName);
         getUiActions().waitForSeconds(2);
         getFlutterActions().click(STORE_SEARCH);
-        getMobileActions().click(By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
-        getMobileActions().type(storeName, By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
+//        getMobileActions().click(By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
+//        getMobileActions().type(storeName, By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
+        getFlutterActions().type(STORE_SEARCH_TEXT_BOX,storeName);
         getUiActions().waitForSeconds(2);
     }
 
