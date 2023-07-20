@@ -28,33 +28,39 @@ public class ExpLayerCommonSteps {
     public void click_on_locality(String word, List<String> list) throws Exception {
         LocalityPage.clickOnLocalityAndCustomer(list.get(0), list.get(1));
     }
+
     @Given("{word} captures store image if available")
     public void capture_store_image_if_available(String word) throws Exception {
         StorePage.captureStoreImageIfAvailable();
     }
 
     @Given("{word} click on take order button")
-    public void click_on_take_order_button(String word){
+    public void click_on_take_order_button(String word) {
         StorePage.clickOnTakeOrderButton();
     }
 
     @Given("{word} reset store for {string}")
-    public void reset_store(String word,String locality) throws Exception {
+    public void reset_store(String word, String locality) throws Exception {
         LocalityPage.resetLocalityAndStore(locality);
 
-    }@Given("{word} captures store image")
+    }
+
+    @Given("{word} captures store image")
     public void capture_store_image(String word) throws Exception {
         StorePage.captureStoreImage();
     }
+
     @Given("{word} clicks on take a remote order button")
     public void take_a_remote_order(String word) throws Exception {
         StorePage.clickOnRemoteOrderButton();
     }
+
     @Given("{word} add one random item to cart")
     public void add_random_category_item_cart(String word) throws Exception {
         CategoriesPage.addRandomCategoryItem();
     }
-   @Given("{word} click on cart next button")
+
+    @Given("{word} click on cart next button")
     public void click_on_cart_next_button(String word) throws Exception {
         CartPage.clickOnNextButton();
     }
@@ -94,12 +100,14 @@ public class ExpLayerCommonSteps {
     public void verify_absence_of_oc_strip(String word) throws Exception {
         OcPage.verifyAbsenceOfOcStrip();
     }
+
     @Given("{word} verifies order timer")
     public void verify_order_timer(String word) throws Exception {
         ExpLayerCommonPage.verifyOrderTimer();
     }
+
     @Given("{word} verifies presence of cart warehouse cutoff time")
-    public void verify_presence_of_cuttoff_popup (String word) throws Exception {
+    public void verify_presence_of_cuttoff_popup(String word) throws Exception {
         CartPage.verifyPresenceOfWarehouseCutoffTime();
     }
 
@@ -124,7 +132,8 @@ public class ExpLayerCommonSteps {
     }
 
     @Given("{word} log out of sales app")
-    public void log_out_of_sales_app(String word){
+    public void log_out_of_sales_app(String word) {
         ExpLayerCommonPage.logOut();
     }
+
 }

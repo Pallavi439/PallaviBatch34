@@ -44,9 +44,9 @@ Feature: WH SO time
       | ${wh3-sp1.locality} | ${wh3-customer-1-title} |
     * user captures store image
     * user clicks on take a remote order button
-    * user add items to cart
-      | Automation-Category-2       | Bag  | 7  |
-      | Automation-Test-Item-Name-1 | Case | 10 |
+    * user add item to cart
+      | Automation-Category-1       | ${NUMBER-1-5} | Bag  | ${NUMBER-5-10} |
+      | Automation-Test-Item-Name-1 | 0             | Case | ${NUMBER-5-10} |
     * user click on cart next button
     * user click on place order button
     * user verifies presence of cart warehouse cutoff time

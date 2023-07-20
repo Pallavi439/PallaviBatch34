@@ -3,7 +3,7 @@ Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow
     * user sets mobile geolocation
-      |18.5068|73.9299|
+      | 18.5068 | 73.9299 |
 
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
@@ -13,9 +13,8 @@ Feature: E2E Local Cash Flow
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
     * user captures store image if available
     * user click on take order button
-    * user add items to cart
-      | Automation-Category-1        |
-      | Automation-Test-Item-Name-17 |
+    * user add item to cart
+      | Automation-Test-Item-Name-17 | 0 | Bag | ${NUMBER-5-10} |
     * user increase item quantity
       | Automation-Test-Item-Name-17 | Bag | 10 |
     * user place order with local

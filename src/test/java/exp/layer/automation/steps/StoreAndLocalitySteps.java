@@ -15,4 +15,21 @@ public class StoreAndLocalitySteps {
     public static void verifies_visibility_of_store_lst_page(String word){
         StorePage.visibilityOfStoreListPage();
     }
+
+    @Given("{word} clicks on locality {string}")
+    public static void clicks_on_locality(String word, String locality_name){
+        LocalityPage.clickOnLocality(locality_name);
+    }
+    @Given("{word} searches store {string}")
+    public static void searches_store(String word, String store_name){
+        StorePage.searchStore(store_name);
+    }
+    @Given("{word} verifies presence of gold outlet tag")
+    public static void verify_presence_of_gold_outlet_tag(String word){
+        StorePage.visibilityOfGolfOutletTag();
+    }
+    @Given("{word} verifies absence of silver outlet tag")
+    public static void verify_absence_of_silver_outlet_tag(String word){
+        StorePage.absenceOfSilverOutletTag();
+    }
 }

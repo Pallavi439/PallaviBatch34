@@ -63,6 +63,10 @@ public class CategoriesPage extends Step {
     }
 
     public static void searchItemDetails(String itemDetails) throws Exception {
+        try {
+            getMobileActions().clickIfAvailableByWaiting(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::android.widget.Button"));
+        }
+        catch (Exception ignored){}
         searchItem(itemDetails);
         getUiActions().waitForSeconds(1);
         getFlutterActions().click(CLICK_ITEM_INDEX_0);
@@ -70,10 +74,9 @@ public class CategoriesPage extends Step {
     }
 
     public static void searchItem(String itemDetails) {
-        getMobileActions().waitForSeconds(3);
+        getFlutterActions().waitForVisibility(SEARCH_ITEM);
         getFlutterActions().click(SEARCH_ITEM);
         getFlutterActions().type(ITEM_SEARCH_BOX, itemDetails);
-        getUiActions().waitForSeconds(1);
     }
 
     public static void addRandomOneItemToCart() throws Exception {
