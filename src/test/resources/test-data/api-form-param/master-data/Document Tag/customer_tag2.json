@@ -1,0 +1,11 @@
+{
+  "docstatus": 0,
+  "doctype": "Document Tag",
+  "name": "New Document Tag 1",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "automation.system.user@elastic.run",
+  "ref_doctype": "Customer",
+  "ref_docname": "${customer_id}",
+  "tag_title": "${SE_Tag2}"
+}

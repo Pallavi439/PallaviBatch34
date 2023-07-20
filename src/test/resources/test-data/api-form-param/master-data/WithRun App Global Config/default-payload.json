@@ -1,0 +1,15 @@
+{
+  "docstatus": 0,
+  "doctype": "WithRun App Global Config",
+  "name": "New WithRun App Global Config 1",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "automation.system.user@elastic.run",
+  "parent": "WithRun App Config",
+  "parentfield": "global_config",
+  "parenttype": "WithRun App Config",
+  "idx": 11,
+  "__unedited": false,
+  "title": "Whitelisted Customer Tag",
+  "value": "Automation Gold Outlet, Unbilled Outlet"
+}

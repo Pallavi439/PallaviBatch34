@@ -65,9 +65,13 @@ public class ItemListPage extends Step {
             for (List<String> item_detail : item_list) {
                 decreaseGivenItemQuantity(item_detail.get(0));
             }
-        } else {
+        } else if (item_list.get(0).size()==2) {
             for (List<String> item_detail : item_list) {
                 decreaseGivenItemQuantity(item_detail.get(0), item_detail.get(1));
+            }
+        } else {
+            for (List<String> item_detail : item_list){
+                decreaseGivenItemQuantity(item_detail.get(0),item_detail.get(1),item_detail.get(2));
             }
         }
     }

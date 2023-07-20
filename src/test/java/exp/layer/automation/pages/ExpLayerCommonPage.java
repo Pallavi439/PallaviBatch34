@@ -12,8 +12,8 @@ import org.openqa.selenium.By;
 
 public class ExpLayerCommonPage extends Step {
 
-    public static FlutterElement HAMBURGER_MENU_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("home_hamburger_menu");
-    public static FlutterElement LOGOUT_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("logout_widget");
+    public static FlutterElement HAMBURGER_MENU_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("home_hamburger_menu");
+    public static FlutterElement LOGOUT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("logout_widget");
 
     static Logger log = LogManager.getLogger(ExpLayerCommonPage.class);
 
@@ -41,7 +41,9 @@ public class ExpLayerCommonPage extends Step {
         } catch (Exception e) {
             return "0";
         }
-    }public static void verifyOrderTimer() throws Exception {
+    }
+
+    public static void verifyOrderTimer() throws Exception {
         getMobileActions().verifyVisibilityOfWebElement(By.xpath("//*[contains(@content-desc,'01')]"));
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("(//*[contains(@content-desc,'Categories')]/preceding-sibling::*)[1]"));
@@ -55,12 +57,11 @@ public class ExpLayerCommonPage extends Step {
         getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey("beat_plan_search_back"));
         getUiActions().waitForSeconds(2);
     }
-    public void placeNormalOrder() {
+
+    public static void log_out() {
     }
 
-    public static void log_out(){}
-
-    public static void captureImage(){
+    public static void captureImage() {
         getUiActions().waitForSeconds(2);
         getMobileActions().verifyContextAndSwitchToNativeContext();
         KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
@@ -70,7 +71,7 @@ public class ExpLayerCommonPage extends Step {
         getUiActions().waitForSeconds(2);
     }
 
-    public static void logOut(){
+    public static void logOut() {
         getFlutterActions().waitForVisibility(HAMBURGER_MENU_BUTTON);
         getFlutterActions().click(HAMBURGER_MENU_BUTTON);
         getUiActions().waitForSeconds(3);
@@ -81,7 +82,6 @@ public class ExpLayerCommonPage extends Step {
         getFlutterActions().waitForVisibility(LoginPage.DEV_LOGIN_ER_LOGO);
     }
 
-
-
-
+    public void placeNormalOrder() {
+    }
 }

@@ -2,6 +2,7 @@ package exp.layer.automation.pages;
 
 import er.automation.engine.helpers.AutomationUtils;
 import er.automation.engine.setup.Step;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -107,5 +108,13 @@ public class StorePage extends Step {
 
     public static void visibilityOfStoreListPage(){
         getFlutterActions().waitForVisibility(CLICK_STORE);
+    }
+
+    public static void visibilityOfGolfOutletTag(){
+        getMobileActions().waitForVisibilityOfElementLocated(AppiumBy.accessibilityId("Automation Gold Outlet"));
+    }
+
+    public static void absenceOfSilverOutletTag(){
+        getMobileActions().verifyInvisibilityOfElement(AppiumBy.accessibilityId("Automation Silver Outlet"));
     }
 }

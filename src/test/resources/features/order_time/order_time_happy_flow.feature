@@ -38,8 +38,8 @@ Feature: Happy flow for order time by placing order with specific time
       | ${wh2-sp1.locality} | Sdfgrotuyb |
     * user captures store image if available
     * user clicks on take a remote order button
-    * user add items to cart
-      | Automation-Category-3 | Case | 7 |
+    * user add item to cart
+      | Automation-Category-1       | ${NUMBER-1-5} | Bag  | ${NUMBER-5-10} |
     * user click on cart button
     * user click on cart next button
     * user click on place order button
@@ -60,8 +60,8 @@ Feature: Happy flow for order time by placing order with specific time
       | ${wh2-sp1.locality} | Sdfgrotuyb |
     * user captures store image if available
     * user clicks on take a remote order button
-    * user add items to cart
-      | Automation-Category-2 | Bag | 7 |
+    * user add item to cart
+      | Automation-Category-1       | ${NUMBER-1-5} | Bag  | ${NUMBER-5-10} |
     * user click on cart button
     * user click on cart next button
     * user click on place order button
