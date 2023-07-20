@@ -26,6 +26,7 @@ public class CategoriesPage extends Step {
     public int categoryNumber = AutomationUtils.generateRandomNoByRange(1, 4);
 
 
+
     public static void addItemToCart(List<List<String>> list) {
         for (int i = 0; i < list.size(); i++) {
             List<String> data = AutomationUtils.replaceListData(list.get(i));

@@ -1,0 +1,19 @@
+{
+  "docstatus": 0,
+  "doctype": "Constraint",
+  "name": "New Constraint 5",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "pranali.mulay@elastic.run",
+  "__run_link_triggers": false,
+  "title": "Automation Prod oc 3 C1",
+  "constraint_group": "${prod_oc_3_CG1}",
+  "metric": "${prod_oc_3_pdm}",
+  "min": 5,
+  "max": 0,
+  "message_template": "Unique SKU 5",
+  "creation": "",
+  "modified_by": "pranali.mulay@elastic.run",
+  "modified": "",
+  "idx": null
+}
