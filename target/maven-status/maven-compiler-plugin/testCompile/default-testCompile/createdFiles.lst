@@ -3,6 +3,7 @@ exp/layer/automation/steps/ExpLayerBaseStep.class
 exp/layer/automation/pages/ItemListPage.class
 exp/layer/automation/steps/CartPageSteps.class
 exp/layer/automation/pages/CategoriesPage.class
+exp/layer/automation/pages/StorePage.class
 exp/layer/automation/pages/LocalityPage.class
 exp/layer/automation/pages/ApiPages/WhSoTimePages.class
 exp/layer/automation/steps/ItemListPageSteps.class
@@ -15,4 +16,3 @@ exp/layer/automation/pages/OcPage.class
 exp/layer/automation/steps/ApiSteps/WhSoTimeSteps.class
 exp/layer/automation/steps/StoreAndLocalitySteps.class
 exp/layer/automation/pages/ExpLayerCommonPage.class
-exp/layer/automation/pages/Stores.class

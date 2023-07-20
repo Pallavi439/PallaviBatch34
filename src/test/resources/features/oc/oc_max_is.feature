@@ -84,14 +84,15 @@ Feature: Order constraint max order validation for IS
     * user click on cart next button
     * user click on order constraints strip
 
-    * user click on order constraints title "0"
-    * user add item to cart
-      #| Item or Category Name | Index No | Uom |Quantity|
-      | ${product-brand-name-1} | ${NUMBER-1-7} | Piece | 1 |
-    * user click on cart next button
-    * user click on order constraints strip
+#    * user click on order constraints title "0"
+#    * user add item to cart
+#      #| Item or Category Name | Index No | Uom |Quantity|
+#      | ${product-brand-name-1} | ${NUMBER-1-7} | Piece | 1 |
+#    * user click on cart next button
     * user click on cart back button
+    * user wait for 5 seconds
     * user remove item from the cart page
+    * user click on cart next button
     * user verify absence of order constraint strip
     * user click on place order button
 #   # * user click on cart local place order button

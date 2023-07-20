@@ -177,9 +177,7 @@ public class CartPage extends Step {
         clickOnNextButton();
         placeOrderButton();
         popUpPlaceOrderButton();
-
         ExpLayerCommonPage.captureImage();
-
         getUiActions().waitForSeconds(3);
         getFlutterActions().click(PLACE_ORDER_WITH_STORE_IMAGE);
         getFlutterActions().waitForVisibility(StorePage.CLICK_STORE);

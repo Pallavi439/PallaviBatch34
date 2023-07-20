@@ -11,7 +11,7 @@
   "metric": "${min_PDM}",
   "min": 200,
   "max": 0,
-  "message_template": "Min Order 500",
+  "message_template": "Min Order 200",
   "creation": "",
   "modified_by": "pranali.mulay@elastic.run",
   "modified": "",

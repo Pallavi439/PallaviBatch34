@@ -71,11 +71,11 @@ Feature: Order constraint
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Category-4 | ${NUMBER-1-5} | Piece | 1 |
-    * user click on cart back button
     * user click on cart next button
     * user verify absence of order constraint strip
 
     * user click on place order button
+    * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "min" order
     * click on place order button remote order popup
 
