@@ -16,12 +16,11 @@ public class CartPage extends Step {
     static Logger log = LogManager.getLogger(CartPage.class);
     public static FlutterElement CART_ICON= getFlutterActions().getFlutterFinder().byValueKey("header_cart_key");
     public static FlutterElement PLACE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("order_details_button");
-    public static FlutterElement CART_BACK_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_back_button");
+    //public static FlutterElement CART_BACK_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_back_button");
     public static FlutterElement ADD_MORE_ITEMS_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_add_more_item");
 
-    public static FlutterElement NEXT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_next_buttom");
+    public static FlutterElement NEXT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_next_button");
     public static FlutterElement POP_UP_PLACE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_click_local");
-    public static FlutterElement POPUP_REMOTE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_remote_order");
     public static FlutterElement PLACE_ORDER_REMOTE_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("place_order_remote_order");
     public static FlutterElement PLACE_ORDER_LOCAL_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_click_local");
     public static FlutterElement REMOVE_ALL_ITEM_FROM_CART_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_show_delete_all_warning_popup");
@@ -39,8 +38,8 @@ public class CartPage extends Step {
     public static FlutterElement REJECT_BUTTON=getFlutterActions().getFlutterFinder().byValueKey("reject_button");
 
     public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("er_info_screen_primary_button");
-
-
+    public static final By CART_BACK_BUTTON = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button");
+public static FlutterElement REMOVE_INDEX1_ITEM = getFlutterActions().getFlutterFinder().byValueKey("cart_item_list_er_item_card_1");
     public static void removeAllItemFromCartIfAvailable() {
         WebElement we = getMobileActions().waitForVisibilityOfElementLocated(CategoriesPage.BOTTOM_CART_EMPTY_ICON, 2);
         if (we != null) {
@@ -79,7 +78,8 @@ public class CartPage extends Step {
         getFlutterActions().click(PLACE_ORDER_REMOTE_BUTTON);
     }
     public static void clickOnCartGoBackButton() {
-        getFlutterActions().click(CART_BACK_BUTTON);
+        //getFlutterActions().click(CART_BACK_BUTTON);
+        getMobileActions().click(CART_BACK_BUTTON);
     }
     public static void popUpPlaceOrderButton() throws Exception {
         getFlutterActions().click(PLACE_ORDER_BUTTON);
@@ -100,12 +100,11 @@ public class CartPage extends Step {
 
     public static void clickOnPlaceOrderButtonRemoteOrderPopup() {
         getFlutterActions().click(PLACE_ORDER_BUTTON);
-        getFlutterActions().click(POPUP_REMOTE_ORDER_BUTTON);
+        getFlutterActions().click(PLACE_ORDER_REMOTE_BUTTON);
     }
 
     public static void clickOnAddMoreItemButtonFromCartPage() {
         getFlutterActions().click(ADD_MORE_ITEMS_BUTTON);
-        getFlutterActions().click(PLACE_ORDER_LOCAL_BUTTON);
         getMobileActions().waitForSeconds(5);
     }
     public static void clickOnCartPageButton(){
@@ -129,5 +128,9 @@ public class CartPage extends Step {
         getFlutterActions().click(getFlutterActions().getFlutterFinder().byValueKey("reject_button"));
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
+    }
+
+    public static void removeItemFromTheCartPage() {
+getFlutterActions().click(REMOVE_INDEX1_ITEM);
     }
 }

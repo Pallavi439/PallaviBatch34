@@ -80,10 +80,16 @@ Feature: Order constraint
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Category-4 | ${NUMBER-1-7} | Piece | 3 |
     * user click on cart next button
+    * user get grand total
+    * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "max" order
     * user click on order constraints strip
 
-#    * user click on place order button
-#    * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "min" order
+    * user click on cart back button
+    * user remove item from the cart page
+    * user click on cart next button
+
+    * user click on place order button
+
 #   # * user click on cart local place order button
 #    * click on place order button remote order popup
 

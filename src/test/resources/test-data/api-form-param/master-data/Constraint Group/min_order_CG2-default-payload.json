@@ -43,7 +43,7 @@
       "__unsaved": 1,
       "owner": "pranali.mulay@elastic.run",
       "criteria": "Warehouse",
-      "comparator": "=",
+      "comparator": "!=",
       "parent": "New Constraint Group 1",
       "parentfield": "applicable_for",
       "parenttype": "Constraint Group",

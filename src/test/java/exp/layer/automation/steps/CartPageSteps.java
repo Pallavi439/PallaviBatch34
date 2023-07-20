@@ -1,6 +1,7 @@
 package exp.layer.automation.steps;
 
 import exp.layer.automation.pages.*;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 public class CartPageSteps {
@@ -21,5 +22,10 @@ public class CartPageSteps {
     @Given("{word} verifies presence of minimum time spent")
     public static void verify_minimum_time_spent_presence(String word){
         CartPage.verifyPresenceOfMinimumTimeSpent();
+    }
+
+    @And("user remove item from the cart page")
+    public void userRemoveItemFromTheCartPage() {
+        CartPage.removeItemFromTheCartPage();
     }
 }
