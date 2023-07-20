@@ -2,14 +2,63 @@
 
 Feature: User verifies sales person mark visit functionality
 
+#  Scenario: User gets latitude and longitude for Customer
+#    * user generate random value " " and store into session "cookie"
+#
+#    * user set api headers
+#      | Authorization | token ${onboarding_api_key}:${onboarding_api_secret} |
+#
+#    * user retries and get details by frappe client get api with filters
+#      | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"CCLKGXZYTK"} |
+#    * response status code should be 200
+#    * get response "message.name" string attribute and store into session "exp_customer_id"
+#    * get response "message.latitude" string attribute and store into session "exp_customer_latitude"
+#    * get response "message.longitude" string attribute and store into session "exp_customer_longitude"
+#    * user verifies response "message.latitude" attribute value should not be null
+#    * user verifies response "message.longitude" attribute value should not be null
+
+
   Scenario: User mark visit the customer
     * user sets mobile geolocation
-      |58.7464|23.4137|
+      | 18.7464 | 73.4137 |
 
     * user login to the experience layer sales app with valid details
       | ${wh3-se1} | ${common-password} |
     * user wait for 5 seconds
     * user click on beat button
-    * user mark visit "${wh3-sp1.locality}" locality "${wh3-customer-1-title}" store with reason "${NUMBER-0-7}"
+    * user mark visit "${wh3-sp1.locality}" locality store
+      | CCLKGXZYTK | ${NUMBER-0-7} |
+    * {word} click on locality and store
+    * user wait for 10 seconds
 
 
+  Scenario: Verify Visit log in experience layer
+    * user generate random value " " and store into session "cookie"
+
+    * user set api headers
+      | Authorization | token ${onboarding_api_key}:${onboarding_api_secret} |
+
+    * user retries and get details by frappe client get api with filters
+      | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"CCLKGXZYTK"} |
+    * response status code should be 200
+    * get response "message.name" string attribute and store into session "exp_customer_id"
+
+    * user generate random value " " and store into session "cookie"
+
+    * user set api headers
+      | Authorization | token ${sales_api_key}:${sales_api_secret} |
+
+    * user retries and get details by frappe client get api with filters
+      | experience-layer-sales-api | frappe_get_report | Visit Log | {"visit_date":"${DATE-yyyy-MM-dd}","ref_docname":"${exp_customer_id}","reason":"${mark_visit_reason}","sales_person":"${wh3-sales-person-1-name}"} |
+    * response status code should be 200
+
+  Scenario: verify visit log in with-run
+    * user login to application by api
+      | ${with-run-username} | ${with-run-password} |
+    And response status code should be 200
+
+    * user get "CCLKGXZYTK" customer details by api
+
+    * user retries and get details by frappe client get api with filters
+      | Visit Log | {"reason":"${mark_visit_reason}":"${wh3-sales-person-1-name}","visit_date":"${DATE-yyyy-MM-dd}","outlet_name":"${customer_id}"} |
+    * response status code should be 200

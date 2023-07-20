@@ -15,6 +15,16 @@ public class CartPageSteps {
         CartPage.placeRemoteOrder();
     }
 
+    @Given("{word} place local order")
+    public static void place_local_order(String word) throws Exception {
+        CartPage.placeLocalOrder();
+    }
+
+    @Given("{word} place order with local")
+    public static void place_order_local(String word) throws Exception {
+        CartPage.placeOrderWithLocal();
+    }
+
     @Given("{word} click on cart button")
     public static void click_on_cart_button(String word) throws Exception{
         CartPage.clickOnCartPageButton();
@@ -25,7 +35,12 @@ public class CartPageSteps {
     }
 
     @And("user remove item from the cart page")
-    public void userRemoveItemFromTheCartPage() {
+    public void userRemoveItemFromTheCartPage() throws Exception {
         CartPage.removeItemFromTheCartPage();
+    }
+    @Given("{word} wait for {int} seconds on cart page")
+    public static void wait_for_seconds_on_cart_page(String word, int wait_time){
+        CartPage.waitOnCartPage(wait_time);
+
     }
 }

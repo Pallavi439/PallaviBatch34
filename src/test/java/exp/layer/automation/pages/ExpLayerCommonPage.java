@@ -2,6 +2,9 @@ package exp.layer.automation.pages;
 
 import er.automation.engine.setup.Step;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.github.ashwith.flutter.FlutterElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -55,8 +58,16 @@ public class ExpLayerCommonPage extends Step {
     public void placeNormalOrder() {
     }
 
-    public static void log_out(){
+    public static void log_out(){}
 
+    public static void captureImage(){
+        getUiActions().waitForSeconds(2);
+        getMobileActions().verifyContextAndSwitchToNativeContext();
+        KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
+        AndroidDriver driver = (AndroidDriver) getMobileActions().appiumDriver;
+        driver.pressKey(event);
+        getMobileActions().click(By.xpath("//android.widget.ImageButton[@content-desc='Done']"));
+        getUiActions().waitForSeconds(2);
     }
 
     public static void logOut(){
@@ -64,10 +75,13 @@ public class ExpLayerCommonPage extends Step {
         getFlutterActions().click(HAMBURGER_MENU_BUTTON);
         getUiActions().waitForSeconds(3);
         getMobileActions().click(AppiumBy.accessibilityId("Logout"));
-//        getFlutterActions().click(LOGOUT_BUTTON);
         getUiActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[@content-desc='Yes']"));
+        getUiActions().waitForSeconds(2);
+        getFlutterActions().waitForVisibility(LoginPage.DEV_LOGIN_ER_LOGO);
     }
+
+
 
 
 }

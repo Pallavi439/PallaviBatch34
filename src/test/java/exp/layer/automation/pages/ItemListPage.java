@@ -15,6 +15,9 @@ public class ItemListPage extends Step {
     public static final By VIEWS_IOS = By.xpath("//*[@name='Views']");
 
     public static void increaseGivenItemQuantity(String item_name, String item_type, String increase_amount) throws Exception {
+        item_name=AutomationUtils.replaceTestDataVariable(item_name);
+        item_type=AutomationUtils.replaceTestDataVariable(item_type);
+        increase_amount=AutomationUtils.replaceTestDataVariable(increase_amount);
         item_name = item_name.concat(" @");
         CategoriesPage.searchItemDetails(item_name);
         int i = Integer.parseInt(increase_amount);
@@ -78,6 +81,9 @@ public class ItemListPage extends Step {
     }
 
     public static void decreaseGivenItemQuantity(String item_name, String item_type, String decrease_amount) throws Exception {
+        item_name=AutomationUtils.replaceTestDataVariable(item_name);
+        item_type=AutomationUtils.replaceTestDataVariable(item_type);
+        decrease_amount=AutomationUtils.replaceTestDataVariable(decrease_amount);
         item_name = item_name.concat(" @");
         CategoriesPage.searchItemDetails(item_name);
         int i = Integer.parseInt(decrease_amount);
