@@ -31,6 +31,7 @@ public class LocalityPage extends Step {
     public static void clickOnLocality(String locality){
         locality = AutomationUtils.getTestData(locality);
         getMobileActions().click(By.xpath(String.format(LOCALITY, locality)));
+        getUiActions().waitForSeconds(2);
     }
 
     public static void markVisitStore(String locality, List<List<String>> mark_visit_details) throws Exception {

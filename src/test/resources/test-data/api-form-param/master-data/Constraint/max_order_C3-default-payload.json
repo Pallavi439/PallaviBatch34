@@ -1,0 +1,19 @@
+{
+  "docstatus": 0,
+  "doctype": "Constraint",
+  "name": "New Constraint 5",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "pranali.mulay@elastic.run",
+  "__run_link_triggers": false,
+  "title": "${Automation Max Order ISNOT C}",
+  "constraint_group": "${max_isnot_CG}",
+  "metric": "${max_isnot_PDM}",
+  "min": 0,
+  "max": 500,
+  "message_template": "Max Order 500",
+  "creation": "",
+  "modified_by": "pranali.mulay@elastic.run",
+  "modified": "",
+  "idx": null
+}

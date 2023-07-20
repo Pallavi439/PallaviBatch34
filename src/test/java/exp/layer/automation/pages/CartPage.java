@@ -16,8 +16,11 @@ public class CartPage extends Step {
     public static final By EMPTY_CART_TEXT = By.xpath("//android.view.View[@content-desc='Your shopping cart is empty!']");
     public static FlutterElement CART_ICON = getFlutterActions().getFlutterFinder().byValueKey("header_cart_key");
     public static FlutterElement PLACE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("order_details_button");
-    public static FlutterElement CART_BACK_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_back_button");
+    //public static FlutterElement CART_BACK_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_back_button");
     public static FlutterElement ADD_MORE_ITEMS_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_add_more_item");
+
+    public static FlutterElement NEXT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_next_button");
+    public static FlutterElement POP_UP_PLACE_ORDER_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_click_local");
     public static FlutterElement PLACE_ORDER_REMOTE_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_remote_order");
     public static FlutterElement PLACE_ORDER_LOCAL_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("place_order_click_local");
     public static FlutterElement REMOVE_ALL_ITEM_FROM_CART_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("cart_show_delete_all_warning_popup");
@@ -34,6 +37,8 @@ public class CartPage extends Step {
     public static FlutterElement CUTOFF_TIME = getFlutterActions().getFlutterFinder().byValueKey("cart_warehouse_cutoff_time");
     public static FlutterElement REJECT_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("reject_button");
     public static FlutterElement CART_SHOP_NOW_BUTTON = getFlutterActions().getFlutterFinder().byValueKey("er_info_screen_primary_button");
+    public static final By CART_BACK_BUTTON = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button");
+    public static FlutterElement REMOVE_INDEX1_ITEM = getFlutterActions().getFlutterFinder().byValueKey("cart_item_list_er_item_card_1");
     static Logger log = LogManager.getLogger(CartPage.class);
 
     public static void removeAllItemFromCartIfAvailable() {
@@ -75,11 +80,34 @@ public class CartPage extends Step {
     }
 
     public static void clickOnCartGoBackButton() {
-        getFlutterActions().click(CART_BACK_BUTTON);
+        //getFlutterActions().click(CART_BACK_BUTTON);
+        getMobileActions().click(CART_BACK_BUTTON);
     }
 
     public static void popUpPlaceOrderButton() throws Exception {
-        getFlutterActions().click(PLACE_ORDER_LOCAL_BUTTON);
+        getFlutterActions().click(PLACE_ORDER_BUTTON);
+        getFlutterActions().click(POP_UP_PLACE_ORDER_BUTTON);
+        getMobileActions().waitForSeconds(5);
+    }
+
+    public static void getGrandTotal() {
+        getMobileActions().verifyContextAndSwitchToNativeContext();
+        List<WebElement> s = getMobileActions().appiumDriver.findElements(By.xpath("//android.view.View"));
+        String grandTotal = s.get(s.size() - 3).getAttribute("content-desc");
+        grandTotal = grandTotal.split("\\.")[0];
+        grandTotal = grandTotal.replaceAll(",", "");
+        grandTotal = AutomationUtils.extractNumbers(grandTotal);
+        System.out.println("GRAND_TOTAL_AMOUNT -> " + grandTotal);
+        AutomationUtils.getTestContext().put("GRAND_TOTAL_AMOUNT", grandTotal);
+    }
+
+    public static void clickOnPlaceOrderButtonRemoteOrderPopup() {
+        getFlutterActions().click(PLACE_ORDER_BUTTON);
+        getFlutterActions().click(PLACE_ORDER_REMOTE_BUTTON);
+    }
+
+    public static void clickOnAddMoreItemButtonFromCartPage() {
+        getFlutterActions().click(ADD_MORE_ITEMS_BUTTON);
         getMobileActions().waitForSeconds(5);
     }
 
@@ -115,6 +143,10 @@ public class CartPage extends Step {
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
     }
 
+    public static void removeItemFromTheCartPage() throws Exception {
+        getFlutterActions().click(REMOVE_INDEX1_ITEM);
+    }
+
     public static void waitOnCartPage(int wait_time) {
         while (wait_time != 0) {
             if (wait_time > 50) {
@@ -145,9 +177,7 @@ public class CartPage extends Step {
         clickOnNextButton();
         placeOrderButton();
         popUpPlaceOrderButton();
-
         ExpLayerCommonPage.captureImage();
-
         getUiActions().waitForSeconds(3);
         getFlutterActions().click(PLACE_ORDER_WITH_STORE_IMAGE);
         getFlutterActions().waitForVisibility(StorePage.CLICK_STORE);

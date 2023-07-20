@@ -1,0 +1,17 @@
+{
+  "docstatus": 0,
+  "doctype": "Document Tag",
+  "name": "New Document Tag 2",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "pranali.mulay@elastic.run",
+  "__run_link_triggers": false,
+  "ref_doctype": "Customer",
+  "ref_docname": "${customer_id}",
+  "tag_title": "${customer-title}",
+  "disable": 0,
+  "creation": "",
+  "modified_by": "pranali.mulay@elastic.run",
+  "modified": "",
+  "idx": null
+}

@@ -1,6 +1,7 @@
 package exp.layer.automation.steps;
 
 import exp.layer.automation.pages.*;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 public class CartPageSteps {
@@ -33,8 +34,13 @@ public class CartPageSteps {
         CartPage.verifyPresenceOfMinimumTimeSpent();
     }
 
+    @And("user remove item from the cart page")
+    public void userRemoveItemFromTheCartPage() throws Exception {
+        CartPage.removeItemFromTheCartPage();
+    }
     @Given("{word} wait for {int} seconds on cart page")
     public static void wait_for_seconds_on_cart_page(String word, int wait_time){
         CartPage.waitOnCartPage(wait_time);
+
     }
 }
