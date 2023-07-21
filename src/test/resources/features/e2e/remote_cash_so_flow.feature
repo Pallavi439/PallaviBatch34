@@ -24,7 +24,7 @@ Feature: E2E Remote Cash Flow
     * user generate random value " " and store into session "cookie"
 
     * user set api headers
-      | Authorization | token ${order_api_key}:${order_api_secret} |
+      | Authorization | ${order_api_token} |
 
     * user retries and get details by frappe client get api with filters
       | experience-layer-order-api | frappe_get_report | Quotation | {"app_source":"ER Sales App","transaction_date":"${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}"} |
@@ -34,7 +34,7 @@ Feature: E2E Remote Cash Flow
 
   Scenario: Get Sales Order in exp layer
     * user set api headers
-      | Authorization | token ${order_api_key}:${order_api_secret} |
+      | Authorization | ${order_api_token} |
 
     * user retries and get details by frappe client get api with filters
       | experience-layer-order-api | frappe_get_report | Sales Order | {"quotation":"${exp_quotation_id}"} |

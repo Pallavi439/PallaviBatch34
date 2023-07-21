@@ -25,10 +25,8 @@ Feature: E2E Local Cash Flow
 
   Scenario: Get Quotation Log in exp Layer
     * user generate random value " " and store into session "cookie"
-
     * user set api headers
-      | Authorization | token ${order_api_key}:${order_api_secret} |
-
+      | Authorization | ${sales_api_token} |
     * user retries and get details by frappe client get api with filters
       | experience-layer-order-api | frappe_get_report | Quotation | {"app_source":"ER Sales App","transaction_date":"${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}"} |
     * response status code should be 200
@@ -37,8 +35,7 @@ Feature: E2E Local Cash Flow
 
   Scenario: Get Sales Order in exp layer
     * user set api headers
-      | Authorization | token ${order_api_key}:${order_api_secret} |
-
+      | Authorization | ${order_api_token} |
     * user retries and get details by frappe client get api with filters
       | experience-layer-order-api | frappe_get_report | Sales Order | {"quotation":"${exp_quotation_id}"} |
     * response status code should be 200
@@ -50,7 +47,7 @@ Feature: E2E Local Cash Flow
     * user wait for 10 seconds
     * user login to application by api
       | ${with-run-username} | ${with-run-password} |
-
+    * response status code should be 200
     * user get "${wh2-customer-1-title}" customer details by api
 
     * "User" retries and get details by frappe client get api with filters
@@ -63,6 +60,7 @@ Feature: E2E Local Cash Flow
       | Sales Order Item | {"prevdoc_docname":"${Quotation_Id}"} |
     * response status code should be 200
     * get response "message.parent" string attribute and store into session "SalesOrder_Id"
+
     * "User" retries and get details by frappe client get api with filters
       | Sales Order | {"name":"${SalesOrder_Id}"} |
     * response status code should be 200
@@ -92,7 +90,6 @@ Feature: E2E Local Cash Flow
     * user compares actual "${Sales_Invoice_Shipping_Status}" and expected "Order Confirmed" data
 
   Scenario: Assign Sales Invoice to DA in with-run
-
     * user assigns sales invoice to DA
       | ["${SALES_ORDER_INVOICE_ID}"] | ${wh2-delivery-person-1-username} | /sanity-payload/assign-invoice-filters.json |
     Then response status code should be 200
