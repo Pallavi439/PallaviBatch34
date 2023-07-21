@@ -19,6 +19,7 @@ Feature: E2E Local Cash Flow
     * user place order with local
 
   Scenario: Get Quotation Log in exp Layer
+    * user generate random value " " and store into session "cookie"
     * user set api headers
       | Authorization | token ${order_api_key}:${order_api_secret} |
     * user retries and get details by frappe client get api with filters
