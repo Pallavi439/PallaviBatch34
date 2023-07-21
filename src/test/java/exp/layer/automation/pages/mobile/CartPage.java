@@ -48,6 +48,7 @@ public class CartPage extends Step {
         }
     }
 
+    //remote order
     public static void placeRemoteOrder() {
         clickOnCartPageButton();
         clickOnNextButton();
@@ -56,6 +57,7 @@ public class CartPage extends Step {
         getMobileActions().flutterWaitForVisibility(StorePage.CLICK_STORE);
     }
 
+    //if location is same
     public static void placeOrderWithLocal() {
         clickOnCartPageButton();
         clickOnNextButton();
@@ -64,6 +66,7 @@ public class CartPage extends Step {
         getMobileActions().flutterWaitForVisibility(StorePage.CLICK_STORE);
     }
 
+    //if location is different
     public static void placeLocalOrder() {
         clickOnCartPageButton();
         clickOnNextButton();
