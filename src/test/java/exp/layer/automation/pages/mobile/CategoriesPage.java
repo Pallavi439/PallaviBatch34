@@ -72,8 +72,7 @@ public class CategoriesPage extends Step {
     public static void searchItem(String itemDetails) {
         getMobileActions().flutterWaitForVisibility(SEARCH_ITEM);
         getMobileActions().flutterClick(SEARCH_ITEM);
-        getMobileActions().flutterWaitForVisibility("search_section_business_title");
-        getMobileActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(5);
         getMobileActions().flutterType(ITEM_SEARCH_BOX, itemDetails);
     }
 
