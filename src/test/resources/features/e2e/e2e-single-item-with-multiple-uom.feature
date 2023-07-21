@@ -1,4 +1,4 @@
-@e2e-with-multi-uom
+@e2e-with-multi-uom @sanity
 Feature: Cash order placement for single item and multiple uom
 
   Scenario: Verify cash order placement for single item and multiple uom
@@ -14,9 +14,7 @@ Feature: Cash order placement for single item and multiple uom
       | Automation-Category-1 | ${NUMBER-1-5} | Piece | ${NUMBER-5-10} |
       | Automation-Category-2 | ${NUMBER-1-5} | Bag   | ${NUMBER-5-10} |
       | Automation-Category-2 | ${NUMBER-1-5} | Case  | ${NUMBER-5-10} |
-    * user click on cart next button
-    * user click on place order button
-    * user click on cart local place order button
+    * user place local order
 
 
     

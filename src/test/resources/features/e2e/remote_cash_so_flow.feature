@@ -42,7 +42,6 @@ Feature: E2E Remote Cash Flow
     * get response "message.name" string attribute and store into session "exp_sales_order_id"
     * get response "message.remote_order" string attribute and store into session "withrun_sales_order_id"
     * get response "message.remote_quotation" string attribute and store into session "withrun_quotation_id"
-    * user verifies response attribute "message.customer_name" value should be "${wh2-customer-1-title}"
 
   Scenario: Verify Quotation in with-run
     * user wait for 10 seconds

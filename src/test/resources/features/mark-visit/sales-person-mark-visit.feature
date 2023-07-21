@@ -12,7 +12,6 @@ Feature: User verifies sales person mark visit functionality
     * user click on beat button
     * user mark visit "${wh2-sp1.locality}" locality store
       | ${wh2-customer-1-title} | ${NUMBER-0-7} |
-    * {word} click on locality and store
     * user wait for 10 seconds
 
     Scenario: Resets sales person geolocation
@@ -24,7 +23,7 @@ Feature: User verifies sales person mark visit functionality
     * user generate random value " " and store into session "cookie"
 
     * user set api headers
-      | Authorization | token ${onboarding_api_key}:${onboarding_api_secret} |
+      | Authorization | ${onboarding_api_token} |
 
     * user retries and get details by frappe client get api with filters
       | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"${wh2-customer-1-title}","locality":"${wh2-sp1.locality}"} |
@@ -34,7 +33,7 @@ Feature: User verifies sales person mark visit functionality
     * user generate random value " " and store into session "cookie"
 
     * user set api headers
-      | Authorization | token ${sales_api_key}:${sales_api_secret} |
+      | Authorization | ${sales_api_token} |
 
     * user retries and get details by frappe client get api with filters
       | experience-layer-sales-api | frappe_get_report | Visit Log | {"visit_date":"${DATE-yyyy-MM-dd}","ref_docname":"${exp_customer_id}","reason":"${mark_visit_reason}","sales_person":"${wh2-sales-person-1-name}"} |
