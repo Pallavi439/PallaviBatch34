@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>exp.layer.sales</groupId>
-    <artifactId>sale-app</artifactId>
+    <artifactId>sales-app</artifactId>
     <version>develop</version>
     <build>
         <plugins>
