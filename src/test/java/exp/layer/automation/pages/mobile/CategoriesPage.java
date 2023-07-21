@@ -21,6 +21,7 @@ public class CategoriesPage extends Step {
     public static String ITEM_SEARCH_BOX = "search_er_input_box";
     public static String CLICK_ITEM_INDEX_0 = "search_item_click_list_tile_0";
     static Logger log = LogManager.getLogger(CategoriesPage.class);
+    public static String CATEGORY = "category_%s";
 
     public static void addItemToCart(List<List<String>> list) {
         for (int i = 0; i < list.size(); i++) {
