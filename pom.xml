@@ -30,10 +30,10 @@
         <parallel.test.count>$(parallel.test.count)</parallel.test.count>
         <mobile.app.noReset>false</mobile.app.noReset>
         <parallelScheme>FEATURE</parallelScheme>
-        <submodule.name></submodule.name>
-        <token></token>
+        <token>ciqojtuexayhzhqg</token>
+        <submodule.name>flutter</submodule.name>
         <!--suppress UnresolvedMavenProperty -->
-        <email.sentToList></email.sentToList>
+        <email.sentToList>qa_auto_mates@elastic.run</email.sentToList>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <er.automation.engine.version>3.0.7</er.automation.engine.version>
@@ -417,7 +417,7 @@
                                 <configuration>
                                     <cleanupDaemonThreads>false</cleanupDaemonThreads>
                                     <classpathScope>test</classpathScope>
-                                    <mainClass>er.automation.mail.SendMail</mainClass>
+                                    <mainClass>exp.layer.automation.mail.SendMail</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
