@@ -66,4 +66,11 @@ public class ExpLayerCommonPage extends Step {
         getUiActions().waitForSeconds(2);
         getMobileActions().flutterWaitForVisibility(LoginPage.DEV_LOGIN_ER_LOGO);
     }
+
+    public static void backButton(){
+        KeyEvent event = new KeyEvent(AndroidKey.BACK);
+        AndroidDriver driver = (AndroidDriver) getMobileActions().appiumDriver;
+        driver.pressKey(event);
+    }
+
 }

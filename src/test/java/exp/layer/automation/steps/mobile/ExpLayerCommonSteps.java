@@ -113,7 +113,7 @@ public class ExpLayerCommonSteps {
 
     @And("user verify final price on cart page with {string} for {string} order")
     public void userVerifyFinalPriceOnCartPageWith(String grand_total, String oc_name) {
-        OcPage.verifyFinalPriceOnCartPage(grand_total,oc_name);
+        OcPage.verifyFinalPriceOnCartPage(grand_total, oc_name);
     }
 
     @And("user get grand total")
@@ -134,6 +134,11 @@ public class ExpLayerCommonSteps {
     @Given("{word} log out of sales app")
     public void log_out_of_sales_app(String word) {
         ExpLayerCommonPage.logOut();
+    }
+
+    @Given("{word} go back to previous screen")
+    public void go_back_to_previous_screen(String word) {
+        ExpLayerCommonPage.backButton();
     }
 
 }
