@@ -39,7 +39,6 @@ Feature: WH SO time
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
     * user click on beat button
-    * user reset store for "${wh3-sp1.locality}"
     * user click on locality and store
       | ${wh3-sp1.locality} | ${wh3-customer-1-title} |
     * user captures store image
@@ -88,7 +87,6 @@ Feature: WH SO time
     * user wait for 60 seconds
 
     * user click on beat button
-    * user reset store for "${wh3-sp1.locality}"
     * user click on locality and store
       | ${wh3-sp1.locality} | ${wh3-customer-1-title} |
     * user captures store image
