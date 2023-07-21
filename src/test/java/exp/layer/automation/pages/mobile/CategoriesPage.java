@@ -26,9 +26,12 @@ public class CategoriesPage extends Step {
     public static void addItemToCart(List<List<String>> list) {
         for (int i = 0; i < list.size(); i++) {
             List<String> data = AutomationUtils.replaceListData(list.get(i));
-            getMobileActions().flutterWaitForVisibility(String.format(CATEGORY,0));
+            getMobileActions().flutterWaitForVisibility(CATEGORIES_SEARCH);
             getMobileActions().flutterClick(CATEGORIES_SEARCH);
+            getMobileActions().flutterWaitForVisibility("search_section_business_title");
+            getMobileActions().waitForSeconds(2);
             getMobileActions().flutterType(CATEGORIES_SEARCH_RESULTS, data.get(0));
+            getMobileActions().waitForSeconds(2);
             getMobileActions().flutterClick("search_item_click_list_tile_" + data.get(1));
             int index;
             if (data.get(2).equalsIgnoreCase("Piece")) {
@@ -63,14 +66,15 @@ public class CategoriesPage extends Step {
     public static void searchItemDetails(String itemDetails) {
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::android.widget.Button"));
         searchItem(itemDetails);
-        getUiActions().waitForSeconds(1);
+        getUiActions().waitForSeconds(2);
         getMobileActions().flutterClick(CLICK_ITEM_INDEX_0);
-        getUiActions().waitForSeconds(1);
     }
 
     public static void searchItem(String itemDetails) {
         getMobileActions().flutterWaitForVisibility(SEARCH_ITEM);
         getMobileActions().flutterClick(SEARCH_ITEM);
+        getMobileActions().flutterWaitForVisibility("search_section_business_title");
+        getMobileActions().waitForSeconds(2);
         getMobileActions().flutterType(ITEM_SEARCH_BOX, itemDetails);
     }
 
