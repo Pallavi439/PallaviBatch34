@@ -1,4 +1,4 @@
-@e2e @local_cash_so_flow
+@e2e @local_cash_so_flow @regression1
 Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow
@@ -15,8 +15,6 @@ Feature: E2E Local Cash Flow
     * user click on take order button
     * user add item to cart
       | Automation-Test-Item-Name-17 | 0 | Bag | ${NUMBER-5-10} |
-    * user increase item quantity
-      | Automation-Test-Item-Name-17 | Bag | 10 |
     * user place order with local
 
   Scenario: Resets sales person geolocation

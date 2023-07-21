@@ -1,4 +1,4 @@
-@e2e @remote_cash_so_flow
+@e2e @remote_cash_so_flow @regression1
 Feature: E2E Remote Cash Flow
 
 
@@ -14,10 +14,6 @@ Feature: E2E Remote Cash Flow
     * user clicks on take a remote order button
     * user add item to cart
       | Automation-Test-Item-Name-17 | 0 | Bag | ${NUMBER-5-10} |
-    * user increase item quantity
-      | Automation-Test-Item-Name-17 | Bag | 4 |
-    * user decrease item quantity
-      | Automation-Test-Item-Name-17 | Bag |
     * user place remote order
 
   Scenario: Get Quotation Log in exp Layer

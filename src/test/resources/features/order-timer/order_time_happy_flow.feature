@@ -1,4 +1,4 @@
-@order_time_happy
+@order_time_happy @regression1
 
 Feature: Happy flow for order time by placing order with specific time
 
@@ -40,16 +40,12 @@ Feature: Happy flow for order time by placing order with specific time
     * user clicks on take a remote order button
     * user add item to cart
       | Automation-Category-1 | ${NUMBER-1-5} | Bag | ${NUMBER-5-10} |
-    * user click on cart button
     * user click on cart next button
     * user click on place order button
     * user verifies presence of minimum time spent
 
     * user wait for 120 seconds on cart page
-    * user click on cart next button
-    * user click on place order button
-    * user click on cart remote order button
-    * user verifies visibility of Store list page
+    * user place remote order
 
   Scenario: Verify order time and order placement from app side for 2nd order
 

@@ -1,4 +1,4 @@
-@e2e @login-logout
+@e2e @login-logout @regression1
 Feature: Login Logout
 
   Scenario: Verify Login Logout flow

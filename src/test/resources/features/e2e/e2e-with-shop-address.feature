@@ -1,4 +1,4 @@
-@e2e-with-shop-address
+@e2e-with-shop-address @regression1
 Feature: Cash order placement with shop address
 
   Scenario: Verify cash order placement flow with shop address
