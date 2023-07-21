@@ -1,19 +1,17 @@
 @oc_min_is
 Feature: Min order validation section IS
 
-  Scenario: Create Customer tag from document tag doctype
+  Scenario Outline: Create Customer tag from document tag doctype
 
     * user login to application by api
       | ${with-run-username} | ${with-run-password} |
 
-    * user get "${customer-6-title}" customer details by api
+    * user get "<customer>" customer details by api
 
-    * user generate random value "${customer-6-title}" and store into session "customer-title"
+    * user generate random value "<customer>" and store into session "customer-title"
     * user create "Document Tag" by api
-      | tag_title | ${customer-6-title} | /default-payload.json |
+      | tag_title | <customer> | /default-payload.json |
     * response status code should be 200
-
-  Scenario Outline: Create Parameterized document metric
 
     * user login to application by api
       | ${with-run-username} | ${with-run-password} |
@@ -39,12 +37,15 @@ Feature: Min order validation section IS
       | Parameterized Document Metric | {"title":"Automation min order metric with <type>"} |
     * get response "message.name" string attribute and store into session "min_PDM"
 
+    * user generate random value "<customer>" and store into session "customer"
+
+    * user generate random value "Automation Min Order CG3 with <type>" and store into session "Automation Min Order CG"
     * user create "Constraint Group" by api
-      | title | Automation Min Order CG3 | /min_order_CG3-default-payload.json |
+      | title | ${Automation Min Order CG} | /min_order_CG3-default-payload.json |
     * response status code should be 200
 
     * user get details by frappe client get api with filters
-      | Constraint Group | {"title":"Automation Min Order CG3"} |
+      | Constraint Group | {"title":"${Automation Min Order CG}"} |
     * get response "message.name" string attribute and store into session "min_CG"
 
     * user generate random value "Automation Min Order C <type>" and store into session "Automation Min Order C"
@@ -53,24 +54,17 @@ Feature: Min order validation section IS
       | title | ${Automation Min Order C} | /min_order_C3-default-payload.json |
     * response status code should be 200
 
-    Examples:
-      | payload pdm          | type  |
-      | /min_order_pdm2.json | brand |
-#      | /min_order_pdm3.json | item group   |
-#      | /min_order_pdm4.json | er item type |
-
-  Scenario: oc-1
     * user login to the experience layer sales app with valid details
       | ${oc-wh1-se-1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
-      | ${wh1-oc.locality} | ${customer-6-title} |
+      | ${wh1-oc.locality} | <customer> |
     * user captures store image if available
     * user clicks on take a remote order button
 
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | ${product-brand-name-2} | ${NUMBER-1-5} | Piece | 1 |
+      | <brand> | ${NUMBER-1-5} | Piece | 1 |
     * user click on cart next button
     * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "less" order
@@ -78,19 +72,23 @@ Feature: Min order validation section IS
 
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | ${product-brand-name-1} | ${NUMBER-1-5} | Piece | 1 |
+      | <category> | ${NUMBER-1-5} | Piece | 1 |
     * user click on cart next button
     * user click on order constraints strip
     * user click on order constraints title "0"
 
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | ${product-brand-name-1} | ${NUMBER-1-5} | Case | 2 |
+      | <category> | ${NUMBER-1-5} | Case | 2 |
     * user click on place order button
     * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "min" order
-    * click on place order button remote order popup
+    #* click on place order button remote order popup
 
-
+    Examples:
+      | payload pdm          | type       | customer             | brand                   | category                |
+      | /min_order_pdm2.json | brand      | ${customer-6-title}  | ${product-brand-name-2} | ${product-brand-name-1} |
+      | /min_order_pdm3.json | item group | ${customer-12-title} | ${category_1}           | ${category_3}           |
+#      | /min_order_pdm4.json | er item type |
     
 
