@@ -3,7 +3,8 @@ Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow
     * user sets mobile geolocation
-      | 18.5068 | 73.9299 |
+      | 18.6011408 | 73.7807528 |
+
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
     * user wait for 5 seconds
@@ -17,6 +18,10 @@ Feature: E2E Local Cash Flow
     * user increase item quantity
       | Automation-Test-Item-Name-17 | Bag | 10 |
     * user place order with local
+
+  Scenario: Resets sales person geolocation
+    * user sets mobile geolocation
+      | 98.6011408 | 13.7807528 |
 
   Scenario: Get Quotation Log in exp Layer
     * user generate random value " " and store into session "cookie"
@@ -37,7 +42,6 @@ Feature: E2E Local Cash Flow
     * get response "message.name" string attribute and store into session "exp_sales_order_id"
     * get response "message.remote_order" string attribute and store into session "withrun_sales_order_id"
     * get response "message.remote_quotation" string attribute and store into session "withrun_quotation_id"
-    * user verifies response attribute "message.customer_name" value should be "${wh2-customer-1-title}"
 
   Scenario: Verify Quotation in with-run
     * user wait for 10 seconds

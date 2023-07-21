@@ -105,7 +105,6 @@ public class CartPage extends Step {
     }
 
     public static void popUpPlaceOrderButton() {
-        getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
         getMobileActions().flutterClick(POP_UP_PLACE_ORDER_BUTTON);
         getMobileActions().waitForSeconds(5);
     }
