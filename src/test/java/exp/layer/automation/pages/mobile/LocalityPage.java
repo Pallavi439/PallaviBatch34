@@ -30,7 +30,7 @@ public class LocalityPage extends Step {
     public static void clickOnLocality(String locality) {
         locality = AutomationUtils.getTestData(locality);
         getMobileActions().click(By.xpath(String.format(LOCALITY, locality)));
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
     }
 
     public static void markVisitStore(String locality, List<List<String>> mark_visit_details) {
@@ -38,7 +38,7 @@ public class LocalityPage extends Step {
         for (List<String> mark_visit_store_reason : mark_visit_details) {
             StorePage.searchStore(mark_visit_store_reason.get(0));
             StorePage.clickOnStore();
-            StorePage.captureStoreImage();
+            StorePage.captureStoreImageIfAvailable();
             StorePage.markVisitCustomer(mark_visit_store_reason.get(1));
         }
     }

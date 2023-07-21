@@ -10,11 +10,8 @@ import java.util.List;
 
 public class CategoriesPage extends Step {
 
-    static Logger log = LogManager.getLogger(CategoriesPage.class);
-
     public static By BOTTOM_CART_EMPTY_ICON = By.xpath("//android.view.View[@content-desc='Cart Tab 4 of 4']/android.widget.ImageView");
     public static By ADD_BUTTON_PIECE = By.xpath("(//android.widget.Button[@content-desc='Add'])[1]");
-
     public static String CATEGORIES_SEARCH = "header_search_key";
     public static String CATEGORIES_SEARCH_RESULTS = "search_er_input_box";
     public static String BOTTOM_CART_ICON = "header_cart_key";
@@ -23,6 +20,7 @@ public class CategoriesPage extends Step {
     public static String SEARCH_ITEM = "header_search_key";
     public static String ITEM_SEARCH_BOX = "search_er_input_box";
     public static String CLICK_ITEM_INDEX_0 = "search_item_click_list_tile_0";
+    static Logger log = LogManager.getLogger(CategoriesPage.class);
     public static String CATEGORY = "category_%s";
 
     public static void addItemToCart(List<List<String>> list) {
@@ -63,10 +61,7 @@ public class CategoriesPage extends Step {
     }
 
     public static void searchItemDetails(String itemDetails) {
-        try {
-            getMobileActions().clickIfAvailableByWaiting(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::android.widget.Button"));
-        } catch (Exception ignored) {
-        }
+        getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::android.widget.Button"));
         searchItem(itemDetails);
         getUiActions().waitForSeconds(1);
         getMobileActions().flutterClick(CLICK_ITEM_INDEX_0);
