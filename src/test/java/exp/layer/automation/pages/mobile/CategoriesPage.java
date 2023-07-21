@@ -26,6 +26,7 @@ public class CategoriesPage extends Step {
     public static void addItemToCart(List<List<String>> list) {
         for (int i = 0; i < list.size(); i++) {
             List<String> data = AutomationUtils.replaceListData(list.get(i));
+            getMobileActions().flutterWaitForVisibility(String.format(CATEGORY,0));
             getMobileActions().flutterClick(CATEGORIES_SEARCH);
             getMobileActions().flutterType(CATEGORIES_SEARCH_RESULTS, data.get(0));
             getMobileActions().flutterClick("search_item_click_list_tile_" + data.get(1));
