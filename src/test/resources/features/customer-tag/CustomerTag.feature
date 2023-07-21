@@ -30,6 +30,7 @@ Feature: Customer Tag configuration functionality
     * user set value by frappe client set value api with filters and fieldname
       | WithRun App Global Config | ${WhitelistedCustomerTag} | value | Automation Gold Outlet, Unbilled Outlet |
     * response status code should be 200
+    * user wait for 60 seconds
 
   Scenario: To verify that tag should not be shown in the app side if it is not present in the withrun app config and document tag is present
     * user login to the experience layer sales app with valid details

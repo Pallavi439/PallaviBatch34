@@ -16,7 +16,6 @@ public class ItemListPage extends Step {
         item_name = AutomationUtils.replaceTestDataVariable(item_name);
         item_type = AutomationUtils.replaceTestDataVariable(item_type);
         increase_amount = AutomationUtils.replaceTestDataVariable(increase_amount);
-        item_name = item_name.concat(" @");
         CategoriesPage.searchItemDetails(item_name);
         int i = Integer.parseInt(increase_amount);
         if (item_type.equalsIgnoreCase("Bag")) {
