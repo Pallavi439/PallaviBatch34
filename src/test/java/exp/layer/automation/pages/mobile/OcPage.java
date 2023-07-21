@@ -22,7 +22,7 @@ public class OcPage extends Step {
     }
 
     public static void verifyAbsenceOfOcStrip() {
-        getMobileActions().flutterClick(OC_STRIP);
+        getMobileActions().flutterWaitForInVisibility(OC_STRIP);
     }
 
     public static void verifyFinalPriceOnCartPage(String grand_total, String oc_name) {
