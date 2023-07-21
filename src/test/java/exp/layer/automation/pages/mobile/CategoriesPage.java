@@ -23,10 +23,12 @@ public class CategoriesPage extends Step {
     public static String SEARCH_ITEM = "header_search_key";
     public static String ITEM_SEARCH_BOX = "search_er_input_box";
     public static String CLICK_ITEM_INDEX_0 = "search_item_click_list_tile_0";
+    public static String CATEGORY = "category_%s";
 
     public static void addItemToCart(List<List<String>> list) {
         for (int i = 0; i < list.size(); i++) {
             List<String> data = AutomationUtils.replaceListData(list.get(i));
+            getMobileActions().flutterWaitForVisibility(String.format(CATEGORY,0));
             getMobileActions().flutterClick(CATEGORIES_SEARCH);
             getMobileActions().flutterType(CATEGORIES_SEARCH_RESULTS, data.get(0));
             getMobileActions().flutterClick("search_item_click_list_tile_" + data.get(1));
