@@ -13,9 +13,7 @@ Feature: Cash order placement without shop address
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Category-1 | ${NUMBER-1-5} | Piece | ${NUMBER-5-10} |
-    * user click on cart next button
-    * user click on place order button
-    * user click on cart local place order button
+    * user place local order
 
 
     

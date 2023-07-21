@@ -50,7 +50,6 @@ public class CartPage extends Step {
 
     //remote order
     public static void placeRemoteOrder() {
-        clickOnCartPageButton();
         clickOnNextButton();
         placeOrderButton();
         clickOnRemoteOrderButton();
@@ -59,7 +58,6 @@ public class CartPage extends Step {
 
     //if location is same
     public static void placeOrderWithLocal() {
-        clickOnCartPageButton();
         clickOnNextButton();
         placeOrderButton();
         popUpPlaceOrderButton();
@@ -68,12 +66,11 @@ public class CartPage extends Step {
 
     //if location is different
     public static void placeLocalOrder() {
-        clickOnCartPageButton();
         clickOnNextButton();
         placeOrderButton();
         popUpPlaceOrderButton();
         ExpLayerCommonPage.captureImage();
-        getUiActions().waitForSeconds(3);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().flutterClick(PLACE_ORDER_WITH_STORE_IMAGE);
         getMobileActions().flutterWaitForVisibility(StorePage.CLICK_STORE);
     }
@@ -131,17 +128,10 @@ public class CartPage extends Step {
     }
 
     public static void clickOnCartPageButton() {
-        try {
-            getMobileActions().verifyContextAndSwitchToFlutterContext();
-            AndroidDriver driver = (AndroidDriver) Step.getMobileActions().appiumDriver;
-            driver.executeScript("flutter:waitFor", CART_ICON, 5000);
-            getMobileActions().flutterClickIfAvailable(CART_ICON);
-        } catch (Exception ignored) {
-        }
+        getMobileActions().flutterClick(CART_ICON);
     }
 
     public static void removeALLItemFromCart() {
-        clickOnCartPageButton();
         getMobileActions().flutterClick(REMOVE_ALL_ITEM_FROM_CART_BUTTON);
         getMobileActions().flutterClick(ACCEPT_BUTTON);
         getMobileActions().waitForSeconds(4);

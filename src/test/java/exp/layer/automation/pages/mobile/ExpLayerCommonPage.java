@@ -47,13 +47,13 @@ public class ExpLayerCommonPage extends Step {
     }
 
     public static void captureImage() {
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().verifyContextAndSwitchToNativeContext();
         KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
         AndroidDriver driver = (AndroidDriver) getMobileActions().appiumDriver;
         driver.pressKey(event);
         getMobileActions().click(By.xpath("//android.widget.ImageButton[@content-desc='Done']"));
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
     }
 
     public static void logOut() {

@@ -32,24 +32,18 @@ public class ItemListPage extends Step {
                 getMobileActions().flutterClick("product_0_increment_button_0");
             }
         }
+        CartPage.clickOnCartPageButton();
     }
 
-    public static void increaseGivenItemQuantity(String item_name, String item_type) throws Exception {
-        increaseGivenItemQuantity(item_name, item_type, "1");
-    }
-
-    public static void increaseGivenItemQuantity(String item_name) throws Exception {
-        increaseGivenItemQuantity(item_name, "Bag");
-    }
 
     public static void increaseItemQuantity(List<List<String>> item_list) throws Exception {
         if (item_list.get(0).size() == 1) {
             for (List<String> item_detail : item_list) {
-                increaseGivenItemQuantity(item_detail.get(0));
+                increaseGivenItemQuantity(item_detail.get(0),"Piece","1");
             }
         } else if (item_list.get(0).size() == 2) {
             for (List<String> item_detail : item_list) {
-                increaseGivenItemQuantity(item_detail.get(0), item_detail.get(1));
+                increaseGivenItemQuantity(item_detail.get(0), item_detail.get(1),"1");
             }
         } else {
             for (List<String> item_detail : item_list) {
@@ -61,25 +55,17 @@ public class ItemListPage extends Step {
     public static void decreaseItemQuantity(List<List<String>> item_list) {
         if (item_list.get(0).size() == 1) {
             for (List<String> item_detail : item_list) {
-                decreaseGivenItemQuantity(item_detail.get(0));
+                decreaseGivenItemQuantity(item_detail.get(0),"Piece","1");
             }
         } else if (item_list.get(0).size() == 2) {
             for (List<String> item_detail : item_list) {
-                decreaseGivenItemQuantity(item_detail.get(0), item_detail.get(1));
+                decreaseGivenItemQuantity(item_detail.get(0), item_detail.get(1),"1");
             }
         } else {
             for (List<String> item_detail : item_list) {
                 decreaseGivenItemQuantity(item_detail.get(0), item_detail.get(1), item_detail.get(2));
             }
         }
-    }
-
-    public static void decreaseGivenItemQuantity(String item_name) {
-        decreaseGivenItemQuantity(item_name, "Bag");
-    }
-
-    public static void decreaseGivenItemQuantity(String item_name, String item_type) {
-        decreaseGivenItemQuantity(item_name, item_type, "1");
     }
 
     public static void decreaseGivenItemQuantity(String item_name, String item_type, String decrease_amount) {
@@ -102,5 +88,6 @@ public class ItemListPage extends Step {
                 getMobileActions().flutterClick("product_0_decrement_button_0");
             }
         }
+        CartPage.clickOnCartPageButton();
     }
 }
