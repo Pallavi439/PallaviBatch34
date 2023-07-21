@@ -21,7 +21,7 @@ Feature: E2E Local Cash Flow
   Scenario: Get Quotation Log in exp Layer
     * user generate random value " " and store into session "cookie"
     * user set api headers
-      | Authorization | token ${order_api_key}:${order_api_secret} |
+      | Authorization | ${api_token} |
     * user retries and get details by frappe client get api with filters
       | experience-layer-order-api | frappe_get_report | Quotation | {"app_source":"ER Sales App","transaction_date":"${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}"} |
     * response status code should be 200
@@ -30,7 +30,7 @@ Feature: E2E Local Cash Flow
 
   Scenario: Get Sales Order in exp layer
     * user set api headers
-      | Authorization | token ${order_api_key}:${order_api_secret} |
+      | Authorization | ${api_token} |
     * user retries and get details by frappe client get api with filters
       | experience-layer-order-api | frappe_get_report | Sales Order | {"quotation":"${exp_quotation_id}"} |
     * response status code should be 200
