@@ -1,4 +1,4 @@
-@order_time_happy
+@order_time_happy @regression1
 
 Feature: Happy flow for order time by placing order with specific time
 

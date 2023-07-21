@@ -1,4 +1,4 @@
-@customer_tag_1
+@customer_tag_1 @regression1
 
 Feature: Customer Tag configuration functionality
 

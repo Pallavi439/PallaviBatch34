@@ -39,12 +39,6 @@ public class ExpLayerCommonSteps {
         StorePage.clickOnTakeOrderButton();
     }
 
-    @Given("{word} reset store for {string}")
-    public void reset_store(String word, String locality) throws Exception {
-        LocalityPage.resetLocalityAndStore(locality);
-
-    }
-
     @Given("{word} captures store image")
     public void capture_store_image(String word) throws Exception {
         StorePage.captureStoreImage();

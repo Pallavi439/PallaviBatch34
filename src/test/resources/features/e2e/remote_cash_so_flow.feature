@@ -1,4 +1,4 @@
-@e2e @remote_cash_so_flow
+@e2e @remote_cash_so_flow @regression1
 Feature: E2E Remote Cash Flow
 
 

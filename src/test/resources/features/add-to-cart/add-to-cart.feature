@@ -1,4 +1,4 @@
-@add_to_cart
+@add_to_cart @regression1
 Feature: Add items to cart flow
 
   Scenario: User add multiple items, increase and decrease their quantity

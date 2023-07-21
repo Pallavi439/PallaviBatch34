@@ -1,4 +1,4 @@
-@wh_so_time
+@wh_so_time @regression1
 
 Feature: WH SO time
 

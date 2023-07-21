@@ -1,4 +1,4 @@
-@e2e @local_cash_so_flow
+@e2e @local_cash_so_flow @regression1
 Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow
