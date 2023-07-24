@@ -11,7 +11,7 @@
   "metric": "${min_pdm}",
   "min": 200,
   "max": 0,
-  "message_template": "Min Order 200",
+  "message_template": "Min Order 200 for not applicable validation",
   "creation": "",
   "modified_by": "pranali.mulay@elastic.run",
   "modified": "",
