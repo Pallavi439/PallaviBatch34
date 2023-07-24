@@ -6,7 +6,7 @@
   "__unsaved": 1,
   "owner": "pranali.mulay@elastic.run",
   "__run_link_triggers": false,
-  "title": "Automation Min Order ISNOT CG3 ",
+  "title": "${Automation Min Order CG ISNOT}",
   "applicable_only_for_first_order_of_the_day": 0,
   "applicable_only_for_app": 0,
   "soft_constraint": 0,

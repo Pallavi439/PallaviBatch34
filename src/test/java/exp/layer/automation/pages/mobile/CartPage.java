@@ -89,10 +89,11 @@ public class CartPage extends Step {
         grandTotal = AutomationUtils.extractNumbers(grandTotal);
         System.out.println("GRAND_TOTAL_AMOUNT -> " + grandTotal);
         AutomationUtils.getTestContext().put("GRAND_TOTAL_AMOUNT", grandTotal);
-        getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
+
     }
 
     public static void clickOnRemoteOrderButton() {
+        getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
         getMobileActions().flutterClick(PLACE_ORDER_REMOTE_BUTTON);
     }
 

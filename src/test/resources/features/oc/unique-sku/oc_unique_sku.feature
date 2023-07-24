@@ -65,7 +65,7 @@ Feature: Min no. of unique SKU
 
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | Automation-Category-1 | ${NUMBER-1-7} | Piece | 1 |
+      | Automation-Category-1 | ${NUMBER-0-3} | Piece | 1 |
       | Automation-Category-2 | ${NUMBER-1-7} | Piece | 1 |
     * user click on cart next button
     * user get grand total
@@ -76,10 +76,10 @@ Feature: Min no. of unique SKU
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Category-4 | ${NUMBER-1-7} | Piece | 1 |
       | Automation-Category-3 | ${NUMBER-1-7} | Piece | 1 |
-      | Automation-Category-1 | ${NUMBER-1-7} | Piece | 1 |
+      | Automation-Category-1 | ${NUMBER-4-7} | Piece | 1 |
     * user click on cart next button
     * user get grand total
     * user verify absence of order constraint strip
 
     * user click on place order button
-    #* click on place order button remote order popup
+    * click on place order button remote order popup
