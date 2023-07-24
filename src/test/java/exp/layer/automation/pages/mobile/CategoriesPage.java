@@ -28,7 +28,11 @@ public class CategoriesPage extends Step {
             List<String> data = AutomationUtils.replaceListData(list.get(i));
             getMobileActions().flutterWaitForVisibility(CATEGORIES_SEARCH);
             getMobileActions().flutterClick(CATEGORIES_SEARCH);
-            getMobileActions().waitForSeconds(5);
+            try {
+                getMobileActions().flutterClick("search_section_business_title");
+            }
+            catch (Exception ignored){}
+            getMobileActions().waitForSeconds(2);
             getMobileActions().flutterType(CATEGORIES_SEARCH_RESULTS, data.get(0));
             getMobileActions().waitForSeconds(2);
             getMobileActions().flutterClick("search_item_click_list_tile_" + data.get(1));
@@ -72,7 +76,11 @@ public class CategoriesPage extends Step {
     public static void searchItem(String itemDetails) {
         getMobileActions().flutterWaitForVisibility(SEARCH_ITEM);
         getMobileActions().flutterClick(SEARCH_ITEM);
-        getMobileActions().waitForSeconds(5);
+        try {
+            getMobileActions().flutterClick("search_section_business_title");
+        }
+        catch (Exception ignored){}
+        getMobileActions().waitForSeconds(2);
         getMobileActions().flutterType(ITEM_SEARCH_BOX, itemDetails);
     }
 

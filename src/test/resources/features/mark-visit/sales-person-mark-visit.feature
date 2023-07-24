@@ -1,4 +1,4 @@
-@sales-mark-visit
+@sales-mark-visit @regression1
 
 Feature: User verifies sales person mark visit functionality
 

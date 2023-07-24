@@ -1,4 +1,4 @@
-@e2e-with-multi-uom @sanity
+@e2e-with-multi-uom @regression1
 Feature: Cash order placement for single item and multiple uom
 
   Scenario: Verify cash order placement for single item and multiple uom

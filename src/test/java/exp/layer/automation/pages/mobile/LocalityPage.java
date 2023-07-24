@@ -10,16 +10,6 @@ public class LocalityPage extends Step {
 
     public static String LOCALITY = "//*[contains(@content-desc,'%s')]";
 
-    public static void resetLocalityAndStore(String locality) {
-        clickOnLocalityAndCustomer(locality, "l");
-        getUiActions().waitForSeconds(3);
-        getMobileActions().flutterClickIfAvailable("work_with_capture_photo_back_button");
-        getMobileActions().clickIfAvailable(By.xpath("(//*[contains(@content-desc,'Take a Remote')]/preceding-sibling::*)[1]/*"));
-        getUiActions().waitForSeconds(3);
-        getMobileActions().flutterClick("beat_plan_search_back");
-        getUiActions().waitForSeconds(3);
-    }
-
     public static void clickOnLocalityAndCustomer(String locality, String store) {
         clickOnLocality(locality);
         StorePage.searchStore(store);
