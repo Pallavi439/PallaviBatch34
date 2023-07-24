@@ -44,7 +44,6 @@ public class CartPage extends Step {
             getMobileActions().flutterClick(CART_SHOP_NOW_BUTTON);
         }
     }
-
     //remote order
     public static void placeRemoteOrder() {
         clickOnNextButton();
@@ -71,7 +70,6 @@ public class CartPage extends Step {
         getMobileActions().flutterClick(PLACE_ORDER_WITH_STORE_IMAGE);
         getMobileActions().flutterWaitForVisibility(StorePage.CLICK_STORE);
     }
-
 
     public static void clickOnNextButton() {
         getMobileActions().flutterClick(CART_NEXT_BUTTON);
@@ -108,6 +106,7 @@ public class CartPage extends Step {
     }
 
     public static void clickOnPlaceOrderButtonRemoteOrderPopup() {
+        getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
         getMobileActions().flutterClick(PLACE_ORDER_REMOTE_BUTTON);
     }
 

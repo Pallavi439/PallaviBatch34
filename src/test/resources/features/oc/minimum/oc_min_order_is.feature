@@ -50,6 +50,8 @@ Feature: Min order validation section IS
 
     * user generate random value "Automation Min Order C <type>" and store into session "Automation Min Order C"
 
+    * user generate random value "Min Order 200 IS with <type>" and store into session "Min Order 200"
+
     * user create "Constraint" by api
       | title | ${Automation Min Order C} | /min_order_C3-default-payload.json |
     * response status code should be 200
@@ -82,7 +84,7 @@ Feature: Min order validation section IS
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | <category> | ${NUMBER-1-5} | Case | 2 |
-    * user click on place order button
+    * user click on cart next button
     * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "min" order
     #* click on place order button remote order popup

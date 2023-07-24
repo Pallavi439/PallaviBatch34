@@ -10,7 +10,7 @@
   "applicable_only_for_first_order_of_the_day": 0,
   "applicable_only_for_app": 0,
   "soft_constraint": 0,
-  "evaluate_on_cart_change": 1,
+  "evaluate_on_cart_change": 0,
   "evaluate_on_order_cancel": 0,
   "from_date": "2023-07-04",
   "to_date": "2099-03-31",

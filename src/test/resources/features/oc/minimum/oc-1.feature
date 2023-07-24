@@ -74,7 +74,6 @@ Feature: Order constraint
     * user click on cart next button
     * user verify absence of order constraint strip
 
-    * user click on place order button
     * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "min" order
     * click on place order button remote order popup

@@ -88,7 +88,6 @@ Feature: Order constraint
     * user remove item from the cart page
     * user click on cart next button
 
-    * user click on place order button
 
 #   # * user click on cart local place order button
 #    * click on place order button remote order popup

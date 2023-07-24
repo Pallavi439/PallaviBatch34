@@ -94,7 +94,6 @@ Feature: Order constraint max order validation for IS
     * user remove item from the cart page
     * user click on cart next button
     * user verify absence of order constraint strip
-    * user click on place order button
 #   # * user click on cart local place order button
 #    * click on place order button remote order popup
 
