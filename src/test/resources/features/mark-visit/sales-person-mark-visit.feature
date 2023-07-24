@@ -18,7 +18,6 @@ Feature: User verifies sales person mark visit functionality
       * user sets mobile geolocation
         | 98.6011408 | 13.7807528 |
 
-
   Scenario: Verify Visit log in experience layer
     * user generate random value " " and store into session "cookie"
 
