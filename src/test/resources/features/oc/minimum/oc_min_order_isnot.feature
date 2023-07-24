@@ -84,10 +84,10 @@ Feature: Min order validation section ISNOT
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | <category> | ${NUMBER-1-5} | Case | 2 |
-    * user click on place order button
+    * user click on cart next button
     * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "min" order
-    #* click on place order button remote order popup
+    * click on place order button remote order popup
 
     Examples:
       | payload pdm                | type  | customer            | brand                   | category                |

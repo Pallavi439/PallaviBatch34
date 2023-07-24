@@ -81,5 +81,4 @@ Feature: Min no. of unique SKU
     * user get grand total
     * user verify absence of order constraint strip
 
-    * user click on place order button
     * click on place order button remote order popup
