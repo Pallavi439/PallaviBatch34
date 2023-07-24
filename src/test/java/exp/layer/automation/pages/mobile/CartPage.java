@@ -17,14 +17,11 @@ public class CartPage extends Step {
     public static String ITEMS_COUNT = "//android.view.View[@content-desc='Items %s']";
     public static By EMPTY_CART_TEXT = By.xpath("//android.view.View[@content-desc='Your shopping cart is empty!']");
     public static By CART_BACK_BUTTON = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button");
-
     public static String CART_ICON = "header_cart_key";
     public static String PLACE_ORDER_BUTTON = "order_details_button";
     public static String ADD_MORE_ITEMS_BUTTON = "cart_add_more_item";
-    public static String NEXT_BUTTON = "cart_next_button";
     public static String POP_UP_PLACE_ORDER_BUTTON = "place_order_click_local";
     public static String PLACE_ORDER_REMOTE_BUTTON = "place_order_remote_order";
-    public static String PLACE_ORDER_LOCAL_BUTTON = "place_order_click_local";
     public static String REMOVE_ALL_ITEM_FROM_CART_BUTTON = "cart_show_delete_all_warning_popup";
     public static String EMPTY_CART_POP_UP_YES_BUTTON = "accept_button";
     public static String EMPTY_CART_POP_UP_NO_BUTTON = "reject_button";

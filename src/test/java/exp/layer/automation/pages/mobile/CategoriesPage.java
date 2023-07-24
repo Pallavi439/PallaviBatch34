@@ -29,7 +29,7 @@ public class CategoriesPage extends Step {
             getMobileActions().flutterWaitForVisibility(CATEGORIES_SEARCH);
             getMobileActions().flutterClick(CATEGORIES_SEARCH);
             try {
-                getMobileActions().flutterClick("search_section_business_title");
+                getMobileActions().flutterWaitForVisibility("search_section_business_title");
             }
             catch (Exception ignored){}
             getMobileActions().waitForSeconds(2);
