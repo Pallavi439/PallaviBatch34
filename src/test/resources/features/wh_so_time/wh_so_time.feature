@@ -34,7 +34,7 @@ Feature: WH SO time
       | Marketplace Association | ${association_name} | warehouse | ${warehouse-3} |
     * response status code should be 200
 
-#    * user wait for 60 seconds
+    * user wait for 120 seconds
 
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
@@ -84,7 +84,7 @@ Feature: WH SO time
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_start_time" attribute value should be null
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_end_time" attribute value should be null
 
-    * user wait for 60 seconds
+    * user wait for 120 seconds
 
     * user click on beat button
     * user click on locality and store

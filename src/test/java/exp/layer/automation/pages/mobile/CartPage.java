@@ -81,17 +81,9 @@ public class CartPage extends Step {
     }
 
     public static void placeOrderButton() {
-        getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//android.widget.Button[@content-desc='Place Order']"));
-        List<WebElement> s = getMobileActions().appiumDriver.findElements(By.xpath("//android.view.View"));
-        String grandTotal = s.get(s.size() - 3).getAttribute("content-desc");
-        grandTotal = grandTotal.split("\\.")[0];
-        grandTotal = grandTotal.replaceAll(",", "");
-        grandTotal = AutomationUtils.extractNumbers(grandTotal);
-        System.out.println("GRAND_TOTAL_AMOUNT -> " + grandTotal);
-        AutomationUtils.getTestContext().put("GRAND_TOTAL_AMOUNT", grandTotal);
+        getGrandTotal();
         getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
     }
-
     public static void clickOnRemoteOrderButton() {
         getMobileActions().flutterClick(PLACE_ORDER_REMOTE_BUTTON);
     }
@@ -107,6 +99,7 @@ public class CartPage extends Step {
     }
 
     public static void getGrandTotal() {
+        getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//android.widget.Button[@content-desc='Place Order']"));
         getMobileActions().verifyContextAndSwitchToNativeContext();
         List<WebElement> s = getMobileActions().appiumDriver.findElements(By.xpath("//android.view.View"));
         String grandTotal = s.get(s.size() - 3).getAttribute("content-desc");
