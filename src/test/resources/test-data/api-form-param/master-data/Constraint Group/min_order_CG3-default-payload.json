@@ -6,7 +6,7 @@
   "__unsaved": 1,
   "owner": "pranali.mulay@elastic.run",
   "__run_link_triggers": false,
-  "title": "Automation Min Order CG3",
+  "title": "${Automation Min Order CG}",
   "applicable_only_for_first_order_of_the_day": 0,
   "applicable_only_for_app": 0,
   "soft_constraint": 0,
@@ -66,7 +66,7 @@
       "parentfield": "applicable_for",
       "parenttype": "Constraint Group",
       "idx": 2,
-      "value": "${customer-6-title}",
+      "value": "${customer}",
       "creation": "",
       "modified_by": "pranali.mulay@elastic.run",
       "modified": ""
