@@ -1,4 +1,4 @@
-@wh_so_time @regression1
+@wh_so_time @regression1 @gajender.singh@elastic.run
 
 Feature: WH SO time
 

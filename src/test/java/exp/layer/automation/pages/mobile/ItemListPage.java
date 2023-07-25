@@ -12,11 +12,12 @@ public class ItemListPage extends Step {
     public static final By VIEWS_ANDROID = AppiumBy.accessibilityId("Views");
     public static final By VIEWS_IOS = By.xpath("//*[@name='Views']");
 
-    public static void increaseGivenItemQuantity(String item_name, String item_type, String increase_amount) throws Exception {
+    public static void increaseGivenItemQuantity(String item_name,String item_index, String item_type, String increase_amount) throws Exception {
         item_name = AutomationUtils.replaceTestDataVariable(item_name);
+        item_index=AutomationUtils.replaceTestDataVariable(item_index);
         item_type = AutomationUtils.replaceTestDataVariable(item_type);
         increase_amount = AutomationUtils.replaceTestDataVariable(increase_amount);
-        CategoriesPage.searchItemDetails(item_name);
+        CategoriesPage.searchItemDetails(item_name,item_index);
         int i = Integer.parseInt(increase_amount);
         if (item_type.equalsIgnoreCase("Bag")) {
             for (int j = 0; j < i; j++) {
@@ -36,43 +37,25 @@ public class ItemListPage extends Step {
 
 
     public static void increaseItemQuantity(List<List<String>> item_list) throws Exception {
-        if (item_list.get(0).size() == 1) {
             for (List<String> item_detail : item_list) {
-                increaseGivenItemQuantity(item_detail.get(0),"Piece","1");
-            }
-        } else if (item_list.get(0).size() == 2) {
-            for (List<String> item_detail : item_list) {
-                increaseGivenItemQuantity(item_detail.get(0), item_detail.get(1),"1");
-            }
-        } else {
-            for (List<String> item_detail : item_list) {
-                increaseGivenItemQuantity(item_detail.get(0), item_detail.get(1), item_detail.get(2));
-            }
+                increaseGivenItemQuantity(item_detail.get(0), item_detail.get(1), item_detail.get(2),item_detail.get(3));
         }
     }
 
     public static void decreaseItemQuantity(List<List<String>> item_list) {
-        if (item_list.get(0).size() == 1) {
+
             for (List<String> item_detail : item_list) {
-                decreaseGivenItemQuantity(item_detail.get(0),"Piece","1");
+                decreaseGivenItemQuantity(item_detail.get(0), item_detail.get(1), item_detail.get(2),item_detail.get(3));
             }
-        } else if (item_list.get(0).size() == 2) {
-            for (List<String> item_detail : item_list) {
-                decreaseGivenItemQuantity(item_detail.get(0), item_detail.get(1),"1");
-            }
-        } else {
-            for (List<String> item_detail : item_list) {
-                decreaseGivenItemQuantity(item_detail.get(0), item_detail.get(1), item_detail.get(2));
-            }
-        }
     }
 
-    public static void decreaseGivenItemQuantity(String item_name, String item_type, String decrease_amount) {
+    public static void decreaseGivenItemQuantity(String item_name,String item_index, String item_type, String decrease_amount) {
         item_name = AutomationUtils.replaceTestDataVariable(item_name);
+        item_index = AutomationUtils.replaceTestDataVariable(item_index);
         item_type = AutomationUtils.replaceTestDataVariable(item_type);
         decrease_amount = AutomationUtils.replaceTestDataVariable(decrease_amount);
         item_name = item_name.concat(" @");
-        CategoriesPage.searchItemDetails(item_name);
+        CategoriesPage.searchItemDetails(item_name,item_index);
         int i = Integer.parseInt(decrease_amount);
         if (item_type.equalsIgnoreCase("Bag")) {
             for (int j = 0; j < i; j++) {

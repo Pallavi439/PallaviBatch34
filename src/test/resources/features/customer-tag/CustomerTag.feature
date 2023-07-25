@@ -1,4 +1,4 @@
-@customer_tag_1 @regression1
+@customer_tag_1 @regression1 @gajender.singh@elastic.run
 
 Feature: Customer Tag configuration functionality
 
