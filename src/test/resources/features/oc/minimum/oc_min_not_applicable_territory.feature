@@ -1,4 +1,4 @@
-@oc_nt @pranali.mulay@elastic.run
+@oc_nt @pranali.mulay@elastic.run @oc
 Feature: Order constraint
 
   Scenario: Create Customer tag from document tag doctype
