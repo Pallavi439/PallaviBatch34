@@ -1,4 +1,4 @@
-@oc_min_isnot @pranali.mulay@elastic.run
+@oc_min_isnot @pranali.mulay@elastic.run @oc
 Feature: Min order validation section ISNOT
 
   Scenario Outline: Create Customer tag from document tag doctype
