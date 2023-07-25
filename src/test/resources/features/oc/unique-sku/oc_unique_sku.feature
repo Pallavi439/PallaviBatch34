@@ -1,4 +1,4 @@
-@oc_unique @pranali.mulay@elastic.run
+@oc_unique @pranali.mulay@elastic.run @oc
 Feature: Min no. of unique SKU
 
   Scenario: Create Customer tag from document tag doctype

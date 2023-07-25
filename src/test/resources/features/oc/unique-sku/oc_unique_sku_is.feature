@@ -1,4 +1,4 @@
-@oc_unique_is @pranali.mulay@elastic.run
+@oc_unique_is @pranali.mulay@elastic.run @oc
 Feature: Min unique no of SKU validation section IS
 
   Scenario Outline: Create Customer tag from document tag doctype
