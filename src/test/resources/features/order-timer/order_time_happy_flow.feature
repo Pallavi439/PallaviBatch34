@@ -1,4 +1,4 @@
-@order_time_happy @regression1
+@order_time_happy @regression1 @gajender.singh@elastic.run
 
 Feature: Happy flow for order time by placing order with specific time
 
@@ -30,12 +30,12 @@ Feature: Happy flow for order time by placing order with specific time
       | ${wh2-se1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
-      | ${wh2-sp1.locality} | ${wh2.customer-4-title} |
+      | ${wh2-sp1.locality} | ${wh2-customer-4-title} |
     * user captures store image if available
     * user clicks on take a remote order button
     * user verifies order timer
     * user click on locality and store
-      | ${wh2-sp1.locality} | ${wh2.customer-4-title} |
+      | ${wh2-sp1.locality} | ${wh2-customer-4-title} |
     * user captures store image if available
     * user clicks on take a remote order button
     * user add item to cart
@@ -53,7 +53,7 @@ Feature: Happy flow for order time by placing order with specific time
       | ${wh2-se1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
-      | ${wh2-sp1.locality} | ${wh2.customer-4-title} |
+      | ${wh2-sp1.locality} | ${wh2-customer-4-title} |
     * user captures store image if available
     * user clicks on take a remote order button
     * user add item to cart

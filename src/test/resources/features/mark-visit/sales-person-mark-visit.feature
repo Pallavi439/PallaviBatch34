@@ -1,4 +1,4 @@
-@sales-mark-visit @regression1
+@sales-mark-visit @regression1 @gajender.singh@elastic.run
 
 Feature: User verifies sales person mark visit functionality
 
