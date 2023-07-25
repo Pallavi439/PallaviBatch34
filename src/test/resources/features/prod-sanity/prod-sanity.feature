@@ -9,7 +9,7 @@ Feature: Cash order placement for single item and multiple uom
     * user click on locality and store
       | ${PROD_LOCALITY_1} | ${PROD_STORE_1} |
     * user clicks on take a remote order button
-    * user for visibility of catalogue
+    * user wait for visibility of catalogue
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Ayurved Akash Soap @ 50          | 0 | Piece | ${NUMBER-1-5} |

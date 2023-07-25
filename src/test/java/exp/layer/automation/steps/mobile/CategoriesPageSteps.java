@@ -11,7 +11,7 @@ public class CategoriesPageSteps {
         CategoriesPage.addItemToCart(item_list);
     }
 
-    @Given("{word} for visibility of catalogue")
+    @Given("{word} wait for visibility of catalogue")
     public void wait_for_visibility_of_catalogue(String word) {
         CategoriesPage.waitForVisibilityOfCatalogue();
     }
