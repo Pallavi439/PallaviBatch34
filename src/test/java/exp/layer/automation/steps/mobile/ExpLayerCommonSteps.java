@@ -48,6 +48,10 @@ public class ExpLayerCommonSteps {
     public void take_a_remote_order(String word) throws Exception {
         StorePage.clickOnRemoteOrderButton();
     }
+    @Given("{word} clicks on retry location capture button")
+    public void retry_location_capture(String word){
+        StorePage.retryLocationCapture();
+    }
 
     @Given("{word} add one random item to cart")
     public void add_random_category_item_cart(String word) throws Exception {

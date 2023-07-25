@@ -1,4 +1,4 @@
-@add_to_cart @regression1
+@add_to_cart @regression1 @gajender.singh@elastic.run
 Feature: Add items to cart flow
 
   Scenario: User add multiple items, increase and decrease their quantity
@@ -20,7 +20,7 @@ Feature: Add items to cart flow
       | Automation-Category-1        | ${NUMBER-1-5} | Piece | 3 |
       | Automation-Test-Item-Name-17 | 0             | Case  | 5 |
     * user increase item quantity
-      | Automation-Test-Item-Name-17 | Case | ${NUMBER-5-10} |
+      | Automation-Test-Item-Name-17 | 0 | Case | ${NUMBER-5-10} |
     * user decrease item quantity
-      | Automation-Test-Item-Name-17 | Case |
+      | Automation-Test-Item-Name-17 | 0 | Case | 1 |
     * user place remote order

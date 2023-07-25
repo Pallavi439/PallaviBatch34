@@ -83,6 +83,10 @@ public class StorePage extends Step {
         getMobileActions().flutterClick(REMOTE_ORDER_BUTTON);
     }
 
+    public static void retryLocationCapture(){
+        getMobileActions().flutterClick(RETRY_LOCATION_CAPTURE_BUTTON);
+    }
+
     public static void clickOnTakeOrderButton() {
         getMobileActions().flutterClick(TAKE_ORDER_BUTTON);
     }
