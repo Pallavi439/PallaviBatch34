@@ -63,6 +63,7 @@ public class CategoriesPage extends Step {
             getMobileActions().flutterClick(BOTTOM_CART_ICON);
             if (list.size() - 1 != i) {
                 getMobileActions().flutterClick(CartPage.ADD_MORE_ITEMS_BUTTON);
+                getMobileActions().waitForSeconds(1);
             }
         }
     }
