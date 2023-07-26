@@ -25,7 +25,6 @@ public class CategoriesPage extends Step {
     public static String ITEM_SEARCH_BOX = "search_er_input_box";
     public static String CLICK_ITEM_INDEX = "search_item_click_list_tile_%s";
     public static String CATEGORY = "category_%s";
-    static Logger log = LogManager.getLogger(CategoriesPage.class);
 
     public static void waitForVisibilityOfCatalogue() {
         getMobileActions().flutterWaitForVisibility(String.format(CATEGORY, 0));
