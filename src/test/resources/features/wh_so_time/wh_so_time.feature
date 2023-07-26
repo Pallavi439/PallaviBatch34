@@ -4,15 +4,17 @@ Feature: WH SO time
 
   Scenario Outline: Validate WH SO Start Time: <StartTime> and End Time: <EndTime>
 
+    * user generate random value "${warehouse-3}" and store into session "warehouse_id"
+
     * user login to application by api
       | ${with-run-username} | ${with-run-password} |
 
     * User set value by frappe client set value api with filters and fieldname
-      | Warehouse | ${warehouse-3} | sales_order_start_time | <StartTime> |
+      | Warehouse | ${warehouse_id} | sales_order_start_time | <StartTime> |
     And response status code should be 200
 
     * User set value by frappe client set value api with filters and fieldname
-      | Warehouse | ${warehouse-3} | sales_order_end_time | <EndTime> |
+      | Warehouse | ${warehouse_id} | sales_order_end_time | <EndTime> |
     And response status code should be 200
 
     And user refresh the cache
@@ -26,18 +28,18 @@ Feature: WH SO time
     * user verifies response attribute "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_end_time" value should be "<EndTime>"
 
     * user get details by frappe client get api with filters
-      | Marketplace Association | {"warehouse":"${warehouse-3}"} |
+      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
     * response status code should be 200
     * get response "message.name" string attribute and store into session "association_name"
 
     * User set value by frappe client set value api with filters and fieldname
-      | Marketplace Association | ${association_name} | warehouse | ${warehouse-3} |
+      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
     * response status code should be 200
 
-    * user wait for 120 seconds
+    * user wait for 60 seconds
 
     * user login to the experience layer sales app with valid details
-      | ${wh2-se1} | ${common-password} |
+      | ${wh3-se1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
       | ${wh3-sp1.locality} | ${wh3-customer-1-title} |
@@ -68,11 +70,11 @@ Feature: WH SO time
       | ${with-run-username} | ${with-run-password} |
 
     * User set value by frappe client set value api with filters and fieldname
-      | Warehouse | ${warehouse-3} | sales_order_start_time | <StartTime> |
+      | Warehouse | ${warehouse_id} | sales_order_start_time | <StartTime> |
     And response status code should be 200
 
     * User set value by frappe client set value api with filters and fieldname
-      | Warehouse | ${warehouse-3} | sales_order_end_time | <EndTime> |
+      | Warehouse | ${warehouse_id} | sales_order_end_time | <EndTime> |
     And response status code should be 200
 
     And user refresh the cache
@@ -80,11 +82,19 @@ Feature: WH SO time
 
 #    verify start and end time by api
     * user hit get_beat api and get time
-      | ${wh3-sales-person-1-username} | ${wh3-sales-person-1-password} | ${warehouse-3} |
+      | ${wh3-sales-person-1-username} | ${wh3-sales-person-1-password} | ${warehouse_id} |
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_start_time" attribute value should be null
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_end_time" attribute value should be null
 
-    * user wait for 120 seconds
+    * user get details by frappe client get api with filters
+      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
+    * get response "message.name" string attribute and store into session "association_name"
+
+    * user set value by frappe client set value api with filters and fieldname
+      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
+    * response status code should be 200
+
+    * user wait for 60 seconds
 
     * user click on beat button
     * user click on locality and store
