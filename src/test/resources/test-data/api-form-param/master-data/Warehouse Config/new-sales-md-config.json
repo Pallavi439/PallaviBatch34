@@ -1,0 +1,16 @@
+{
+  "docstatus": 0,
+  "doctype": "Warehouse Config",
+  "name": "New Warehouse Config 1",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "automation.system.user@elastic.run",
+  "__run_link_triggers": false,
+  "warehouse": "${warehouse_id}",
+  "config_name": "${conf_name}",
+  "config_data": "0",
+  "creation": "",
+  "modified_by": "automation.system.user@elastic.run",
+  "modified": "",
+  "idx": null
+}

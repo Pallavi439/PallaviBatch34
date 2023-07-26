@@ -14,10 +14,6 @@ Feature: User verifies sales person mark visit functionality
       | ${wh2-customer-5-title} | ${NUMBER-0-7} |
     * user wait for 10 seconds
 
-    Scenario: Resets sales person geolocation
-      * user sets mobile geolocation
-        | 98.6011408 | 13.7807528 |
-
   Scenario: Verify Visit log in experience layer
     * user generate random value " " and store into session "cookie"
 

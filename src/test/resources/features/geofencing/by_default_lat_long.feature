@@ -6,7 +6,7 @@ Feature: When all config regarding geofencing are not available in the warehouse
       | ${with-run-username} | ${with-run-password} |
     * response status code should be 200
     * user get and delete record if available
-      | Location Geofencing | {"link_name":"AUTOMATION-WH-5-LOCALITY-4 - 411028"} |
+      | Location Geofencing | {"link_name":"${wh5-sp4.locality}"} |
       | Location Geofencing | ${name}                                             |
 
   Scenario: Delete Territory Geofencing

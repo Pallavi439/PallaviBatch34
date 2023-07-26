@@ -5,16 +5,16 @@ Feature: Happy flow for order time by placing order with specific time
   Scenario: Set warehouse config name
     * user login to application by api
       | ${with-run-username} | ${with-run-password} |
-  # doctype name
+
+    * user generate random value "MIN_ORDER_TIME_IN_MINS" and store into session "conf_name"
+
     * user create "Warehouse Config Name" by api
-    #field name # name for filter
       | config_name | MIN_ORDER_TIME_IN_MINS | /default-payload.json |
 
-    * user generate random value "${Warehouse Config Name.name}" and store into session "wh_config_name"
-
   Scenario: Set warehouse config
+    * user generate random value "${warehouse-2}" and store into session "warehouse_id"
     * user create "Warehouse Config" by api
-      | NA | {"warehouse":"${warehouse-2}","config_name":"${wh_config_name}"} | /default-payload.json |
+      | NA | {"warehouse":"${warehouse_id}","config_name":"${conf_name}"} | /new-sales-md-config.json |
     * user generate random value "${Warehouse Config.name}" and store into session "wh_config"
 
   Scenario: Set Timer to 2
@@ -22,7 +22,15 @@ Feature: Happy flow for order time by placing order with specific time
     * User set value by frappe client set value api with filters and fieldname
       | Warehouse Config | ${wh_config} | config_data | 2 |
 
-    * user wait for 120 seconds
+    * user get details by frappe client get api with filters
+      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
+    * get response "message.name" string attribute and store into session "association_name"
+
+    * user set value by frappe client set value api with filters and fieldname
+      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
+    * response status code should be 200
+
+    * user wait for 60 seconds
 
   Scenario: Verify order time and order placement from app side for 1st order
 
@@ -47,6 +55,7 @@ Feature: Happy flow for order time by placing order with specific time
     * user wait for 120 seconds on cart page
     * user place remote order
 
+
   Scenario: Verify order time and order placement from app side for 2nd order
 
     * user login to the experience layer sales app with valid details
@@ -66,11 +75,22 @@ Feature: Happy flow for order time by placing order with specific time
 
   Scenario: Set warehouse config
     * user create "Warehouse Config" by api
-      | NA | {"warehouse":"${warehouse-2}","config_name":"${wh_config_name}"} | /default-payload.json |
+      | NA | {"warehouse":"${warehouse_id}","config_name":"${conf_name}"} | /new-sales-md-config.json |
     * user generate random value "${Warehouse Config.name}" and store into session "wh_config"
+
 
   Scenario: Set Timer to 0
 
     * User set value by frappe client set value api with filters and fieldname
       | Warehouse Config | ${wh_config} | config_data | 0 |
-    * user wait for 120 seconds
+
+    * user get details by frappe client get api with filters
+      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
+
+    * get response "message.name" string attribute and store into session "association_name"
+
+    * user set value by frappe client set value api with filters and fieldname
+      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
+    * response status code should be 200
+
+    * user wait for 60 seconds
