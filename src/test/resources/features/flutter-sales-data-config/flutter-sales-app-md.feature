@@ -1,4 +1,4 @@
-@new-sales-md
+@new-sales-md @gajender.singh@elastic.run
 
 Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new flutter sales app.
 
