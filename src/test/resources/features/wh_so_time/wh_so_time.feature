@@ -105,8 +105,8 @@ Feature: WH SO time
     * user captures store image
     * user clicks on take a remote order button
     * user add item to cart
-      | Automation-Category-2       | Bag  | 7  |
-      | Automation-Test-Item-Name-1 | Case | 10 |
+      | Automation-Category-2       |${NUMBER-1-5} |Bag  | 7  |
+      | Automation-Test-Item-Name-1 | 0|Case | 10 |
     * user place remote order
 
     Examples:
