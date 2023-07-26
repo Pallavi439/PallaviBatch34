@@ -48,6 +48,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
     Examples:
       | customer name           | customer locality   |
       | ${wh2-customer-1-title} | ${wh2-sp1.locality} |
+      | ${wh2-customer-3-title} | ${wh2-sp1.locality} |
       | ${wh2-customer-4-title} | ${wh2-sp1.locality} |
       | ${wh2-customer-5-title} | ${wh2-sp1.locality} |
       | ${wh3-customer-1-title} | ${wh3-sp1.locality} |
@@ -74,6 +75,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
     Examples:
       | customer name           | customer locality   |
       | ${wh2-customer-1-title} | ${wh2-sp1.locality} |
+      | ${wh2-customer-3-title} | ${wh2-sp1.locality} |
       | ${wh2-customer-4-title} | ${wh2-sp1.locality} |
       | ${wh2-customer-5-title} | ${wh2-sp1.locality} |
       | ${wh3-customer-1-title} | ${wh3-sp1.locality} |

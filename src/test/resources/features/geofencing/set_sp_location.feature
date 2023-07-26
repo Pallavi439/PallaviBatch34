@@ -17,7 +17,7 @@ Feature:Changing sp location at store location page
 
     * user wait for 10 seconds
     * user clicks on retry location capture button
-    * user click on take order button
+#    * user click on take order button
     * user add item to cart
       | Automation-Category-2 | ${NUMBER-1-5} | Bag | ${NUMBER-5-10} |
       | Automation-Category-3 | ${NUMBER-1-5} | Bag | ${NUMBER-5-10} |

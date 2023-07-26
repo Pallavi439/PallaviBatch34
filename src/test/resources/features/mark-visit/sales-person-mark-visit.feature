@@ -42,5 +42,5 @@ Feature: User verifies sales person mark visit functionality
     * user get "${wh2-customer-5-title}" customer details by api
 
     * user retries and get details by frappe client get api with filters
-      | Visit Log | {"reason":"${mark_visit_reason}":"${wh2-sales-person-1-name}","visit_date":"${DATE-yyyy-MM-dd}","outlet_name":"${customer_id}"} |
+      | Visit Log | {"reason":"${mark_visit_reason}","sales_person":"${wh2-sales-person-1-name}","visit_date":"${DATE-yyyy-MM-dd}","outlet_name":"${customer_id}"} |
     * response status code should be 200

@@ -96,6 +96,9 @@ Feature: WH SO time
 
     * user wait for 60 seconds
 
+    * user login to the experience layer sales app with valid details
+      | ${wh3-se1} | ${common-password} |
+    * user wait for 5 seconds
     * user click on beat button
     * user click on locality and store
       | ${wh3-sp1.locality} | ${wh3-customer-1-title} |
