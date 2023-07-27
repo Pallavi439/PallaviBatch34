@@ -46,7 +46,7 @@ public class CategoriesPage extends Step {
             getMobileActions().flutterClick("search_item_click_list_tile_" + data.get(1));
             int index;
             getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_ADD_BUTTON,0,0));
-            saveItemDetails();
+            //saveItemDetails();
             if (data.get(2).equalsIgnoreCase("Piece")) {
                 index = 0;
                 getMobileActions().flutterClick(String.format(PRODUCT_CART_ADD_BUTTON, 0, index));

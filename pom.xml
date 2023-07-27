@@ -20,7 +20,7 @@
 
     <properties>
         <mobile.os>android</mobile.os>
-        <desktop.browser>chrome</desktop.browser>
+
         <mobile.app.prod.package>run.er.ecom.assist</mobile.app.prod.package>
         <mobile.app.package>run.er.ecom.assist.dev</mobile.app.package>
         <mobile.app.activity>run.er.ecom.assist.MainActivity</mobile.app.activity>
