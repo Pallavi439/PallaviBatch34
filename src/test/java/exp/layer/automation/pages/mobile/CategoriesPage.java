@@ -83,7 +83,7 @@ public class CategoriesPage extends Step {
     public static void searchItemDetails(String itemDetails,String item_index){
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::android.widget.Button"));
         searchItem(itemDetails);
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().flutterClick(String.format(CLICK_ITEM_INDEX,item_index));
     }
 

@@ -37,15 +37,15 @@ public class StorePage extends Step {
 
     public static void clickOnStore() {
         getMobileActions().flutterClick(CLICK_STORE);
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
     }
 
     public static void searchStore(String storeName) {
         storeName = AutomationUtils.getTestData(storeName);
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().flutterClick(STORE_SEARCH);
         getMobileActions().type(storeName, By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
     }
 
     public static void informCUSTOMER() {
@@ -99,9 +99,9 @@ public class StorePage extends Step {
         getMarkVisitReason(reason);
         getMobileActions().performScroll();
         getMobileActions().flutterType(MARK_VISIT_TEXT_FIELD, AutomationUtils.getTestData("${mark_visit_reason}"));
-        getUiActions().waitForSeconds(10);
+        getMobileActions().waitForSeconds(10);
         getMobileActions().flutterClick(MARK_VISIT_SUBMIT_BUTTON);
-        getUiActions().waitForSeconds(5);
+        getMobileActions().waitForSeconds(5);
     }
 
     public static void getMarkVisitReason(String reason) {

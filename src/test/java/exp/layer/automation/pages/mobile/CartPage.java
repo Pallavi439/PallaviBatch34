@@ -135,7 +135,7 @@ public class CartPage extends Step {
     public static void verifyPresenceOfMinimumTimeSpent() {
         getMobileActions().flutterWaitForVisibility(MINIMUM_TIME_SPENT_POPUP);
         getMobileActions().flutterClick("reject_button");
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
     }
 
@@ -147,12 +147,11 @@ public class CartPage extends Step {
         while (wait_time != 0) {
             if (wait_time > 50) {
                 wait_time = wait_time - 50;
-                getUiActions().waitForSeconds(47);
+                getMobileActions().waitForSeconds(47);
             } else {
-                getUiActions().waitForSeconds(wait_time);
+                getMobileActions().waitForSeconds(wait_time);
                 wait_time = 0;
             }
-            getMobileActions().flutterClick(CART_NEXT_BUTTON);
             getMobileActions().flutterClick(CART_NEXT_BUTTON);
             getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
         }
