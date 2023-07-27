@@ -46,7 +46,7 @@ public class CategoriesPage extends Step {
             getMobileActions().flutterClick("search_item_click_list_tile_" + data.get(1));
             int index;
             getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_ADD_BUTTON,0,0));
-            //saveItemDetails();
+            saveItemDetails();
             if (data.get(2).equalsIgnoreCase("Piece")) {
                 index = 0;
                 getMobileActions().flutterClick(String.format(PRODUCT_CART_ADD_BUTTON, 0, index));
@@ -123,22 +123,33 @@ public class CategoriesPage extends Step {
 
         String[] item_det = item_details.split("Rate");
 
+        try{
         String[] piece_arr = item_det[1].split("\n");
         String piece = piece_arr[1].replace(" ", "").replace("₹", "");
         System.out.println("piece price is " + piece);
-        AutomationUtils.getTestContext().put(item_name + "_piece", piece);
+        AutomationUtils.getTestContext().put(item_name + "_piece", piece);}
+        catch (Exception ignore){
+            System.out.println("piece price not found");
+        }
 
+        try {
         String bag = item_det[1].split("Bag")[1];
         bag = bag.split("\n")[1];
         bag = bag.replace(" ", "").replace("₹", "");
         System.out.println("price of bag is " + bag);
-        AutomationUtils.getTestContext().put(item_name + "_bag", bag);
-
+        AutomationUtils.getTestContext().put(item_name + "_bag", bag);}
+        catch (Exception ignore){
+            System.out.println("bag price not found");
+        }
+        try {
         String case_detail = item_det[2].split("Case")[1];
         case_detail = case_detail.split("\n")[1];
         case_detail = case_detail.replace(" ", "").replace("₹", "");
         System.out.println("case price is " + case_detail);
-        AutomationUtils.getTestContext().put(item_name + "_case", case_detail);
+        AutomationUtils.getTestContext().put(item_name + "_case", case_detail);}
+        catch (Exception ignore){
+            System.out.println("case price not found");
+        }
 
     }
 }
