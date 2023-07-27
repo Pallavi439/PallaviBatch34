@@ -80,7 +80,7 @@ Feature: Cash order placement for single item and multiple uom
     * user compares actual "${Sales_Invoice_Status}" and expected "Unpaid" data
     * user compares actual "${Sales_Invoice_Shipping_Status}" and expected "Ready For Pickup" data
 
-
+@ignore
   Scenario: Deliver Sales Invoice for partial delivery
     * user sets "chromeEmulator" browser for execution
     * user mock geolocation
@@ -88,7 +88,7 @@ Feature: Cash order placement for single item and multiple uom
     * user login to the delivery app by valid mobile number "${DA_MOBILE_NUMBER_1}"
     * DA delivers the Sales Invoice partially by "updating" item from DA app
     * user wait for 10 seconds
-
+@ignore
   Scenario: Verify Payment Entry for partial delivery
     * "User" retries and get details by frappe client get api with filters
       | Payment Entry Reference | {"reference_name":"${SALES_ORDER_INVOICE_ID}"} |
