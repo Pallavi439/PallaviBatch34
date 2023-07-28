@@ -45,7 +45,7 @@ public class CategoriesPage extends Step {
             getMobileActions().waitForSeconds(2);
             getMobileActions().flutterClick("search_item_click_list_tile_" + data.get(1));
             int index;
-            getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_ADD_BUTTON,0,0));
+            getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_ADD_BUTTON, 0, 0));
             saveItemDetails();
             if (data.get(2).equalsIgnoreCase("Piece")) {
                 index = 0;
@@ -78,13 +78,14 @@ public class CategoriesPage extends Step {
     }
 
     public static void searchItemDetails(String itemDetails) {
-        searchItemDetails(itemDetails,"0");
+        searchItemDetails(itemDetails, "0");
     }
-    public static void searchItemDetails(String itemDetails,String item_index){
+
+    public static void searchItemDetails(String itemDetails, String item_index) {
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::android.widget.Button"));
         searchItem(itemDetails);
         getMobileActions().waitForSeconds(2);
-        getMobileActions().flutterClick(String.format(CLICK_ITEM_INDEX,item_index));
+        getMobileActions().flutterClick(String.format(CLICK_ITEM_INDEX, item_index));
     }
 
     public static void searchItem(String itemDetails) {
@@ -115,41 +116,45 @@ public class CategoriesPage extends Step {
     }
 
     public static void saveItemDetails() {
-        getMobileActions().verifyContextAndSwitchToNativeContext();
-        List<WebElement> s = getMobileActions().appiumDriver.findElements(By.xpath("//*[contains(@content-desc,'Automation-Test-Item')]"));
-        String item_details = s.get(0).getAttribute("content-desc");
-        String item_name = item_details.split("\n")[0];
-        System.out.println("item name is " + item_name);
-
-        String[] item_det = item_details.split("Rate");
-
-        try{
-        String[] piece_arr = item_det[1].split("\n");
-        String piece = piece_arr[1].replace(" ", "").replace("₹", "");
-        System.out.println("piece price is " + piece);
-        AutomationUtils.getTestContext().put(item_name + "_piece", piece);}
-        catch (Exception ignore){
-            System.out.println("piece price not found");
-        }
-
         try {
-        String bag = item_det[1].split("Bag")[1];
-        bag = bag.split("\n")[1];
-        bag = bag.replace(" ", "").replace("₹", "");
-        System.out.println("price of bag is " + bag);
-        AutomationUtils.getTestContext().put(item_name + "_bag", bag);}
-        catch (Exception ignore){
-            System.out.println("bag price not found");
-        }
-        try {
-        String case_detail = item_det[2].split("Case")[1];
-        case_detail = case_detail.split("\n")[1];
-        case_detail = case_detail.replace(" ", "").replace("₹", "");
-        System.out.println("case price is " + case_detail);
-        AutomationUtils.getTestContext().put(item_name + "_case", case_detail);}
-        catch (Exception ignore){
-            System.out.println("case price not found");
-        }
+            getMobileActions().verifyContextAndSwitchToNativeContext();
+            List<WebElement> s = getMobileActions().appiumDriver.findElements(By.xpath("//*[contains(@content-desc,'Automation-Test-Item')]"));
+            String item_details = s.get(0).getAttribute("content-desc");
+            String item_name = item_details.split("\n")[0];
+            System.out.println("item name is " + item_name);
 
+            String[] item_det = item_details.split("Rate");
+
+            try {
+                String[] piece_arr = item_det[1].split("\n");
+                String piece = piece_arr[1].replace(" ", "").replace("₹", "");
+                System.out.println("piece price is " + piece);
+                AutomationUtils.getTestContext().put(item_name + "_piece", piece);
+            } catch (Exception ignore) {
+                System.out.println("piece price not found");
+            }
+
+            try {
+                String bag = item_det[1].split("Bag")[1];
+                bag = bag.split("\n")[1];
+                bag = bag.replace(" ", "").replace("₹", "");
+                System.out.println("price of bag is " + bag);
+                AutomationUtils.getTestContext().put(item_name + "_bag", bag);
+            } catch (Exception ignore) {
+                System.out.println("bag price not found");
+            }
+            try {
+                String case_detail = item_det[2].split("Case")[1];
+                case_detail = case_detail.split("\n")[1];
+                case_detail = case_detail.replace(" ", "").replace("₹", "");
+                System.out.println("case price is " + case_detail);
+                AutomationUtils.getTestContext().put(item_name + "_case", case_detail);
+            } catch (Exception ignore) {
+                System.out.println("case price not found");
+            }
+
+        } catch (Exception ignore) {
+
+        }
     }
 }

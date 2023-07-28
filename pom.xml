@@ -27,12 +27,12 @@
         <mobile.uuid>emulator-5554</mobile.uuid>
         <test.env>$(test.env)</test.env>
         <tags>$(tags)</tags>
-        <remote.execution>$(remote.execution)</remote.execution>
-        <parallel.test.count>$(parallel.test.count)</parallel.test.count>
+        <remote.execution>true</remote.execution>
+        <parallel.test.count></parallel.test.count>
+        <submodule.name></submodule.name>
         <mobile.app.noReset>false</mobile.app.noReset>
         <parallelScheme>FEATURE</parallelScheme>
         <token>ciqojtuexayhzhqg</token>
-        <submodule.name>flutter</submodule.name>
         <!--suppress UnresolvedMavenProperty -->
         <email.sentToList>qa_auto_mates@elastic.run</email.sentToList>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
