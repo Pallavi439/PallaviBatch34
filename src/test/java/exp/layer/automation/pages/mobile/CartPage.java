@@ -33,6 +33,7 @@ public class CartPage extends Step {
     public static String REJECT_BUTTON = "reject_button";
     public static String CART_SHOP_NOW_BUTTON = "er_info_screen_primary_button";
     public static String REMOVE_INDEX1_ITEM = "cart_item_list_er_item_card_1";
+    public static String DECREMENT_BUTTON = "cart_item_1_decrement_button_0";
 
 
     public static void removeAllItemFromCartIfAvailable() {
@@ -44,6 +45,7 @@ public class CartPage extends Step {
             getMobileActions().flutterClick(CART_SHOP_NOW_BUTTON);
         }
     }
+
     //remote order
     public static void placeRemoteOrder() {
         clickOnNextButton();
@@ -79,6 +81,7 @@ public class CartPage extends Step {
         getGrandTotal();
         getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
     }
+
     public static void clickOnRemoteOrderButton() {
         getMobileActions().flutterClick(PLACE_ORDER_REMOTE_BUTTON);
     }
@@ -108,6 +111,7 @@ public class CartPage extends Step {
     public static void clickOnPlaceOrderButtonRemoteOrderPopup() {
         getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
         getMobileActions().flutterClick(PLACE_ORDER_REMOTE_BUTTON);
+        getMobileActions().flutterWaitForVisibility(StorePage.CLICK_STORE);
     }
 
     public static void clickOnAddMoreItemButtonFromCartPage() {
@@ -157,5 +161,10 @@ public class CartPage extends Step {
             getMobileActions().flutterClick(CART_NEXT_BUTTON);
             getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
         }
+    }
+
+    public static void decrementItemQtyFromCartPage() {
+        getMobileActions().performScroll();
+        getMobileActions().flutterClick(DECREMENT_BUTTON);
     }
 }
