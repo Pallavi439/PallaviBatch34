@@ -27,15 +27,6 @@ Feature: WH SO time
     * user verifies response attribute "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_start_time" value should be "<StartTime>"
     * user verifies response attribute "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_end_time" value should be "<EndTime>"
 
-    * user get details by frappe client get api with filters
-      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
-    * response status code should be 200
-    * get response "message.name" string attribute and store into session "association_name"
-
-    * User set value by frappe client set value api with filters and fieldname
-      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
-    * response status code should be 200
-
     * user wait for 60 seconds
 
     * user login to the experience layer sales app with valid details
@@ -85,14 +76,6 @@ Feature: WH SO time
       | ${wh3-sales-person-1-username} | ${wh3-sales-person-1-password} | ${warehouse_id} |
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_start_time" attribute value should be null
     * user verifies response "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_end_time" attribute value should be null
-
-    * user get details by frappe client get api with filters
-      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
-    * get response "message.name" string attribute and store into session "association_name"
-
-    * user set value by frappe client set value api with filters and fieldname
-      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
-    * response status code should be 200
 
     * user wait for 60 seconds
 
