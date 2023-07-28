@@ -32,4 +32,18 @@ public class StoreAndLocalitySteps {
     public static void verify_absence_of_silver_outlet_tag(String word){
         StorePage.absenceOfSilverOutletTag();
     }
+
+    @Given("{word} verifies store card icons visibility")
+    public static void verify_presence_of_store_card_icons(String word){
+        StorePage.verifyPresenceOfStoreCardIcons();
+    }
+
+    @Given("{word} verifies store direction icon")
+    public static void verify_store_direction_icon(String word){
+        StorePage.verifyStoreDirectionIcon();
+    }
+    @Given("{word} verifies store call icon")
+    public static void verify_store_call_icon(String word){
+        StorePage.verifyStoreCallIcon();
+    }
 }

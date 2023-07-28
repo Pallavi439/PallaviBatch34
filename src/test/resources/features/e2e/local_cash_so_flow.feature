@@ -17,10 +17,6 @@ Feature: E2E Local Cash Flow
       | Automation-Test-Item-Name-17 | 0 | Bag | ${NUMBER-5-10} |
     * user place order with local
 
-  Scenario: Resets sales person geolocation
-    * user sets mobile geolocation
-      | 98.6011408 | 13.7807528 |
-
   Scenario: Get Quotation Log in exp Layer
     * user generate random value " " and store into session "cookie"
     * user set api headers

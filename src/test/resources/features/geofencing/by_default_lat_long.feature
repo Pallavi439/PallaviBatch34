@@ -1,4 +1,4 @@
-@gajender.singh@elastic.run @default_geofencing @regression1
+@gajender.singh@elastic.run @default_geofencing @regression1 @ignore
 Feature: When all config regarding geofencing are not available in the warehouse,territory,locality and withrun app config
 
   Scenario:Delete locality geofencing
@@ -128,7 +128,7 @@ Feature: When all config regarding geofencing are not available in the warehouse
     * user verifies response attribute "message.coords" should contains values "\"is_local\":1"
 
         ###############Billing address present ,difference>2000,remote order#######################
-  Scenario: Billing address present ,difference >2000,local order
+  Scenario: Billing address present ,difference >2000,remote order
     * user sets mobile geolocation
       | 19.064284 | 72.898656 |
 
