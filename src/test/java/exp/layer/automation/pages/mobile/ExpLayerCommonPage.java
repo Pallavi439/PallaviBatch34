@@ -33,7 +33,7 @@ public class ExpLayerCommonPage extends Step {
 
     public static void verifyOrderTimer() {
         getMobileActions().verifyVisibilityOfWebElement(By.xpath("//*[contains(@content-desc,'01')]"));
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("(//*[contains(@content-desc,'Categories')]/preceding-sibling::*)[1]"));
         getMobileActions().waitForSeconds(2);
         getMobileActions().waitForSeconds(20);
@@ -43,7 +43,7 @@ public class ExpLayerCommonPage extends Step {
         getMobileActions().waitForSeconds(20);
         getMobileActions().verifyVisibilityOfWebElement(By.xpath("//*[contains(@content-desc,'01')]"));
         getMobileActions().flutterClick("beat_plan_search_back");
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
     }
 
     public static void captureImage() {
@@ -59,11 +59,11 @@ public class ExpLayerCommonPage extends Step {
     public static void logOut() {
         getMobileActions().flutterWaitForVisibility(HAMBURGER_MENU_BUTTON);
         getMobileActions().flutterClick(HAMBURGER_MENU_BUTTON);
-        getUiActions().waitForSeconds(3);
+        getMobileActions().waitForSeconds(3);
         getMobileActions().click(AppiumBy.accessibilityId("Logout"));
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[@content-desc='Yes']"));
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().flutterWaitForVisibility(LoginPage.DEV_LOGIN_ER_LOGO);
     }
 

@@ -9,6 +9,7 @@ Feature: Cash order placement for single item and multiple uom
       | ${PROD_LOCALITY_1} | ${PROD_STORE_1} |
     * user clicks on take a remote order button
     * user wait for visibility of catalogue
+
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Ayurved Akash Soap @ 50          | 0 | Piece | ${NUMBER-1-5} |
@@ -16,9 +17,12 @@ Feature: Cash order placement for single item and multiple uom
       | Nisha Brown Mehendi @100         | 0 | Piece | ${NUMBER-1-5} |
       | Ujala Supreme Fabric Whitener @8 | 0 | Piece | ${NUMBER-1-5} |
       | Santoor Talcum Powder @10        | 0 | Piece | ${NUMBER-1-5} |
-    * user click on cart next button
-    * user click on place order button
-    * user click on cart local place order button
+#      | Cadbury Halls @112             | 0 | Piece | ${NUMBER-1-5} |
+#      | Mortein Air @94                | 0 | Piece | ${NUMBER-1-5} |
+#      | Mortein Natural Coil @ 26      | 0 | Piece | ${NUMBER-1-5} |
+#      | Maxo Coil @ 27                 | 0 | Piece | ${NUMBER-1-5} |
+#      | Lokmangal Coriander Powder @60 | 0 | Piece | ${NUMBER-1-5} |
+    * user place remote order
 
   Scenario: Verify sales order Quotation
     * user wait for 10 seconds
@@ -75,3 +79,27 @@ Feature: Cash order placement for single item and multiple uom
     * get response "message.shipping_status" string attribute and store into session "Sales_Invoice_Shipping_Status"
     * user compares actual "${Sales_Invoice_Status}" and expected "Unpaid" data
     * user compares actual "${Sales_Invoice_Shipping_Status}" and expected "Ready For Pickup" data
+
+@ignore
+  Scenario: Deliver Sales Invoice for partial delivery
+    * user sets "chromeEmulator" browser for execution
+    * user mock geolocation
+      | -4.448784 | -171.24832 | 10 |
+    * user login to the delivery app by valid mobile number "${DA_MOBILE_NUMBER_1}"
+    * DA delivers the Sales Invoice partially by "updating" item from DA app
+    * user wait for 10 seconds
+@ignore
+  Scenario: Verify Payment Entry for partial delivery
+    * "User" retries and get details by frappe client get api with filters
+      | Payment Entry Reference | {"reference_name":"${SALES_ORDER_INVOICE_ID}"} |
+    * response status code should be 200
+    * get response "message.parent" string attribute and store into session "Payment_Entry_ID"
+
+    * "User" retries and get details by frappe client get api with filters
+      | Payment Entry | {"name":"${Payment_Entry_ID}"} |
+    * response status code should be 200
+    * get response "message.cash_status" string attribute and store into session "Cash_Status"
+    * user compares actual "${Cash_Status}" and expected "With Associate" data
+
+  Scenario: close emulator
+    * user sets "" browser for execution

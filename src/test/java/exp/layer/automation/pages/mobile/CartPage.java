@@ -15,7 +15,6 @@ public class CartPage extends Step {
     static Logger log = LogManager.getLogger(CartPage.class);
 
     public static String ITEMS_COUNT = "//android.view.View[@content-desc='Items %s']";
-    public static By EMPTY_CART_TEXT = By.xpath("//android.view.View[@content-desc='Your shopping cart is empty!']");
     public static By CART_BACK_BUTTON = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button");
     public static String CART_ICON = "header_cart_key";
     public static String PLACE_ORDER_BUTTON = "order_details_button";
@@ -127,7 +126,7 @@ public class CartPage extends Step {
         getMobileActions().flutterClick(REMOVE_ALL_ITEM_FROM_CART_BUTTON);
         getMobileActions().flutterClick(ACCEPT_BUTTON);
         getMobileActions().waitForSeconds(4);
-        getMobileActions().click(By.xpath("//android.widget.Button[@content-desc='Shop Now']"));
+        getMobileActions().flutterClick(CART_SHOP_NOW_BUTTON);
     }
 
     public static void verifyPresenceOfWarehouseCutoffTime() {
@@ -140,7 +139,7 @@ public class CartPage extends Step {
     public static void verifyPresenceOfMinimumTimeSpent() {
         getMobileActions().flutterWaitForVisibility(MINIMUM_TIME_SPENT_POPUP);
         getMobileActions().flutterClick("reject_button");
-        getUiActions().waitForSeconds(2);
+        getMobileActions().waitForSeconds(2);
         getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
     }
 
@@ -152,12 +151,11 @@ public class CartPage extends Step {
         while (wait_time != 0) {
             if (wait_time > 50) {
                 wait_time = wait_time - 50;
-                getUiActions().waitForSeconds(47);
+                getMobileActions().waitForSeconds(47);
             } else {
-                getUiActions().waitForSeconds(wait_time);
+                getMobileActions().waitForSeconds(wait_time);
                 wait_time = 0;
             }
-            getMobileActions().flutterClick(CART_NEXT_BUTTON);
             getMobileActions().flutterClick(CART_NEXT_BUTTON);
             getMobileActions().click(By.xpath("//*[contains(@content-desc,'Cart')]/preceding-sibling::*"));
         }

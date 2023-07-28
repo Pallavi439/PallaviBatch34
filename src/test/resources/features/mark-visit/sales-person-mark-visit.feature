@@ -1,4 +1,4 @@
-@sales-mark-visit @regression1
+@sales-mark-visit @regression1 @gajender.singh@elastic.run
 
 Feature: User verifies sales person mark visit functionality
 
@@ -13,10 +13,6 @@ Feature: User verifies sales person mark visit functionality
     * user mark visit "${wh2-sp1.locality}" locality store
       | ${wh2-customer-5-title} | ${NUMBER-0-7} |
     * user wait for 10 seconds
-
-    Scenario: Resets sales person geolocation
-      * user sets mobile geolocation
-        | 98.6011408 | 13.7807528 |
 
   Scenario: Verify Visit log in experience layer
     * user generate random value " " and store into session "cookie"
@@ -46,5 +42,5 @@ Feature: User verifies sales person mark visit functionality
     * user get "${wh2-customer-5-title}" customer details by api
 
     * user retries and get details by frappe client get api with filters
-      | Visit Log | {"reason":"${mark_visit_reason}":"${wh2-sales-person-1-name}","visit_date":"${DATE-yyyy-MM-dd}","outlet_name":"${customer_id}"} |
+      | Visit Log | {"reason":"${mark_visit_reason}","sales_person":"${wh2-sales-person-1-name}","visit_date":"${DATE-yyyy-MM-dd}","outlet_name":"${customer_id}"} |
     * response status code should be 200

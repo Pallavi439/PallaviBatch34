@@ -1,0 +1,10 @@
+{
+  "config_name": "${conf_name}",
+  "description": " ",
+  "docstatus": 0,
+  "doctype": "Warehouse Config Name",
+  "name": "New Warehouse Config Name 2",
+  "owner": "pranali.mulay@elastic.run",
+  "__islocal": 1,
+  "__unsaved": 1
+}
