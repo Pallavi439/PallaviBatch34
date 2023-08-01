@@ -27,6 +27,9 @@ Feature: E2E Local Cash Flow
     * get response "message.name" string attribute and store into session "exp_quotation_id"
     * user verifies response attribute "message.owner" value should be "${wh2-sales-person-1-username}"
 
+
+
+
   Scenario: Get Sales Order in exp layer
     * user set api headers
       | Authorization | ${order_api_token} |
