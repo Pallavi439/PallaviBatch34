@@ -15,4 +15,9 @@ public class ItemListPageSteps {
     public void decrease_item_quantity(String word, List<List<String>> item_list) throws Exception {
         ItemListPage.decreaseItemQuantity(item_list);
     }
+
+    @Given("{word} verifies all bottom icons")
+    public void verify_all_bottom_icon(String word){
+        ItemListPage.verifyBottomIcons();
+    }
 }

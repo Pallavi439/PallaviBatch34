@@ -11,6 +11,14 @@ public class ItemListPage extends Step {
 
     public static final By VIEWS_ANDROID = AppiumBy.accessibilityId("Views");
     public static final By VIEWS_IOS = By.xpath("//*[@name='Views']");
+    public static String OFFERS_ICON="offers_icon";
+    public static String OFFERS_STRING="offer_text";
+    public static String BRAND_ICON="brand_icon";
+    public static String BRAND_NAME="Automation-Brand-1";
+    public static String CATEGORY_ICON="category_icon";
+    public static String ALL_ITEMS_ICON="sub_section_widget";
+    public static String CART_ICON="header_cart_key";
+    public static String SHOP_NOW_BUTTON="er_info_screen_primary_button";
 
     public static void increaseGivenItemQuantity(String item_name,String item_index, String item_type, String increase_amount) throws Exception {
         item_name = AutomationUtils.replaceTestDataVariable(item_name);
@@ -71,5 +79,22 @@ public class ItemListPage extends Step {
             }
         }
         CartPage.clickOnCartPageButton();
+    }
+
+    public static void verifyBottomIcons(){
+        getMobileActions().flutterWaitForVisibility(OFFERS_ICON);
+        getMobileActions().flutterClick(OFFERS_ICON);
+        getMobileActions().flutterWaitForVisibility(OFFERS_STRING);
+        getMobileActions().flutterWaitForVisibility(BRAND_ICON);
+        getMobileActions().flutterClick(BRAND_ICON);
+        getMobileActions().flutterWaitForVisibility(BRAND_NAME);
+        getMobileActions().flutterWaitForVisibility(CATEGORY_ICON);
+        getMobileActions().flutterClick(CATEGORY_ICON);
+        getMobileActions().flutterWaitForVisibility(ALL_ITEMS_ICON);
+        getMobileActions().flutterWaitForVisibility(CART_ICON);
+        getMobileActions().flutterClick(CART_ICON);
+        getMobileActions().flutterWaitForVisibility(SHOP_NOW_BUTTON);
+
+
     }
 }

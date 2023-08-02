@@ -3,7 +3,7 @@ Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow
     * user sets mobile geolocation
-      | 18.6011408 | 73.7807528 |
+      | 18.5068726 | 73.9299712 |
 
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
@@ -27,9 +27,6 @@ Feature: E2E Local Cash Flow
     * get response "message.name" string attribute and store into session "exp_quotation_id"
     * user verifies response attribute "message.owner" value should be "${wh2-sales-person-1-username}"
 
-
-
-
   Scenario: Get Sales Order in exp layer
     * user set api headers
       | Authorization | ${order_api_token} |
@@ -51,6 +48,11 @@ Feature: E2E Local Cash Flow
       | Quotation | {"transaction_date": "${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}", "customer_name": "${wh2-customer-1-title}"} |
     * response status code should be 200
     * get response "message.name" string attribute and store into session "Quotation_Id"
+
+  Scenario: Verify visit log in with-run
+    * user retries and get details by frappe client get api with filters
+      | Visit Log | {"ref_docname":"${exp_quotation_id}"} |
+    * response status code should be 200
 
   Scenario: Verify Sales Order in with-run
     * "User" retries and get details by frappe client get api with filters

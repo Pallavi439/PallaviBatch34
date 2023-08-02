@@ -14,7 +14,6 @@ Feature: To verify icons displayed on store cart
     * get response "message.longitude" string attribute and store into session "customer_longitude"
     * get response "message.mobile_no" string attribute and store into session "customer_mobile_no"
 
-    @ignore
   Scenario: To verify Icons displayed on store card.
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
@@ -24,7 +23,6 @@ Feature: To verify icons displayed on store cart
     * user verifies store card icons visibility
     * user wait for 5 seconds
 
-  @ignore
   Scenario: To verify direction icon of store card.
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
