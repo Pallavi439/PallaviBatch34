@@ -192,7 +192,6 @@ Feature: When Location Geofencing is created only for Locality then it will be t
     * user verifies response attribute "message.coords" should contains values "\"is_local\":0"
 
     ###############Shop address present ,difference>800,remote order#######################
-  @somee
   Scenario: Set session data for scenario
     * user generate random value "${wh2-se1}" and store into session "sales_person_mobile"
     * user generate random value "${wh2-sp1.locality}" and store into session "sales_person_locality"
