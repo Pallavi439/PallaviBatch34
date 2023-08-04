@@ -9,6 +9,7 @@ import java.util.List;
 public class LocalityPage extends Step {
 
     public static String LOCALITY = "//*[contains(@content-desc,'%s')]";
+    public static String ORDER_PLACED="store_reason_0";
 
     public static void clickOnLocalityAndCustomer(String locality, String store) {
         clickOnLocality(locality);
@@ -31,5 +32,10 @@ public class LocalityPage extends Step {
             StorePage.captureStoreImageIfAvailable();
             StorePage.markVisitCustomer(mark_visit_store_reason.get(1));
         }
+    }
+
+    public static void verifyVisibilityOfOrderPlacedIcon(String store_name){
+        StorePage.searchStore(store_name);
+        getMobileActions().flutterWaitForVisibility(ORDER_PLACED);
     }
 }

@@ -40,7 +40,7 @@ Feature: Cash order placement for single item and multiple uom
       | experience-layer-order-api | frappe_get_report | Quotation | {"app_source":"ER Sales App","transaction_date":"${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}"} |
     * response status code should be 200
     * get response "message.name" string attribute and store into session "exp_quotation_id"
-    * user verifies response attribute "message.owner" value should be "${wh2-sales-person-1-username}"
+    * user verifies response attribute "message.owner" value should be "${PROD_UAT_SE_NAME_1}"
 
   Scenario: Verify visit log in with-run
     * user retries and get details by frappe client get api with filters
@@ -135,5 +135,6 @@ Feature: Cash order placement for single item and multiple uom
     * get response "message.cash_status" string attribute and store into session "Cash_Status"
     * user compares actual "${Cash_Status}" and expected "With Associate" data
 
+    @ignore
   Scenario: close emulator
     * user sets "" browser for execution

@@ -24,5 +24,6 @@ Feature: Add items to cart flow
     * user decrease item quantity
       | Automation-Test-Item-Name-17 | 0 | Case | 1 |
     * user place remote order
+    * user verify visibility of order placed icon for store "${wh2-customer-1-title}"
     * user goes back to home screen
     * user verify order placement notification

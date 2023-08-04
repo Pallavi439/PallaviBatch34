@@ -46,4 +46,8 @@ public class StoreAndLocalitySteps {
     public static void verify_store_call_icon(String word){
         StorePage.verifyStoreCallIcon();
     }
+    @Given("{word} verify visibility of order placed icon for store {string}")
+    public static void verify_visibility_of_order_placed_icon_for_store(String word, String store_name){
+        LocalityPage.verifyVisibilityOfOrderPlacedIcon(store_name);
+    }
 }
