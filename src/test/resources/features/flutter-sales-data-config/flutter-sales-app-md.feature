@@ -30,6 +30,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh2-sales-person-1-name} | ${wh2-se1}          |
       | ${wh2-sales-person-2-name} | ${wh2-se2}          |
       | ${wh3-sales-person-1-name} | ${wh3-se1}          |
+      | ${wh4-sales-person-1-name} | ${wh4-se1}          |
       | ${wh5-sales-person-1-name} | ${wh5-se1}          |
       | ${wh5-sales-person-4-name} | ${wh5-se4}          |
       | ${wh5-sales-person-6-name} | ${wh5-se6}          |
@@ -52,6 +53,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh2-customer-4-title} | ${wh2-sp1.locality} |
       | ${wh2-customer-5-title} | ${wh2-sp1.locality} |
       | ${wh3-customer-1-title} | ${wh3-sp1.locality} |
+      | ${wh4-customer-1-title} | ${wh4-sp1.locality} |
       | ${wh5-customer-1-title} | ${wh5-sp1.locality} |
       | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
       | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
@@ -79,6 +81,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh2-customer-4-title} | ${wh2-sp1.locality} |
       | ${wh2-customer-5-title} | ${wh2-sp1.locality} |
       | ${wh3-customer-1-title} | ${wh3-sp1.locality} |
+      | ${wh4-customer-1-title} | ${wh4-sp1.locality} |
       | ${wh5-customer-1-title} | ${wh5-sp1.locality} |
       | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
       | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
@@ -106,6 +109,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh2-customer-4-title} | ${wh2-sp1.locality} |
       | ${wh2-customer-5-title} | ${wh2-sp1.locality} |
       | ${wh3-customer-1-title} | ${wh3-sp1.locality} |
+      | ${wh4-customer-1-title} | ${wh4-sp1.locality} |
       | ${wh5-customer-1-title} | ${wh5-sp1.locality} |
       | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
       | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
@@ -155,3 +159,28 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${warehouse-3} |
       | ${warehouse-4} |
       | ${warehouse-5} |
+
+    Scenario Outline: Remove shop address from <customer name>
+      * user generate random value " " and store into session "cookie"
+      * user set api headers
+        | Authorization | ${onboarding_api_token} |
+
+      * user get details by frappe client get api with filters
+        | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"<customer name>"} |
+      * response status code should be 200
+      * get response "message.name" string attribute and store into session "customer_id"
+
+      * user get details by frappe client get api with filters
+        | experience-layer-onboarding-api | frappe_get_report |Address|{"address_title":"${customer_id}","address_type":"shop"}|
+      * response status code should be 200
+      * get response "message.name" string attribute and store into session "customer_shop_add_id"
+
+      * user hit post api call with form param
+        | experience-layer-onboarding-api | frappe_delete          |
+        | doctype                         | Address                |
+        | name                            | ${customer_shop_add_id} |
+      * response status code should be 200
+
+      Examples:
+      |customer name|
+      |${wh2-customer-1-title}|

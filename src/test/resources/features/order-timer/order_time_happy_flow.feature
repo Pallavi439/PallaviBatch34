@@ -22,7 +22,7 @@ Feature: Happy flow for order time by placing order with specific time
     * User set value by frappe client set value api with filters and fieldname
       | Warehouse Config | ${wh_config} | config_data | 2 |
 
-    * user wait for 60 seconds
+    * user wait for 330 seconds
 
   Scenario: Verify order time and order placement from app side for 1st order
 
@@ -75,4 +75,4 @@ Feature: Happy flow for order time by placing order with specific time
     * User set value by frappe client set value api with filters and fieldname
       | Warehouse Config | ${wh_config} | config_data | 0 |
 
-    * user wait for 60 seconds
+    * user wait for 330 seconds

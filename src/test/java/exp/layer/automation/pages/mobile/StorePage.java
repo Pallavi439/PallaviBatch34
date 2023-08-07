@@ -58,7 +58,11 @@ public class StorePage extends Step {
     }
 
     public static void informCUSTOMER() {
-        getMobileActions().clickIfAvailable(INFORMED_CUSTOMER_BUTTON);
+        try {
+            getMobileActions().waitForVisibilityOfElementLocated(INFORMED_CUSTOMER_BUTTON,5l);
+            getMobileActions().click(INFORMED_CUSTOMER_BUTTON);
+        }
+        catch (Exception ignore){}
         getMobileActions().clickIfAvailable(By.xpath("//android.widget.Button[@content-desc='Yes']"));
     }
 
@@ -113,8 +117,8 @@ public class StorePage extends Step {
         getMobileActions().performScroll();
         getMobileActions().flutterType(MARK_VISIT_TEXT_FIELD, AutomationUtils.getTestData("${mark_visit_reason}"));
         getMobileActions().waitForSeconds(10);
-//        getMobileActions().flutterClick(MARK_VISIT_SUBMIT_BUTTON);
-//        getMobileActions().waitForSeconds(5);
+        getMobileActions().flutterClick(MARK_VISIT_SUBMIT_BUTTON);
+        getMobileActions().waitForSeconds(5);
     }
 
     public static void getMarkVisitReason(String reason) {

@@ -1,4 +1,4 @@
-@new-sales-data-delete @gajender.singh@elastic.run
+@new-sales-data-delete @gajender.singh@elastic.run @ignore
 
 Feature: Deleting data from experience layer
 

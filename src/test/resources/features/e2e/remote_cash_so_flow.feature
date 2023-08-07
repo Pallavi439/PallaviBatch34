@@ -54,7 +54,7 @@ Feature: E2E Remote Cash Flow
 
   Scenario: Verify visit log in with-run
     * user retries and get details by frappe client get api with filters
-      | Visit Log | {"ref_docname":"${exp_quotation_id}"} |
+      | Visit Log | {"ref_docname":"${Quotation_Id}"} |
     * response status code should be 200
 
   Scenario: Verify Sales Order in with-run

@@ -7,7 +7,7 @@ Feature: Cash order placement with shop address
       | ${wh2-se1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
-      | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
+      | ${wh2-sp1.locality} | ${wh2-customer-2-title} |
     * user clicks on take a remote order button
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|

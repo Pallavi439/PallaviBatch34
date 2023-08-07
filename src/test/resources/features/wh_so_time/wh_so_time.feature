@@ -27,7 +27,7 @@ Feature: WH SO time
     * user verifies response attribute "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_start_time" value should be "<StartTime>"
     * user verifies response attribute "message.warehouse_config_map.AUTOMATION-WH-3 - ER.sales_order_end_time" value should be "<EndTime>"
 
-    * user wait for 60 seconds
+    * user wait for 330 seconds
 
     * user login to the experience layer sales app with valid details
       | ${wh3-se1} | ${common-password} |
