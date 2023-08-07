@@ -56,7 +56,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
       | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
 
-  Scenario Outline: User syncs address for customer <customer name>
+  Scenario Outline: User syncs Billing address for customer <customer name>
 
     * user get details by frappe client get api with filters
       | Customer | {"customer_name":"<customer name>","locality":"<customer locality>"} |
@@ -65,6 +65,33 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
 
     * user get details by frappe client get api with filters
       | Address | {"address_title":"${customer_id}","address_type":"Billing"} |
+    * response status code should be 200
+    * get response "message.name" string attribute and store into session "address_id"
+
+    * user set value by frappe client set value api with filters and fieldname
+      | Address | ${address_id} | address_title | ${customer_id} |
+    * response status code should be 200
+
+    Examples:
+      | customer name           | customer locality   |
+      | ${wh2-customer-1-title} | ${wh2-sp1.locality} |
+      | ${wh2-customer-3-title} | ${wh2-sp1.locality} |
+      | ${wh2-customer-4-title} | ${wh2-sp1.locality} |
+      | ${wh2-customer-5-title} | ${wh2-sp1.locality} |
+      | ${wh3-customer-1-title} | ${wh3-sp1.locality} |
+      | ${wh5-customer-1-title} | ${wh5-sp1.locality} |
+      | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
+      | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
+
+  Scenario Outline: User syncs Shop address for customer <customer name>
+
+    * user get details by frappe client get api with filters
+      | Customer | {"customer_name":"<customer name>","locality":"<customer locality>"} |
+    * response status code should be 200
+    * get response "message.name" string attribute and store into session "customer_id"
+
+    * user get details by frappe client get api with filters
+      | Address | {"address_title":"${customer_id}","address_type":"Shop"} |
     * response status code should be 200
     * get response "message.name" string attribute and store into session "address_id"
 
