@@ -1,5 +1,5 @@
-@prod_4 @pranali.mulay@elastic.run
-Feature: Prod OC 4
+@prod_4 @pranali.mulay@elastic.run @oc
+Feature: Prod OC 4 for max UOM for 1st order
 
   Scenario: Create Customer tag from document tag doctype
 
@@ -49,6 +49,55 @@ Feature: Prod OC 4
       | title | Automation Prod oc 4 C1 | /prod_oc_4_C1-default-payload.json |
     * response status code should be 200
 
-  Scenario: Delete document tag
-    * user delete doc type
-      | Document Tag | ${Document Tag.name} |
+  Scenario: Max UOM flow
+    * user refresh the cache
+    * user login to the experience layer sales app with valid details
+      | ${oc-wh2-se-1} | ${common-password} |
+    * user click on beat button
+    * user click on locality and store
+      | ${wh2-oc.locality} | ${wh2.oc.customer-4-title} |
+    * user captures store image if available
+    * user clicks on take a remote order button
+
+    * user add item to cart
+      #| Item or Category Name | Index No | Uom |Quantity|
+      | Automation-Category-1 | ${NUMBER-1-5} | Case | 2 |
+    * user click on cart next button
+    * user get grand total
+    * user verify absence of order constraint strip
+
+    * user click on cart back button
+    * user click on add more item button from cart page
+    * user add item to cart
+      #| Item or Category Name | Index No | Uom |Quantity|
+      | Automation-Category-3 | ${NUMBER-1-5} | Case | 2 |
+    * user click on cart next button
+    * user click on order constraints strip
+    * user click on cart back button
+
+    * user decrement item qty from cart page
+    * user click on cart next button
+    * user verify absence of order constraint strip
+    * user get grand total
+    * click on place order button remote order popup
+    * user wait for 5 seconds
+
+    Scenario: Max UOm flow for 2nd order
+
+      * user login to the experience layer sales app with valid details
+        | ${oc-wh2-se-1} | ${common-password} |
+      * user click on beat button
+      * user click on locality and store
+        | ${wh2-oc.locality} | ${wh2.oc.customer-4-title} |
+      * user captures store image if available
+      * user clicks on take a remote order button
+
+      * user add item to cart
+      #| Item or Category Name | Index No | Uom |Quantity|
+        | ${item_name} | 0 | Case | 1 |
+      * user click on cart next button
+      * user verify absence of order constraint strip
+      * user get grand total
+      * click on place order button remote order popup
+      * user wait for 5 seconds
+

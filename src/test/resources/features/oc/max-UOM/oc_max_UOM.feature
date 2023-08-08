@@ -1,4 +1,4 @@
-@oc_maxUOM @pranali.mulay@elastic.run
+@oc_maxUOM @pranali.mulay@elastic.run @oc
 
 Feature: Max UOM
 
@@ -81,4 +81,9 @@ Feature: Max UOM
     * user click on order constraints strip
     * user click on cart back button
 
-* user decrement item qty from cart page
+    * user decrement item qty from cart page
+    * user click on cart next button
+    * user verify absence of order constraint strip
+    * user get grand total
+    * click on place order button remote order popup
+    * user wait for 5 seconds

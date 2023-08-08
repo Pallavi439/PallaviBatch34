@@ -24,7 +24,7 @@
       "parenttype": "Parameterized Document Metric",
       "idx": 1,
       "title": "",
-      "value": "Automation-Category-2",
+      "value": "${product-brand-name-2}",
       "creation": "",
       "modified_by": "pranali.mulay@elastic.run",
       "modified": "",

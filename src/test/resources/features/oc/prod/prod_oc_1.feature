@@ -1,4 +1,4 @@
-@prod_1 @pranali.mulay@elastic.run
+@prod_1 @pranali.mulay@elastic.run @oc
 Feature: Prod OC 1
 
   Scenario: Create Customer tag from document tag doctype
@@ -49,7 +49,7 @@ Feature: Prod OC 1
       | title | Automation Prod oc 1 C1 | /prod_oc_1_C1-default-payload.json |
     * response status code should be 200
 
-  Scenario: Prod oc-1
+  Scenario: Prod oc-1 for 1st order validation
     * user login to the experience layer sales app with valid details
       | ${oc-wh2-se-1} | ${common-password} |
     * user click on beat button
@@ -60,7 +60,7 @@ Feature: Prod OC 1
 
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | Automation-Category-1 | ${NUMBER-1-5} | Piece | 1 |
+      | Automation-Category-1 | ${NUMBER-1-5} | Piece | 0 |
     * user click on cart next button
     * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "less" order
@@ -70,7 +70,7 @@ Feature: Prod OC 1
     * user click on add more item button from cart page
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | Automation-Category-2 | ${NUMBER-1-5} | Piece | 1 |
+      | Automation-Category-2 | ${NUMBER-1-5} | Piece | 0 |
     * user click on cart next button
     * user click on order constraints strip
     * user click on order constraints title "0"
@@ -84,3 +84,26 @@ Feature: Prod OC 1
     * user get grand total
     * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "min" order
     * click on place order button remote order popup
+    * user wait for 5 seconds
+
+  Scenario: Prod oc-1 for 2nd order oc should not get applicable
+    * user login to the experience layer sales app with valid details
+      | ${oc-wh2-se-1} | ${common-password} |
+    * user click on beat button
+    * user click on locality and store
+      | ${wh2-oc.locality} | ${wh2.oc.customer-1-title} |
+    * user captures store image if available
+    * user clicks on take a remote order button
+
+    * user add item to cart
+      #| Item or Category Name | Index No | Uom |Quantity|
+      | Automation-Category-2 | ${NUMBER-1-5} | Piece | 0 |
+    * user click on cart next button
+    * user verify absence of order constraint strip
+
+    * user get grand total
+    * user verify final price on cart page with "${GRAND_TOTAL_AMOUNT}" for "less" order
+    * click on place order button remote order popup
+    * user wait for 5 seconds
+
+

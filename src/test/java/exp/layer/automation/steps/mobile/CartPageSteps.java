@@ -43,4 +43,9 @@ public class CartPageSteps {
         CartPage.waitOnCartPage(wait_time);
 
     }
+
+    @And("user decrement item qty from cart page")
+    public void userDecrementItemQtyFromCartPage() {
+        CartPage.decrementItemQtyFromCartPage();
+    }
 }
