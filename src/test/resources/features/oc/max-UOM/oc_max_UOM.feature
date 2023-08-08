@@ -1,4 +1,4 @@
-@oc_maxUOM @pranali.mulay@elastic.run
+@oc_maxUOM @pranali.mulay@elastic.run @oc
 
 Feature: Max UOM
 

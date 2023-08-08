@@ -122,6 +122,7 @@ public class CategoriesPage extends Step {
             String item_details = s.get(0).getAttribute("content-desc");
             String item_name = item_details.split("\n")[0];
             System.out.println("item name is " + item_name);
+            AutomationUtils.getTestContext().put("item_name",item_name);
 
             String[] item_det = item_details.split("Rate");
 

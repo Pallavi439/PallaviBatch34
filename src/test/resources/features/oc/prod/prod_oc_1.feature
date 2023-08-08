@@ -1,4 +1,4 @@
-@prod_1 @pranali.mulay@elastic.run
+@prod_1 @pranali.mulay@elastic.run @oc
 Feature: Prod OC 1
 
   Scenario: Create Customer tag from document tag doctype

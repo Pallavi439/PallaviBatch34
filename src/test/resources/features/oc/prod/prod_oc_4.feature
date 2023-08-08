@@ -1,4 +1,4 @@
-@prod_4 @pranali.mulay@elastic.run
+@prod_4 @pranali.mulay@elastic.run @oc
 Feature: Prod OC 4 for max UOM for 1st order
 
   Scenario: Create Customer tag from document tag doctype
@@ -50,9 +50,9 @@ Feature: Prod OC 4 for max UOM for 1st order
     * response status code should be 200
 
   Scenario: Max UOM flow
-
+    * user refresh the cache
     * user login to the experience layer sales app with valid details
-      | ${oc-wh1-se-1} | ${common-password} |
+      | ${oc-wh2-se-1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
       | ${wh2-oc.locality} | ${wh2.oc.customer-4-title} |
@@ -85,11 +85,19 @@ Feature: Prod OC 4 for max UOM for 1st order
     Scenario: Max UOm flow for 2nd order
 
       * user login to the experience layer sales app with valid details
-        | ${oc-wh1-se-1} | ${common-password} |
+        | ${oc-wh2-se-1} | ${common-password} |
       * user click on beat button
       * user click on locality and store
         | ${wh2-oc.locality} | ${wh2.oc.customer-4-title} |
       * user captures store image if available
       * user clicks on take a remote order button
 
+      * user add item to cart
+      #| Item or Category Name | Index No | Uom |Quantity|
+        | ${item_name} | 0 | Case | 1 |
+      * user click on cart next button
+      * user verify absence of order constraint strip
+      * user get grand total
+      * click on place order button remote order popup
+      * user wait for 5 seconds
 
