@@ -162,7 +162,6 @@ Feature: When Location Geofencing is created only for Locality then it will be t
       | ${sales_person_locality} | ${sales_customer_name} |
     * user captures store image if available
     * user click on take order button
-    *
     ###############Shop address present ,same lat long,local order #######################
   Scenario: Shop address present ,same lat long,local order
 
