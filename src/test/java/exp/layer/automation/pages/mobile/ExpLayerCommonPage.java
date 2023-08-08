@@ -71,26 +71,29 @@ public class ExpLayerCommonPage extends Step {
         getMobileActions().flutterWaitForVisibility(LoginPage.DEV_LOGIN_ER_LOGO);
     }
 
-    public static void backButton(){
+    public static void backButton() {
         getMobileActions().verifyContextAndSwitchToNativeContext();
-        KeyEvent event = new KeyEvent(AndroidKey.BACK);
-        AndroidDriver driver = (AndroidDriver) getMobileActions().appiumDriver;
-        driver.pressKey(event);
+//        KeyEvent event = new KeyEvent(AndroidKey.BACK);
+//        AndroidDriver driver = (AndroidDriver) getMobileActions().appiumDriver;
+        ((AndroidDriver) getMobileActions().appiumDriver).pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+        ((AndroidDriver) getMobileActions().appiumDriver).navigate().back();
     }
     public static void backToHomePage(){
-        for(int i=0;i<10;i++){
-            try {
-                Long t= 5000L;
-                getMobileActions().flutterWaitForVisibility(HAMBURGER_MENU_BUTTON,t);
-                i=10;
-            }
-            catch (Exception e){
-                if (i==9){
-                    Assert.fail("unable to reach home page from here");
-                }
-                backButton();
-            }
+        getMobileActions().flutterClick("beat_plan_search_back");
+        getMobileActions().waitForSeconds(5);
+        getMobileActions().flutterClick("app_back_button_icon");
+        getMobileActions().waitForSeconds(5);
+        getMobileActions().click(By.xpath("(//*[contains(@content-desc,'Today')]/preceding-sibling::*)[1]"));
+        getMobileActions().waitForSeconds(15);
+        try {
+
         }
+        catch (Exception e){
+            getMobileActions().waitForSeconds(4);
+            getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//*[contains(@content-desc,'Today')]/preceding-sibling::*"),5000l);
+            getMobileActions().click(By.xpath("//*[contains(@content-desc,'Today')]/preceding-sibling::*"));
+        }
+        getMobileActions().flutterWaitForVisibility(HAMBURGER_MENU_BUTTON);
     }
     public static void verifyOrderPlacementNotification(){
         getMobileActions().flutterWaitForVisibility(HOME_NOTIFICATION_ICON);

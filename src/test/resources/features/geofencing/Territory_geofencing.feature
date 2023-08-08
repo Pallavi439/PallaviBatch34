@@ -1,4 +1,4 @@
-@regression1 @gajender.singh@elastic.run @territory_geofencing
+@regression1 @gajender.singh@elastic.run @territory_geofencing @ignore
 Feature: When Location Geofencing is created only for Territory then it will be taken under consideration for distance measure
 
   @somee

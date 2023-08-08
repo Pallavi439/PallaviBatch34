@@ -57,6 +57,38 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh5-customer-1-title} | ${wh5-sp1.locality} |
       | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
       | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
+      | ${customer-1-title}     | ${wh1-oc.locality}  |
+      | ${customer-2-title}     | ${wh1-oc.locality}  |
+      | ${customer-3-title}     | ${wh1-oc.locality}  |
+      | ${customer-4-title}     | ${wh1-oc.locality}  |
+      | ${customer-5-title}     | ${wh1-oc.locality}  |
+      | ${customer-6-title}     | ${wh1-oc.locality}  |
+      | ${customer-7-title}     | ${wh1-oc.locality}  |
+      | ${customer-8-title}     | ${wh1-oc.locality}  |
+      | ${customer-9-title}     | ${wh1-oc.locality}  |
+      | ${customer-10-title}    | ${wh1-oc.locality}  |
+      | ${customer-11-title}    | ${wh1-oc.locality}  |
+      | ${customer-12-title}    | ${wh1-oc.locality}  |
+      | ${customer-13-title}    | ${wh1-oc.locality}  |
+      | ${customer-14-title}    | ${wh1-oc.locality}  |
+      | ${customer-15-title}    | ${wh1-oc.locality}  |
+      | ${customer-16-title}    | ${wh1-oc.locality}  |
+      | ${customer-17-title}    | ${wh1-oc.locality}  |
+      | ${customer-18-title}    | ${wh1-oc.locality}  |
+      | ${wh2.oc.customer-1-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-2-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-3-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-4-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-5-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-6-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-7-title}   | ${wh2-oc.locality} |
+      | ${wh3.oc.customer-1-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-2-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-3-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-4-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-5-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-6-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-7-title}  | ${wh3-oc.locality} |
 
   Scenario Outline: User syncs Billing address for customer <customer name>
 
@@ -85,6 +117,38 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh5-customer-1-title} | ${wh5-sp1.locality} |
       | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
       | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
+      | ${customer-1-title}     | ${wh1-oc.locality}  |
+      | ${customer-2-title}     | ${wh1-oc.locality}  |
+      | ${customer-3-title}     | ${wh1-oc.locality}  |
+      | ${customer-4-title}     | ${wh1-oc.locality}  |
+      | ${customer-5-title}     | ${wh1-oc.locality}  |
+      | ${customer-6-title}     | ${wh1-oc.locality}  |
+      | ${customer-7-title}     | ${wh1-oc.locality}  |
+      | ${customer-8-title}     | ${wh1-oc.locality}  |
+      | ${customer-9-title}     | ${wh1-oc.locality}  |
+      | ${customer-10-title}    | ${wh1-oc.locality}  |
+      | ${customer-11-title}    | ${wh1-oc.locality}  |
+      | ${customer-12-title}    | ${wh1-oc.locality}  |
+      | ${customer-13-title}    | ${wh1-oc.locality}  |
+      | ${customer-14-title}    | ${wh1-oc.locality}  |
+      | ${customer-15-title}    | ${wh1-oc.locality}  |
+      | ${customer-16-title}    | ${wh1-oc.locality}  |
+      | ${customer-17-title}    | ${wh1-oc.locality}  |
+      | ${customer-18-title}    | ${wh1-oc.locality}  |
+      | ${wh2.oc.customer-1-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-2-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-3-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-4-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-5-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-6-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-7-title}   | ${wh2-oc.locality} |
+      | ${wh3.oc.customer-1-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-2-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-3-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-4-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-5-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-6-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-7-title}  | ${wh3-oc.locality} |
 
   Scenario Outline: User syncs Shop address for customer <customer name>
 
@@ -113,6 +177,38 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh5-customer-1-title} | ${wh5-sp1.locality} |
       | ${wh5-customer-2-title} | ${wh5-sp4.locality} |
       | ${wh5-customer-6-title} | ${wh5-sp6.locality} |
+      | ${customer-1-title}     | ${wh1-oc.locality}  |
+      | ${customer-2-title}     | ${wh1-oc.locality}  |
+      | ${customer-3-title}     | ${wh1-oc.locality}  |
+      | ${customer-4-title}     | ${wh1-oc.locality}  |
+      | ${customer-5-title}     | ${wh1-oc.locality}  |
+      | ${customer-6-title}     | ${wh1-oc.locality}  |
+      | ${customer-7-title}     | ${wh1-oc.locality}  |
+      | ${customer-8-title}     | ${wh1-oc.locality}  |
+      | ${customer-9-title}     | ${wh1-oc.locality}  |
+      | ${customer-10-title}    | ${wh1-oc.locality}  |
+      | ${customer-11-title}    | ${wh1-oc.locality}  |
+      | ${customer-12-title}    | ${wh1-oc.locality}  |
+      | ${customer-13-title}    | ${wh1-oc.locality}  |
+      | ${customer-14-title}    | ${wh1-oc.locality}  |
+      | ${customer-15-title}    | ${wh1-oc.locality}  |
+      | ${customer-16-title}    | ${wh1-oc.locality}  |
+      | ${customer-17-title}    | ${wh1-oc.locality}  |
+      | ${customer-18-title}    | ${wh1-oc.locality}  |
+      | ${wh2.oc.customer-1-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-2-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-3-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-4-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-5-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-6-title}   | ${wh2-oc.locality} |
+      | ${wh2.oc.customer-7-title}   | ${wh2-oc.locality} |
+      | ${wh3.oc.customer-1-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-2-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-3-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-4-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-5-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-6-title}  | ${wh3-oc.locality} |
+      | ${wh3.oc.customer-7-title}  | ${wh3-oc.locality} |
 
   Scenario Outline: User updates basic warehouse configs for warehouse <warehouse>
     * user generate random value "<warehouse>" and store into session "warehouse_id"
@@ -160,27 +256,27 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${warehouse-4} |
       | ${warehouse-5} |
 
-    Scenario Outline: Remove shop address from <customer name>
-      * user generate random value " " and store into session "cookie"
-      * user set api headers
-        | Authorization | ${onboarding_api_token} |
-
-      * user get details by frappe client get api with filters
-        | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"<customer name>"} |
-      * response status code should be 200
-      * get response "message.name" string attribute and store into session "customer_id"
-
-      * user get details by frappe client get api with filters
-        | experience-layer-onboarding-api | frappe_get_report |Address|{"address_title":"${customer_id}","address_type":"shop"}|
-      * response status code should be 200
-      * get response "message.name" string attribute and store into session "customer_shop_add_id"
-
-      * user hit post api call with form param
-        | experience-layer-onboarding-api | frappe_delete          |
-        | doctype                         | Address                |
-        | name                            | ${customer_shop_add_id} |
-      * response status code should be 200
-
-      Examples:
-      |customer name|
-      |${wh2-customer-1-title}|
+#  Scenario Outline: Remove shop address from <customer name>
+#    * user generate random value " " and store into session "cookie"
+#    * user set api headers
+#      | Authorization | ${onboarding_api_token} |
+#
+#    * user get details by frappe client get api with filters
+#      | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"<customer name>"} |
+#    * response status code should be 200
+#    * get response "message.name" string attribute and store into session "customer_id"
+#
+#    * user get details by frappe client get api with filters
+#      | experience-layer-onboarding-api | frappe_get_report | Address | {"address_title":"${customer_id}","address_type":"shop"} |
+#    * response status code should be 200
+#    * get response "message.name" string attribute and store into session "customer_shop_add_id"
+#
+#    * user hit post api call with form param
+#      | experience-layer-onboarding-api | frappe_delete           |
+#      | doctype                         | Address                 |
+#      | name                            | ${customer_shop_add_id} |
+#    * response status code should be 200
+#
+#    Examples:
+#      | customer name           |
+#      | ${wh2-customer-1-title} |

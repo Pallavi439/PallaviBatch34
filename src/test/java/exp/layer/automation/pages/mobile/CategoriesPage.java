@@ -160,4 +160,26 @@ public class CategoriesPage extends Step {
 
         }
     }
+    public static void verifyRecentSearch(String item_type){
+        getMobileActions().flutterClick(CartPage.ADD_MORE_ITEMS_BUTTON);
+        getMobileActions().flutterWaitForVisibility(CATEGORIES_SEARCH);
+        getMobileActions().flutterClick(CATEGORIES_SEARCH);
+        getMobileActions().flutterWaitForVisibility("search_section_business_title");
+        getMobileActions().flutterWaitForVisibility("search_item_click_list_tile_0");
+        getMobileActions().flutterClick("search_item_click_list_tile_0");
+        if (item_type.equalsIgnoreCase("Piece")) {
+            int index = 0;
+            getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_INCREMENT_BUTTON, 0, index));
+        } else if (item_type.equalsIgnoreCase("Bag")) {
+            int index =1;
+            getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_INCREMENT_BUTTON, 0, index));
+        }
+        else if (item_type.equalsIgnoreCase("Case")){
+            int index=2;
+            getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_INCREMENT_BUTTON, 0, index));
+        }
+        else {int index=0;
+            getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_INCREMENT_BUTTON, 0, index));}
+
+    }
 }
