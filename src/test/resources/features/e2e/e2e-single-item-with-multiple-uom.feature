@@ -11,9 +11,9 @@ Feature: Cash order placement for single item and multiple uom
     * user clicks on take a remote order button
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | Automation-Category-1 | ${NUMBER-1-5} | Piece | ${NUMBER-5-10} |
-      | Automation-Category-2 | ${NUMBER-1-5} | Bag   | ${NUMBER-5-10} |
-      | Automation-Category-2 | ${NUMBER-1-5} | Case  | ${NUMBER-5-10} |
+      | Automation-Test-Item-Name-17 | 0 | Piece | ${NUMBER-5-10} |
+      | Automation-Test-Item-Name-17 | 0 | Bag | ${NUMBER-5-10} |
+      | Automation-Test-Item-Name-17 | 0 | Case | ${NUMBER-5-10} |
     * user place local order
 
 

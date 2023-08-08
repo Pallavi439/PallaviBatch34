@@ -52,6 +52,11 @@ Feature: E2E Remote Cash Flow
     * response status code should be 200
     * get response "message.name" string attribute and store into session "Quotation_Id"
 
+  Scenario: Verify visit log in with-run
+    * user retries and get details by frappe client get api with filters
+      | Visit Log | {"ref_docname":"${Quotation_Id}"} |
+    * response status code should be 200
+
   Scenario: Verify Sales Order in with-run
     * "User" retries and get details by frappe client get api with filters
       | Sales Order Item | {"prevdoc_docname":"${Quotation_Id}"} |

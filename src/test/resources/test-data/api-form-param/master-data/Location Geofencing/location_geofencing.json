@@ -1,0 +1,17 @@
+{
+  "docstatus": 0,
+  "doctype": "Location Geofencing",
+  "name": "New Location Geofencing 2",
+  "__islocal": 1,
+  "__unsaved": 1,
+  "owner": "automation.system.user@elastic.run",
+  "link_type": "${geo_link_type}",
+  "__run_link_triggers": false,
+  "link_name": "${geofencing_location_name}",
+  "outlet_geofencing": ${geo_distance},
+  "outlet_onboarding_geofencing": 0,
+  "creation": "",
+  "modified_by": "automation.system.user@elastic.run",
+  "modified": "",
+  "idx": null
+}

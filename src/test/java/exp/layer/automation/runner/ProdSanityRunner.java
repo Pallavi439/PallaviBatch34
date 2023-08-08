@@ -24,6 +24,6 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty",
         "com.epam.reportportal.cucumber.ScenarioReporter", "html:target/reports/html-reports"}, glue = {"er.automation","exp.layer"},
-        features = "src/test/resources/features", tags = {"@ProdSanity", "not @ignore"}, strict = true, monochrome = true)
+        features = "src/test/resources/features", tags = {"@prod-sanity", "not @ignore"}, strict = true, monochrome = true)
 public class ProdSanityRunner {
 }

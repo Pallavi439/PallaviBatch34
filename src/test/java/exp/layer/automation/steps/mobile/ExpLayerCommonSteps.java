@@ -139,4 +139,14 @@ public class ExpLayerCommonSteps {
         ExpLayerCommonPage.backButton();
     }
 
+    @Given("{word} goes back to home screen")
+    public void go_back_to_home_page(String word){
+        ExpLayerCommonPage.backToHomePage();
+    }
+
+    @Given("{word} verify order placement notification")
+    public void verify_order_placement_notification(String word){
+        ExpLayerCommonPage.verifyOrderPlacementNotification();
+    }
+
 }

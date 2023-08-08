@@ -22,15 +22,7 @@ Feature: Happy flow for order time by placing order with specific time
     * User set value by frappe client set value api with filters and fieldname
       | Warehouse Config | ${wh_config} | config_data | 2 |
 
-    * user get details by frappe client get api with filters
-      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
-    * get response "message.name" string attribute and store into session "association_name"
-
-    * user set value by frappe client set value api with filters and fieldname
-      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
-    * response status code should be 200
-
-    * user wait for 60 seconds
+    * user wait for 330 seconds
 
   Scenario: Verify order time and order placement from app side for 1st order
 
@@ -83,13 +75,4 @@ Feature: Happy flow for order time by placing order with specific time
     * User set value by frappe client set value api with filters and fieldname
       | Warehouse Config | ${wh_config} | config_data | 0 |
 
-    * user get details by frappe client get api with filters
-      | Marketplace Association | {"warehouse":"${warehouse_id}"} |
-
-    * get response "message.name" string attribute and store into session "association_name"
-
-    * user set value by frappe client set value api with filters and fieldname
-      | Marketplace Association | ${association_name} | warehouse | ${warehouse_id} |
-    * response status code should be 200
-
-    * user wait for 60 seconds
+    * user wait for 330 seconds

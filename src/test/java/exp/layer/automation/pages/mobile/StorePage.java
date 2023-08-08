@@ -1,5 +1,6 @@
 package exp.layer.automation.pages.mobile;
 
+import com.beust.ah.A;
 import er.automation.engine.helpers.AutomationUtils;
 import er.automation.engine.setup.Step;
 import io.appium.java_client.AppiumBy;
@@ -18,6 +19,7 @@ public class StorePage extends Step {
     public static final By STORE_IMAGE_LINK = By.xpath("//android.view.View[@content-desc='Add Store Image']");
     public static final By STORE_IMAGE_SUBMIT_BUTTON = By.xpath("//android.widget.Button[@content-desc='Submit']");
     public static final By INFORMED_CUSTOMER_BUTTON = By.xpath("//android.widget.Button[@content-desc='Informed Customer']");
+    public static final By REPORT_ISSUE=By.xpath("//*[@content-desc='Report Issue']");
 
     public static String TAKE_ORDER_BUTTON = "customer_selected_popup_take_order_button";
     public static String REMOTE_ORDER_BUTTON = "beat_plan_take_a_remote_order";
@@ -30,7 +32,14 @@ public class StorePage extends Step {
     public static String MARK_VISIT_REASON_TEXT = "(//android.widget.RadioButton[@content-desc])[%s]";
     public static String MARK_VISIT_TEXT_FIELD = "mark_visit_er_text_field";
     public static String MARK_VISIT_SUBMIT_BUTTON = "mark_visit_app_button";
-    public static String STORE_NAME = "//*[contains(@content-desc,'%s')]";
+    public static String STORE_NAME = "store_full_name_0";
+    public static String STORE_IMAGE="store_image_0";
+    public static String STORE_VERIFIED_ICON="store_verified_1_0";
+    public static String STORE_FOCUS_MEDAL="store_focus_medal_0";
+    public static String STORE_BRAND_MEDAL="store_brand_medal_0";
+    public static String STORE_VALUE_MEDAL="store_value_medal_0";
+    public static String STORE_DIRECTION = "store_direction_0";
+    public static String STORE_CALL="store_call_0";
     public static String STORE_SEARCH_TEXT_BOX = "beat_plan_search_text_field";
     public static String RETRY_LOCATION_CAPTURE_BUTTON = "beat_plan_retry_location_capture";
 
@@ -44,12 +53,16 @@ public class StorePage extends Step {
         storeName = AutomationUtils.getTestData(storeName);
         getMobileActions().waitForSeconds(2);
         getMobileActions().flutterClick(STORE_SEARCH);
-        getMobileActions().type(storeName, By.xpath("//*[@content-desc='Stores']/preceding-sibling::*/*[2]"));
+        getMobileActions().flutterType(STORE_SEARCH_TEXT_BOX,storeName);
         getMobileActions().waitForSeconds(2);
     }
 
     public static void informCUSTOMER() {
-        getMobileActions().clickIfAvailable(INFORMED_CUSTOMER_BUTTON);
+        try {
+            getMobileActions().waitForVisibilityOfElementLocated(INFORMED_CUSTOMER_BUTTON,5l);
+            getMobileActions().click(INFORMED_CUSTOMER_BUTTON);
+        }
+        catch (Exception ignore){}
         getMobileActions().clickIfAvailable(By.xpath("//android.widget.Button[@content-desc='Yes']"));
     }
 
@@ -93,8 +106,12 @@ public class StorePage extends Step {
 
     public static void markVisitCustomer(String reason) {
         reason = AutomationUtils.getTestData(reason);
-        getMobileActions().flutterClick(REPORT_ISSUE_BUTTON);
+        getMobileActions().flutterWaitForVisibility(REPORT_ISSUE_BUTTON);
+        getMobileActions().waitForSeconds(2);
+//        getMobileActions().flutterClick(REPORT_ISSUE_BUTTON);
+        getMobileActions().click(REPORT_ISSUE);
         getMobileActions().flutterWaitForVisibility(MARK_VISIT_LOG);
+        getMobileActions().flutterWaitForVisibility(String.format(MARK_VISIT_REASON, reason));
         getMobileActions().flutterClick(String.format(MARK_VISIT_REASON, reason));
         getMarkVisitReason(reason);
         getMobileActions().performScroll();
@@ -123,5 +140,41 @@ public class StorePage extends Step {
 
     public static void absenceOfSilverOutletTag() {
         getMobileActions().verifyInvisibilityOfElement(AppiumBy.accessibilityId("Automation Silver Outlet"));
+    }
+
+    public static void verifyPresenceOfStoreCardIcons(){
+        getMobileActions().flutterWaitForVisibility(STORE_NAME);
+        getMobileActions().flutterWaitForVisibility(STORE_IMAGE);
+        getMobileActions().flutterWaitForVisibility(STORE_VERIFIED_ICON);
+        getMobileActions().flutterWaitForVisibility(STORE_FOCUS_MEDAL);
+        getMobileActions().flutterWaitForVisibility(STORE_BRAND_MEDAL);
+        getMobileActions().flutterWaitForVisibility(STORE_VALUE_MEDAL);
+        getMobileActions().flutterWaitForVisibility(STORE_DIRECTION);
+        getMobileActions().flutterWaitForVisibility(STORE_CALL);
+    }
+    public static void verifyStoreDirectionIcon(){
+        getMobileActions().flutterClick(STORE_DIRECTION);
+        try {
+            getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//*[@text='SKIP']"),10);
+            getMobileActions().click(By.xpath("//*[@text='SKIP']"));
+        }
+        catch (Exception ignore){}
+        try {
+            getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//*[@text='Allow']"),10);
+            getMobileActions().click(By.xpath("//*[@text='Allow']"));
+        }
+        catch (Exception ignore){}
+
+        String lati = AutomationUtils.getTestData("${customer_latitude}");
+        String longitude =AutomationUtils.getTestData("${customer_longitude}");
+        getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//*[contains(@text,'"+lati+"') and contains(@text,'"+longitude+"')]"));
+        ExpLayerCommonPage.backButton();
+    }
+    public static void verifyStoreCallIcon(){
+        getMobileActions().flutterClick(STORE_CALL);
+        String mobno= AutomationUtils.getTestData("${customer_mobile_no}");
+        getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//*[contains(@text,'"+mobno.substring(0,3)+"') and contains(@text,'"+mobno.substring(mobno.length()-4,mobno.length()-1)+"')]"));
+
+        ExpLayerCommonPage.backButton();ExpLayerCommonPage.backButton();ExpLayerCommonPage.backButton();
     }
 }

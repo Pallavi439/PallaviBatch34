@@ -23,4 +23,6 @@ public class WhSoTimePages {
         CommonApiMethod.getPostCall("api-base-url", GET_BEAT_API, paramMap, formParamMap, headerMap);
         CommonApiPage.verifyStatusCode(200);
     }
+
+
 }
