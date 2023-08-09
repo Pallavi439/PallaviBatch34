@@ -256,27 +256,27 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${warehouse-4} |
       | ${warehouse-5} |
 
-#  Scenario Outline: Remove shop address from <customer name>
-#    * user generate random value " " and store into session "cookie"
-#    * user set api headers
-#      | Authorization | ${onboarding_api_token} |
-#
-#    * user get details by frappe client get api with filters
-#      | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"<customer name>"} |
-#    * response status code should be 200
-#    * get response "message.name" string attribute and store into session "customer_id"
-#
-#    * user get details by frappe client get api with filters
-#      | experience-layer-onboarding-api | frappe_get_report | Address | {"address_title":"${customer_id}","address_type":"shop"} |
-#    * response status code should be 200
-#    * get response "message.name" string attribute and store into session "customer_shop_add_id"
-#
-#    * user hit post api call with form param
-#      | experience-layer-onboarding-api | frappe_delete           |
-#      | doctype                         | Address                 |
-#      | name                            | ${customer_shop_add_id} |
-#    * response status code should be 200
-#
-#    Examples:
-#      | customer name           |
-#      | ${wh2-customer-1-title} |
+  Scenario Outline: Remove shop address from <customer name>
+    * user generate random value " " and store into session "cookie"
+    * user set api headers
+      | Authorization | ${onboarding_api_token} |
+
+    * user get details by frappe client get api with filters
+      | experience-layer-onboarding-api | frappe_get_report | Customer | {"full_name":"<customer name>"} |
+    * response status code should be 200
+    * get response "message.name" string attribute and store into session "customer_id"
+
+    * user get details by frappe client get api with filters
+      | experience-layer-onboarding-api | frappe_get_report | Address | {"address_title":"${customer_id}","address_type":"shop"} |
+    * response status code should be 200
+    * get response "message.name" string attribute and store into session "customer_shop_add_id"
+
+    * user hit post api call with form param
+      | experience-layer-onboarding-api | frappe_delete           |
+      | doctype                         | Address                 |
+      | name                            | ${customer_shop_add_id} |
+    * response status code should be 200
+
+    Examples:
+      | customer name           |
+      | ${wh2-customer-1-title} |

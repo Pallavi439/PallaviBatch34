@@ -20,4 +20,9 @@ public class CategoriesPageSteps {
     public void verify_recent_search_for(String word,String item_type){
         CategoriesPage.verifyRecentSearch(item_type);
     }
+
+    @Given("{word} verify all items icon functionality")
+    public void verify_all_items_icon_functionality(String word){
+        CategoriesPage.verifyAllItemsIconFunctionality();
+    }
 }

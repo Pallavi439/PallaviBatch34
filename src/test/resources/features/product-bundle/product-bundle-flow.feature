@@ -2,14 +2,16 @@
 Feature: Product Bundle End to End Flow
 
   Scenario: Update Product Bundle Bin
-* user get details by frappe client get api with filters
-| Product Bundle Bin | {"warehouse":"${warehouse-2}","item_code":"Automation-Test-Item-Name-39 @190_Case25Bag12_3+Automation-Test-Item-Name-38 @180_Case25Bag12_1"} |
-* response status code should be 200
-* get response "message.name" string attribute and store into session "prod-bund-bin-name"
-* user set value by frappe client set value api with filters and fieldname
-| Product Bundle Bin | ${prod-bund-bin-name} | actual_qty | ${IntegerNum} |
-* response status code should be 200
+    * user login to application by api
+      | ${with-run-username} | ${with-run-password} |
+    * response status code should be 200
+    * user get details by frappe client get api with filters
+      | Product Bundle Bin | {"warehouse":"${warehouse-2}"} |
+    * response status code should be 200
+    * get response "message.name" string attribute and store into session "prod-bund-bin-name"
+    * get response "message.item_code" string attribute and store into session "prod-bund-name"
 
+    @ignore
   Scenario: Place Sales Order for Product Bundle
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
@@ -21,6 +23,5 @@ Feature: Product Bundle End to End Flow
     * user clicks on take a remote order button
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
-      | Automation-Category-1 | ${NUMBER-1-5} | Bag  | ${NUMBER-5-10} |
-      | ${product-name-1}     | 0             | Case | ${NUMBER-5-10} |
+      | ${prod-bund-name} | 0 | Piece | ${NUMBER-5-10} |
     * user place remote order

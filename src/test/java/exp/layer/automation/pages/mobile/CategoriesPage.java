@@ -182,4 +182,13 @@ public class CategoriesPage extends Step {
             getMobileActions().flutterWaitForVisibility(String.format(PRODUCT_CART_INCREMENT_BUTTON, 0, index));}
 
     }
+
+    public static void verifyAllItemsIconFunctionality(){
+        getMobileActions().flutterWaitForVisibility(CATEGORIES_SEARCH);
+        getMobileActions().flutterWaitForVisibility("category_0");
+        getMobileActions().flutterWaitForVisibility("sub_section_widget");
+        getMobileActions().flutterClick("sub_section_widget");
+        getMobileActions().flutterWaitForVisibility("product_sub_category_0");
+        getMobileActions().flutterWaitForVisibility("product_0_add_button_0");
+    }
 }
