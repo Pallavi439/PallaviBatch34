@@ -8,6 +8,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import io.cucumber.java.an.E;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -27,6 +28,7 @@ public class ExpLayerCommonPage extends Step {
     public static String PROFILE_CHANGE_PHOTO_BUTTON="profile_add_photo_change_photo";
     public static String PROFILE_ADD_PHOTO_BUTTON="profile_add_photo_save";
     public static String HOME_NOTIFICATION_ICON="home_notification_icon";
+    public static String BANNER_CLOSE_BUTTON="startup_banner_close_icon";
     public static String NOTIFICATIONS="notification_card_%s";
     public static String LOGOUT_BUTTON = "logout_widget";
 
@@ -133,6 +135,13 @@ public class ExpLayerCommonPage extends Step {
         getMobileActions().flutterClick(PROFILE_ADD_PHOTO_BUTTON);
         getMobileActions().waitForSeconds(3);
         getMobileActions().flutterWaitForVisibility(UPLOAD_PROFILE_IMAGE_BUTTON);
+    }
 
+    public static void closeBannerIfVisible(){
+        try {
+            getMobileActions().flutterWaitForVisibility(BANNER_CLOSE_BUTTON);
+            getMobileActions().flutterClick(BANNER_CLOSE_BUTTON);
+        }
+        catch (Exception ignored){}
     }
 }

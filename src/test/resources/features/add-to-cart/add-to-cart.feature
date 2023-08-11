@@ -6,6 +6,7 @@ Feature: Add items to cart flow
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
     * user wait for 5 seconds
+    * close banner if visible
     * user click on beat button
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |

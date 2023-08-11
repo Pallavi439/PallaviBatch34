@@ -159,4 +159,8 @@ public class ExpLayerCommonSteps {
         ExpLayerCommonPage.editsSalesPersonProfile();
     }
 
+    @Given("close banner if visible")
+    public void close_banner_if_visible(){
+        ExpLayerCommonPage.closeBannerIfVisible();
+    }
 }
