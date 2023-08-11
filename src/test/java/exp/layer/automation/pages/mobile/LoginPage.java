@@ -27,6 +27,7 @@ public class LoginPage extends Step {
     public static String DEV_LOGIN_BUTTON = "dev_login_button";
     public static String ENV_DROP_DOWN = "dev_env_change_dropdown";
     public static String LANGUAGE_NEXT_ARROW = "settings_locale_next_icon";
+    public static String BANNER_CLOSE_BUTTON="startup_banner_close_icon";
 
     public static By DOHA_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Doha' or @content-desc='DOHA']");
     public static By PP_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Pre Prod' or @content-desc='PRE PROD']");
@@ -86,5 +87,10 @@ public class LoginPage extends Step {
             getMobileActions().click(PP_ENV_DROP_DOWN_LIST_VALUE);
         }
         getMobileActions().flutterClick(DEV_LOGIN_BUTTON);
+        try {
+            getMobileActions().flutterWaitForVisibility(BANNER_CLOSE_BUTTON);
+            getMobileActions().flutterClick(BANNER_CLOSE_BUTTON);
+        }
+        catch (Exception ignored){}
     }
 }
