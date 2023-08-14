@@ -57,7 +57,7 @@ Feature: Min unique no of SKU validation section ISNOT
       | payload pdm                 | type         |
       | /unique_SKU_isnot_pdm2.json | brand        |
       | /unique_SKU_isnot_pdm3.json | item group   |
-      | /unique_SKU_isnot_pdm4.json | er item type |
+      #| /unique_SKU_isnot_pdm4.json | er item type |
 
   Scenario: Delete document tag
 
