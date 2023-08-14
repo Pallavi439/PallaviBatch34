@@ -15,4 +15,14 @@ public class CategoriesPageSteps {
     public void wait_for_visibility_of_catalogue(String word) {
         CategoriesPage.waitForVisibilityOfCatalogue();
     }
+
+    @Given("{word} verify recent search for {string}")
+    public void verify_recent_search_for(String word,String item_type){
+        CategoriesPage.verifyRecentSearch(item_type);
+    }
+
+    @Given("{word} verify all items icon functionality")
+    public void verify_all_items_icon_functionality(String word){
+        CategoriesPage.verifyAllItemsIconFunctionality();
+    }
 }

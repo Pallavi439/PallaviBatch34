@@ -149,4 +149,18 @@ public class ExpLayerCommonSteps {
         ExpLayerCommonPage.verifyOrderPlacementNotification();
     }
 
+    @Given("add image to downloads folder")
+    public void add_image_to_downloads_folder() throws IOException {
+        ExpLayerCommonPage.addImageToDownloadsFolder();
+    }
+
+    @Given("{word} edits sales person profile and uploads image")
+    public void  edits_sales_person_profile(String word){
+        ExpLayerCommonPage.editsSalesPersonProfile();
+    }
+
+    @Given("close banner if visible")
+    public void close_banner_if_visible(){
+        ExpLayerCommonPage.closeBannerIfVisible();
+    }
 }

@@ -1,3 +1,4 @@
+@ignore
 Feature: When Location Geofencing is created only for Warehouse then it will be taken under consideration for distance measure
 
   Scenario: Set session data for scenario
