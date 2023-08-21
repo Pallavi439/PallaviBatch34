@@ -1,4 +1,4 @@
-@e2e-without-sa @regression1
+@e2e-without-sa @regression1 @gajender.singh@elastic.run
 Feature: Cash order placement without shop address
 
   Scenario: Verify cash order placement flow without shop address
