@@ -7,7 +7,7 @@ Feature: Cash order placement without shop address
       | ${wh2-se1} | ${common-password} |
     * user click on beat button
     * user click on locality and store
-      | ${wh2-sp1.locality} | ${wh2-customer-3-title} |
+      | ${wh2-sp1.locality} | ${wh2-customer-22-title} |
     * user captures store image if available
     * user click on take order button
     * user add item to cart
