@@ -3,6 +3,7 @@ Feature: Cash order placement for single item and multiple uom
 
   Scenario: Verify cash order placement for single item and multiple uom
 
+
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
     * user click on beat button

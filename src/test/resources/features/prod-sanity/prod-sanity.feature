@@ -7,7 +7,7 @@ Feature: Cash order placement for single item and multiple uom
     * user click on beat button
     * user click on locality and store
       | ${PROD_LOCALITY_1} | ${PROD_STORE_1} |
-    * user clicks on take a remote order button
+    * user click on take order button
     * user wait for visibility of catalogue
 
     * user add item to cart

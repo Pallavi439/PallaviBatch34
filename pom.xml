@@ -24,7 +24,8 @@
         <mobile.app.prod.package>run.er.ecom.assist</mobile.app.prod.package>
         <mobile.app.package>run.er.ecom.assist.dev</mobile.app.package>
         <mobile.app.activity>run.er.ecom.assist.MainActivity</mobile.app.activity>
-        <mobile.uuid>emulator-5554</mobile.uuid>
+        <mobile.uuid>RZ8NC12BB5M</mobile.uuid>
+        <isRealDevice>true</isRealDevice>
         <test.env>$(test.env)</test.env>
         <tags>$(tags)</tags>
         <remote.execution>true</remote.execution>

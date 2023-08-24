@@ -27,7 +27,7 @@ public class LoginPage extends Step {
     public static String DEV_LOGIN_BUTTON = "dev_login_button";
     public static String ENV_DROP_DOWN = "dev_env_change_dropdown";
     public static String LANGUAGE_NEXT_ARROW = "settings_locale_next_icon";
-    public static String BANNER_CLOSE_BUTTON="startup_banner_close_icon";
+    public static String BANNER_CLOSE_BUTTON = "startup_banner_close_icon";
 
     public static By DOHA_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Doha' or @content-desc='DOHA']");
     public static By PP_ENV_DROP_DOWN_LIST_VALUE = By.xpath("//*[@content-desc='Pre Prod' or @content-desc='PRE PROD']");
@@ -45,6 +45,10 @@ public class LoginPage extends Step {
         } catch (Exception ignore) {
         }
         getMobileActions().flutterWaitForVisibility(DEV_LOGIN_ER_LOGO);
+        String flag = AutomationProperties.getProperty("isRealDevice", "false");
+        if (flag.equalsIgnoreCase("true")) {
+            getMobileActions().click(By.xpath("//*[contains(@text, 'NONE OF THE ABOVE')]"));
+        }
         getMobileActions().flutterClick(CAS_LOGIN_MOBILE_NO_TEXT_BOX);
         getMobileActions().flutterType(CAS_LOGIN_MOBILE_NO_TEXT_BOX, mobileNo);
         getMobileActions().flutterClick(CAS_LOGIN_CONTINUE_BUTTON);
@@ -74,6 +78,12 @@ public class LoginPage extends Step {
             } catch (Exception ignored) {
             }
         }
+
+        String flag = AutomationProperties.getProperty("isRealDevice", "false");
+
+        if (flag.contains("true")) {
+            getMobileActions().click(By.xpath("//*[contains(@text, 'NONE OF THE ABOVE')]"));
+        }
         getMobileActions().flutterClick(SALES_DEV_LOGIN_MOBILE_NO_TEXT_BOX);
         getMobileActions().flutterType(SALES_DEV_LOGIN_MOBILE_NO_TEXT_BOX, userName);
         getMobileActions().flutterClick(SALES_DEV_LOGIN_PASSWORD_TEXT_BOX);
@@ -90,7 +100,7 @@ public class LoginPage extends Step {
         try {
             getMobileActions().flutterWaitForVisibility(BANNER_CLOSE_BUTTON);
             getMobileActions().flutterClick(BANNER_CLOSE_BUTTON);
+        } catch (Exception ignored) {
         }
-        catch (Exception ignored){}
     }
 }
