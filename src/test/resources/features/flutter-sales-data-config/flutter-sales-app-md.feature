@@ -53,6 +53,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh2-customer-3-title}    | ${wh2-sp1.locality}  |
       | ${wh2-customer-4-title}    | ${wh2-sp1.locality}  |
       | ${wh2-customer-5-title}    | ${wh2-sp1.locality}  |
+      |${wh2-customer-22-title}    | ${wh2-sp1.locality}  |
       | ${wh3-customer-1-title}    | ${wh3-sp1.locality}  |
       | ${wh4-customer-1-title}    | ${wh4-sp1.locality}  |
       | ${wh5-customer-1-title}    | ${wh5-sp1.locality}  |
@@ -115,6 +116,7 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | ${wh2-customer-3-title}    | ${wh2-sp1.locality}  |
       | ${wh2-customer-4-title}    | ${wh2-sp1.locality}  |
       | ${wh2-customer-5-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-22-title}    | ${wh2-sp1.locality}  |
       | ${wh3-customer-1-title}    | ${wh3-sp1.locality}  |
       | ${wh4-customer-1-title}    | ${wh4-sp1.locality}  |
       | ${wh5-customer-1-title}    | ${wh5-sp1.locality}  |
