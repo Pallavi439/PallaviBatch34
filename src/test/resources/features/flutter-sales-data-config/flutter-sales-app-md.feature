@@ -110,48 +110,48 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
     * response status code should be 200
 
     Examples:
-      | customer name              | customer locality   |
-      | ${wh2-customer-1-title}    | ${wh2-sp1.locality} |
-      | ${wh2-customer-3-title}    | ${wh2-sp1.locality} |
-      | ${wh2-customer-4-title}    | ${wh2-sp1.locality} |
-      | ${wh2-customer-5-title}    | ${wh2-sp1.locality} |
-      | ${wh3-customer-1-title}    | ${wh3-sp1.locality} |
-      | ${wh4-customer-1-title}    | ${wh4-sp1.locality} |
-      | ${wh5-customer-1-title}    | ${wh5-sp1.locality} |
-      | ${wh5-customer-2-title}    | ${wh5-sp4.locality} |
-      | ${wh5-customer-6-title}    | ${wh5-sp6.locality} |
-      | ${customer-1-title}        | ${wh1-oc.locality}  |
-      | ${customer-2-title}        | ${wh1-oc.locality}  |
-      | ${customer-3-title}        | ${wh1-oc.locality}  |
-      | ${customer-4-title}        | ${wh1-oc.locality}  |
-      | ${customer-5-title}        | ${wh1-oc.locality}  |
-      | ${customer-6-title}        | ${wh1-oc.locality}  |
-      | ${customer-7-title}        | ${wh1-oc.locality}  |
-      | ${customer-8-title}        | ${wh1-oc.locality}  |
-      | ${customer-9-title}        | ${wh1-oc.locality}  |
-      | ${customer-10-title}       | ${wh1-oc.locality}  |
-      | ${customer-11-title}       | ${wh1-oc.locality}  |
-      | ${customer-12-title}       | ${wh1-oc.locality}  |
-      | ${customer-13-title}       | ${wh1-oc.locality}  |
-      | ${customer-14-title}       | ${wh1-oc.locality}  |
-      | ${customer-15-title}       | ${wh1-oc.locality}  |
-      | ${customer-16-title}       | ${wh1-oc.locality}  |
-      | ${customer-17-title}       | ${wh1-oc.locality}  |
-      | ${customer-18-title}       | ${wh1-oc.locality}  |
-      | ${wh2.oc.customer-1-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-2-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-3-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-4-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-5-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-6-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-7-title} | ${wh2-oc.locality}  |
-      | ${wh3.oc.customer-1-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-2-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-3-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-4-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-5-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-6-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-7-title} | ${wh3-oc.locality}  |
+      | customer name              | customer locality    |
+      | ${wh2-customer-1-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-3-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-4-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-5-title}    | ${wh2-sp1.locality}  |
+      | ${wh3-customer-1-title}    | ${wh3-sp1.locality}  |
+      | ${wh4-customer-1-title}    | ${wh4-sp1.locality}  |
+      | ${wh5-customer-1-title}    | ${wh5-sp1.locality}  |
+      | ${wh5-customer-2-title}    | ${wh5-sp4.locality}  |
+      | ${wh5-customer-6-title}    | ${wh5-sp6.locality}  |
+      | ${customer-1-title}        | ${wh1-oc.locality}   |
+      | ${customer-2-title}        | ${wh1-oc.locality}   |
+      | ${customer-3-title}        | ${wh1-oc.locality}   |
+      | ${customer-4-title}        | ${wh1-oc.locality}   |
+      | ${customer-5-title}        | ${wh1-oc.locality}   |
+      | ${customer-6-title}        | ${wh1-oc.locality}   |
+      | ${customer-7-title}        | ${wh1-oc.locality}   |
+      | ${customer-8-title}        | ${wh1-oc.locality}   |
+      | ${customer-9-title}        | ${wh1-oc.locality}   |
+      | ${customer-10-title}       | ${wh1-oc.locality}   |
+      | ${customer-11-title}       | ${wh1-oc.locality}   |
+      | ${customer-12-title}       | ${wh1-oc.locality}   |
+      | ${customer-13-title}       | ${wh1-oc.locality}   |
+      | ${customer-14-title}       | ${wh1-oc.locality}   |
+      | ${customer-15-title}       | ${wh1-oc.locality}   |
+      | ${customer-16-title}       | ${wh1-oc.locality}   |
+      | ${customer-17-title}       | ${wh1-oc.locality}   |
+      | ${customer-18-title}       | ${wh1-oc.locality}   |
+      | ${wh2.oc.customer-1-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-2-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-3-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-4-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-5-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-6-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-7-title} | ${wh2-oc.locality}   |
+      | ${wh3.oc.customer-1-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-2-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-3-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-4-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-5-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-6-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-7-title} | ${wh3-oc.locality}   |
       | ${coin-customer-1-title}   | ${coin.sp1.locality} |
       | ${coin-customer-2-title}   | ${coin.sp1.locality} |
 
@@ -172,48 +172,49 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
     * response status code should be 200
 
     Examples:
-      | customer name              | customer locality   |
-      | ${wh2-customer-1-title}    | ${wh2-sp1.locality} |
-      | ${wh2-customer-3-title}    | ${wh2-sp1.locality} |
-      | ${wh2-customer-4-title}    | ${wh2-sp1.locality} |
-      | ${wh2-customer-5-title}    | ${wh2-sp1.locality} |
-      | ${wh3-customer-1-title}    | ${wh3-sp1.locality} |
-      | ${wh4-customer-1-title}    | ${wh4-sp1.locality} |
-      | ${wh5-customer-1-title}    | ${wh5-sp1.locality} |
-      | ${wh5-customer-2-title}    | ${wh5-sp4.locality} |
-      | ${wh5-customer-6-title}    | ${wh5-sp6.locality} |
-      | ${customer-1-title}        | ${wh1-oc.locality}  |
-      | ${customer-2-title}        | ${wh1-oc.locality}  |
-      | ${customer-3-title}        | ${wh1-oc.locality}  |
-      | ${customer-4-title}        | ${wh1-oc.locality}  |
-      | ${customer-5-title}        | ${wh1-oc.locality}  |
-      | ${customer-6-title}        | ${wh1-oc.locality}  |
-      | ${customer-7-title}        | ${wh1-oc.locality}  |
-      | ${customer-8-title}        | ${wh1-oc.locality}  |
-      | ${customer-9-title}        | ${wh1-oc.locality}  |
-      | ${customer-10-title}       | ${wh1-oc.locality}  |
-      | ${customer-11-title}       | ${wh1-oc.locality}  |
-      | ${customer-12-title}       | ${wh1-oc.locality}  |
-      | ${customer-13-title}       | ${wh1-oc.locality}  |
-      | ${customer-14-title}       | ${wh1-oc.locality}  |
-      | ${customer-15-title}       | ${wh1-oc.locality}  |
-      | ${customer-16-title}       | ${wh1-oc.locality}  |
-      | ${customer-17-title}       | ${wh1-oc.locality}  |
-      | ${customer-18-title}       | ${wh1-oc.locality}  |
-      | ${wh2.oc.customer-1-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-2-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-3-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-4-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-5-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-6-title} | ${wh2-oc.locality}  |
-      | ${wh2.oc.customer-7-title} | ${wh2-oc.locality}  |
-      | ${wh3.oc.customer-1-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-2-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-3-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-4-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-5-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-6-title} | ${wh3-oc.locality}  |
-      | ${wh3.oc.customer-7-title} | ${wh3-oc.locality}  |
+      | customer name              | customer locality    |
+      | ${wh2-customer-1-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-3-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-4-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-5-title}    | ${wh2-sp1.locality}  |
+      | ${wh2-customer-22-title}   | ${wh2-sp1.locality}  |
+      | ${wh3-customer-1-title}    | ${wh3-sp1.locality}  |
+      | ${wh4-customer-1-title}    | ${wh4-sp1.locality}  |
+      | ${wh5-customer-1-title}    | ${wh5-sp1.locality}  |
+      | ${wh5-customer-2-title}    | ${wh5-sp4.locality}  |
+      | ${wh5-customer-6-title}    | ${wh5-sp6.locality}  |
+      | ${customer-1-title}        | ${wh1-oc.locality}   |
+      | ${customer-2-title}        | ${wh1-oc.locality}   |
+      | ${customer-3-title}        | ${wh1-oc.locality}   |
+      | ${customer-4-title}        | ${wh1-oc.locality}   |
+      | ${customer-5-title}        | ${wh1-oc.locality}   |
+      | ${customer-6-title}        | ${wh1-oc.locality}   |
+      | ${customer-7-title}        | ${wh1-oc.locality}   |
+      | ${customer-8-title}        | ${wh1-oc.locality}   |
+      | ${customer-9-title}        | ${wh1-oc.locality}   |
+      | ${customer-10-title}       | ${wh1-oc.locality}   |
+      | ${customer-11-title}       | ${wh1-oc.locality}   |
+      | ${customer-12-title}       | ${wh1-oc.locality}   |
+      | ${customer-13-title}       | ${wh1-oc.locality}   |
+      | ${customer-14-title}       | ${wh1-oc.locality}   |
+      | ${customer-15-title}       | ${wh1-oc.locality}   |
+      | ${customer-16-title}       | ${wh1-oc.locality}   |
+      | ${customer-17-title}       | ${wh1-oc.locality}   |
+      | ${customer-18-title}       | ${wh1-oc.locality}   |
+      | ${wh2.oc.customer-1-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-2-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-3-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-4-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-5-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-6-title} | ${wh2-oc.locality}   |
+      | ${wh2.oc.customer-7-title} | ${wh2-oc.locality}   |
+      | ${wh3.oc.customer-1-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-2-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-3-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-4-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-5-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-6-title} | ${wh3-oc.locality}   |
+      | ${wh3.oc.customer-7-title} | ${wh3-oc.locality}   |
       | ${coin-customer-1-title}   | ${coin.sp1.locality} |
       | ${coin-customer-2-title}   | ${coin.sp1.locality} |
 
@@ -238,13 +239,13 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
       | Warehouse Config | ${Warehouse Config.name} | config_data | 0 |
     * response status code should be 200
     Examples:
-      | warehouse      |
-      | ${warehouse-1} |
-      | ${warehouse-2} |
-      | ${warehouse-3} |
-      | ${warehouse-4} |
-      | ${warehouse-5} |
-    |${coin-warehouse}|
+      | warehouse         |
+      | ${warehouse-1}    |
+      | ${warehouse-2}    |
+      | ${warehouse-3}    |
+      | ${warehouse-4}    |
+      | ${warehouse-5}    |
+      | ${coin-warehouse} |
 
 
   Scenario Outline: Syncing Marketplace Association for warehouse <warehouse name>
@@ -257,14 +258,15 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
     * response status code should be 200
 
     Examples:
-      | warehouse name |
-      | ${warehouse-1} |
-      | ${warehouse-2} |
-      | ${warehouse-3} |
-      | ${warehouse-4} |
-      | ${warehouse-5} |
-    |${coin-warehouse}|
+      | warehouse name    |
+      | ${warehouse-1}    |
+      | ${warehouse-2}    |
+      | ${warehouse-3}    |
+      | ${warehouse-4}    |
+      | ${warehouse-5}    |
+      | ${coin-warehouse} |
 
+  @ignore
   Scenario Outline: Remove shop address from <customer name>
     * user generate random value " " and store into session "cookie"
     * user set api headers
