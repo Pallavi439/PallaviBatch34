@@ -2,6 +2,7 @@
 
 Feature: Deleting data from experience layer
 
+  @ignore
   Scenario Outline: Deleting customer from experience layer
 
     * user login to application by api

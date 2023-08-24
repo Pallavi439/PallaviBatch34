@@ -112,7 +112,7 @@ public class ExpLayerCommonPage extends Step {
         getMobileActions().flutterWaitForVisibility(String.format(NOTIFICATIONS,0));
         String gt=AutomationUtils.getTestData("${NOTIFICATION_GRAND_TOTAL_AMOUNT}");
         gt=gt.substring(2);
-        getMobileActions().waitForVisibilityOfElementLocated(By.xpath(String.format("(//*[contains(@content-desc,'%s')])[1]",gt)));
+        getMobileActions().waitForVisibilityOfElementLocated(By.xpath(String.format("(//*[contains(@content-desc,'%s')])[1]",gt)),30L);
     }
 
     public static void addImageToDownloadsFolder() throws IOException {

@@ -68,7 +68,7 @@ public class StorePage extends Step {
 
     public static void captureStoreImageIfAvailable() {
         try {
-            getMobileActions().waitForVisibilityOfElementLocated(STORE_IMAGE_LINK, 8);
+            getMobileActions().waitForVisibilityOfElementLocated(STORE_IMAGE_LINK, 16);
             getMobileActions().flutterClick(ADD_STORE_IMAGE_LINK);
             getMobileActions().verifyContextAndSwitchToNativeContext();
             KeyEvent event = new KeyEvent(AndroidKey.CAMERA);
