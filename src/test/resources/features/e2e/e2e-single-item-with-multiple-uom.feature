@@ -9,7 +9,7 @@ Feature: Cash order placement for single item and multiple uom
     * user click on beat button
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
-    * user clicks on take a remote order button
+    * user click on take order button
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Test-Item-Name-17 | 0 | Piece | ${NUMBER-5-10} |

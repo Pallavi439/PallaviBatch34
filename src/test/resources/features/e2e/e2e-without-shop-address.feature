@@ -9,7 +9,7 @@ Feature: Cash order placement without shop address
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-3-title} |
     * user captures store image if available
-    * user clicks on take a remote order button
+    * user click on take order button
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Category-1 | ${NUMBER-1-5} | Piece | ${NUMBER-5-10} |

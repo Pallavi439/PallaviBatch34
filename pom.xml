@@ -24,12 +24,12 @@
         <mobile.app.prod.package>run.er.ecom.assist</mobile.app.prod.package>
         <mobile.app.package>run.er.ecom.assist.dev</mobile.app.package>
         <mobile.app.activity>run.er.ecom.assist.MainActivity</mobile.app.activity>
-        <mobile.uuid>RZ8NC12BB5M</mobile.uuid>
-        <isRealDevice>true</isRealDevice>
+        <mobile.uuid>emulator-5554</mobile.uuid>
+        <isRealDevice></isRealDevice>
         <test.env>$(test.env)</test.env>
         <tags>$(tags)</tags>
-        <remote.execution>true</remote.execution>
-        <parallel.test.count></parallel.test.count>
+        <parallel.test.count>1</parallel.test.count>
+        <remote.execution></remote.execution>
         <submodule.name></submodule.name>
         <mobile.app.noReset>false</mobile.app.noReset>
         <parallelScheme>FEATURE</parallelScheme>
