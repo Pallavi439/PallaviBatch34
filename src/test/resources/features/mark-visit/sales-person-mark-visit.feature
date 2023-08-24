@@ -3,8 +3,6 @@
 Feature: User verifies sales person mark visit functionality
 
   Scenario: User mark visit the customer
-    * user sets mobile geolocation
-      | 18.5068726 | 73.9299712 |
 
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |

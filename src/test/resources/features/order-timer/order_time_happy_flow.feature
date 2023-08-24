@@ -37,7 +37,7 @@ Feature: Happy flow for order time by placing order with specific time
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-4-title} |
     * user captures store image if available
-    * user clicks on take a remote order button
+    * user click on take order button
     * user add item to cart
       | Automation-Category-1 | ${NUMBER-1-5} | Bag | ${NUMBER-5-10} |
     * user click on cart next button

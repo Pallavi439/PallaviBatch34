@@ -10,6 +10,6 @@ Feature: Verify All Items Icon functionality
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
     * user captures store image if available
-    * user clicks on take a remote order button
+    * user click on take order button
     * user verify all items icon functionality
     * user wait for 10 seconds

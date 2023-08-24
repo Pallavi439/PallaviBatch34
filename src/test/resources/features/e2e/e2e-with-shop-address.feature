@@ -12,7 +12,7 @@ Feature: Cash order placement with shop address
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Category-1 | ${NUMBER-1-5} | Piece | ${NUMBER-5-10} |
-   * user place local order
+   * user place order with local
 
 
     

@@ -10,7 +10,7 @@ Feature: Recent Search flow
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
     * user captures store image if available
-    * user clicks on take a remote order button
+    * user click on take order button
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | ${product-name-1}     | 0             | Case | ${NUMBER-5-10} |

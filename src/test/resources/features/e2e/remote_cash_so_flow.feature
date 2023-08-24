@@ -4,6 +4,9 @@ Feature: E2E Remote Cash Flow
 
   Scenario: Verify remote order placement flow
 
+    * user sets mobile geolocation
+    |120.2345|120.2345|
+
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
     * user wait for 5 seconds

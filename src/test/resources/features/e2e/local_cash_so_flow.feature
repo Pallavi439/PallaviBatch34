@@ -2,9 +2,6 @@
 Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow
-    * user sets mobile geolocation
-      | 18.5068726 | 73.9299712 |
-
     * user login to the experience layer sales app with valid details
       | ${wh2-se1} | ${common-password} |
     * user wait for 5 seconds

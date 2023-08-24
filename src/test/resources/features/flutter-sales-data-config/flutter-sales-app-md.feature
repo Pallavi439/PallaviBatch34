@@ -292,4 +292,3 @@ Feature: Configuring Sales person, Warehouse, Customer and Marketplace for new f
 
     Examples:
       | customer name           |
-      | ${wh2-customer-1-title} |
