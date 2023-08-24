@@ -13,9 +13,9 @@ Feature: Cash order placement for single item and multiple uom
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|
       | Automation-Test-Item-Name-17 | 0 | Piece | ${NUMBER-5-10} |
-      | Automation-Test-Item-Name-17 | 0 | Bag | ${NUMBER-5-10} |
-      | Automation-Test-Item-Name-17 | 0 | Case | ${NUMBER-5-10} |
-    * user place local order
+      | Automation-Test-Item-Name-18 | 0 | Bag | ${NUMBER-5-10} |
+      | Automation-Test-Item-Name-19 | 0 | Case | ${NUMBER-5-10} |
+    * user place order with local
 
 
     
