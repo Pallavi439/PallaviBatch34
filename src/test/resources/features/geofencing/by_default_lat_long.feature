@@ -1,4 +1,4 @@
-@gajender.singh@elastic.run @default_geofencing @regression1 @ignore
+@gajender.singh@elastic.run @default_geofencing @regression2
 Feature: When all config regarding geofencing are not available in the warehouse,territory,locality and withrun app config
 
   Scenario: Set session data for scenario

@@ -1,4 +1,4 @@
-@add_to_cart @regression1 @gajender.singh@elastic.run
+@add_to_cart @gajender.singh@elastic.run @sanity
 Feature: Add items to cart flow
 
   Scenario: User add multiple items, increase and decrease their quantity
@@ -9,7 +9,6 @@ Feature: Add items to cart flow
     * user click on beat button
     * user click on locality and store
       | ${wh2-sp1.locality} | ${wh2-customer-1-title} |
-    * user captures store image if available
     * user click on take order button
     * user add item to cart
       #| Item or Category Name | Index No | Uom |Quantity|

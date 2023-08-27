@@ -1,4 +1,4 @@
-@e2e @local_cash_so_flow @sanity @gajender.singh@elastic.run
+@e2e @local_cash_so_flow @sanity @gajender.singh@elastic.run @sanity
 Feature: E2E Local Cash Flow
 
   Scenario: Verify local order placement flow

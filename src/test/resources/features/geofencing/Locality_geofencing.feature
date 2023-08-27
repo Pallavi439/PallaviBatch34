@@ -1,4 +1,4 @@
-@regression1 @gajender.singh@elastic.run @locality_geofencing @ignore
+@regression2 @gajender.singh@elastic.run @locality_geofencing
 
 Feature: When Location Geofencing is created only for Locality then it will be taken under consideration for distance measure
 

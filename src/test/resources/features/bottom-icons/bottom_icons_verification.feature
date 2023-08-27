@@ -1,4 +1,4 @@
-@gajender.singh@elastic.run @bottom_icons @regression1
+@gajender.singh@elastic.run @bottom_icons @sanity
 Feature: User verifies functionality of bottom icons
 
   Scenario:User verifies all bottom icons are working

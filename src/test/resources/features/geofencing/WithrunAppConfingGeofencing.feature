@@ -1,4 +1,4 @@
-@ignore
+@regression2 @gajender.singh@elastic.run
 Feature: Location Geofencing is created only for Withrun App config then it will be taken under consideration for distance measure
 
   Scenario: set the withrun app config ->outlet geofencing to 0

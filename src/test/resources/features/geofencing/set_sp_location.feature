@@ -1,4 +1,4 @@
-@gajender.singh@elastic.run @location_change @regression1
+@gajender.singh@elastic.run @location_change @regression2
   #not placing order with this customer as this customer is also used in mark visit.
   #has a bug https://elasticrun-rai.atlassian.net/jira/software/c/projects/CMA/issues/CMA-1176
   # so after clicking on retry it directly moves to item page..

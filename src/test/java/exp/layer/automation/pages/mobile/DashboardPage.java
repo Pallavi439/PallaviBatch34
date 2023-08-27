@@ -16,6 +16,7 @@ public class DashboardPage extends Step {
 
     public static void clickOnBeatButton() {
         getMobileActions().flutterWaitForVisibility(HAMBURGER_MENU_BUTTON);
+        getMobileActions().waitForSeconds(5);
         getMobileActions().waitForVisibilityOfElementLocated(BEAT_PLAN_BUTTON);
         getMobileActions().click(BEAT_PLAN_BUTTON);
         getMobileActions().flutterWaitForVisibility(END_BEAT_BUTTON);
