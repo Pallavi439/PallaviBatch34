@@ -29,7 +29,7 @@
         <test.env>$(test.env)</test.env>
         <tags>$(tags)</tags>
         <parallel.test.count>1</parallel.test.count>
-        <remote.execution></remote.execution>
+        <remote.execution>true</remote.execution>
         <submodule.name></submodule.name>
         <mobile.app.noReset>false</mobile.app.noReset>
         <parallelScheme>FEATURE</parallelScheme>
