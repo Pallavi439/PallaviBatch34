@@ -52,6 +52,7 @@
         <log4j.version>2.20.0</log4j.version>
         <slf4j-simple.version>2.0.6</slf4j-simple.version>
         <curl.logger.version>2.1.0</curl.logger.version>
+        <appium.remote.url>http://localhost:4723/wd/hub</appium.remote.url>
     </properties>
 
     <dependencies>
