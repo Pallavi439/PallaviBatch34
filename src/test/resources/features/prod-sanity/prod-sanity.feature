@@ -137,6 +137,6 @@ Feature: Cash order placement for single item and multiple uom
     * get response "message.cash_status" string attribute and store into session "Cash_Status"
     * user compares actual "${Cash_Status}" and expected "With Associate" data
 
-    @ignore
+  @ignore
   Scenario: close emulator
     * user sets "" browser for execution

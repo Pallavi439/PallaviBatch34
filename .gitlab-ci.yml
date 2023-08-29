@@ -1,0 +1,4 @@
+include:
+  -
+  - project: 'qa/templates'
+    file: '/suite/flutter/.prod-sanity-suite-1.yml'
