@@ -97,9 +97,11 @@ public class CartPage extends Step {
 
     public static void getGrandTotal() {
         getMobileActions().waitForVisibilityOfElementLocated(By.xpath("//android.widget.Button[@content-desc='Place Order']"));
+        getMobileActions().waitForSeconds(2);
         getMobileActions().verifyContextAndSwitchToNativeContext();
         List<WebElement> s = getMobileActions().appiumDriver.findElements(By.xpath("//android.view.View"));
         String grandTotal = s.get(s.size() - 3).getAttribute("content-desc");
+        log.info("grandTotal :"+grandTotal);
         grandTotal = grandTotal.split("\\.")[0];
         AutomationUtils.getTestContext().put("NOTIFICATION_GRAND_TOTAL_AMOUNT", grandTotal);
         grandTotal = grandTotal.replaceAll(",", "");
