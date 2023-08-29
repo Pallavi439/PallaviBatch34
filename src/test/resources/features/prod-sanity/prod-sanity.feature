@@ -22,7 +22,7 @@ Feature: Cash order placement for single item and multiple uom
 #      | Mortein Natural Coil @ 26      | 0 | Piece | ${NUMBER-1-5} |
 #      | Maxo Coil @ 27                 | 0 | Piece | ${NUMBER-1-5} |
 #      | Lokmangal Coriander Powder @60 | 0 | Piece | ${NUMBER-1-5} |
-    * user place local order
+    * user place remote order
     * user verify visibility of order placed icon for store "${PROD_STORE_1}"
     * user goes back to home screen
 
