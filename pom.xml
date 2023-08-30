@@ -34,6 +34,8 @@
         <bs.hub></bs.hub>
         <bs.app></bs.app>
         <bs.device.name></bs.device.name>
+        <bs.device1.name>Samsung Galaxy S22 Ultra</bs.device1.name>
+        <bs.device2.name>Google Pixel 7 Ultra</bs.device2.name>
         <bs.os.version></bs.os.version>
         <!-- BROWSER STACK PROPERTIES END-->
 
