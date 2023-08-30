@@ -35,6 +35,7 @@ public class LocalityPage extends Step {
     }
 
     public static void verifyVisibilityOfOrderPlacedIcon(String store_name){
+        getMobileActions().waitForSeconds(5);
         StorePage.searchStore(store_name);
         getMobileActions().flutterWaitForVisibility(ORDER_PLACED);
     }

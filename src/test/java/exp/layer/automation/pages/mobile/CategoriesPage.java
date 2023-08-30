@@ -66,6 +66,8 @@ public class CategoriesPage extends Step {
             for (int j = 0; j < Integer.parseInt(data.get(3)); j++) {
                 getMobileActions().flutterClick(String.format(PRODUCT_CART_INCREMENT_BUTTON, 0, index));
             }
+            String ss=ExpLayerCommonPage.getCartItemQuantity("items");
+            ExpLayerCommonPage.saveCartItemQuantity("items", String.valueOf((Integer.parseInt(ss)+1)));
             getMobileActions().flutterClick(BOTTOM_CART_ICON);
             if (list.size() - 1 != i) {
                 getMobileActions().flutterClick(CartPage.ADD_MORE_ITEMS_BUTTON);

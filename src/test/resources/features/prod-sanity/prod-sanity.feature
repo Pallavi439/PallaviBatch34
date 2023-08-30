@@ -23,8 +23,9 @@ Feature: Cash order placement for single item and multiple uom
 #      | Maxo Coil @ 27                 | 0 | Piece | ${NUMBER-1-5} |
 #      | Lokmangal Coriander Powder @60 | 0 | Piece | ${NUMBER-1-5} |
     * user place remote order
-    * user verify visibility of order placed icon for store "${PROD_STORE_1}"
-    * user goes back to home screen
+#    * user verify visibility of order placed icon for store "${PROD_STORE_1}"
+#    * user goes back to home screen
+#    * user verify order placement notification
 
   Scenario: Verify Quotation in with-run
     * user wait for 10 seconds

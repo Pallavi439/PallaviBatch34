@@ -78,7 +78,13 @@ public class CartPage extends Step {
 
     public static void placeOrderButton() {
         getGrandTotal();
+        verifyItemCount();
         getMobileActions().flutterClick(PLACE_ORDER_BUTTON);
+    }
+    public static void verifyItemCount(){
+        getMobileActions().click(By.xpath("//android.widget.Button[@content-desc='Place Order']/preceding-sibling::*"));
+        getMobileActions().waitForSeconds(5);
+        getMobileActions().waitForVisibilityOfElementLocated(By.xpath(String.format("//android.view.View[@content-desc='Items %s']",ExpLayerCommonPage.getCartItemQuantity("items"))));
     }
 
     public static void clickOnRemoteOrderButton() {
@@ -131,6 +137,7 @@ public class CartPage extends Step {
         getMobileActions().flutterClick(REMOVE_ALL_ITEM_FROM_CART_BUTTON);
         getMobileActions().flutterClick(ACCEPT_BUTTON);
         getMobileActions().waitForSeconds(4);
+        ExpLayerCommonPage.saveCartItemQuantity("items","0");
         getMobileActions().flutterClick(CART_SHOP_NOW_BUTTON);
     }
 

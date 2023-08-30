@@ -39,7 +39,7 @@ public class ExpLayerCommonPage extends Step {
     public static String getCartItemQuantity(String item_name) {
         String temp_quantity;
         try {
-            temp_quantity = AutomationUtils.getTestData("cart_" + item_name);
+            temp_quantity = AutomationUtils.get("cart_" + item_name).toString();
             return temp_quantity;
         } catch (Exception e) {
             return "0";
