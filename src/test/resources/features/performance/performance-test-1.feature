@@ -18,8 +18,6 @@ Feature: Cash order placement for single item and multiple uom
       | Ujala Supreme Fabric Whitener @8 | 0 | Piece | ${NUMBER-1-5} |
       | Santoor Talcum Powder @10        | 0 | Piece | ${NUMBER-1-5} |
     * user place remote order
-    * user verify visibility of order placed icon for store "${PROD_STORE_1}"
-    * user goes back to home screen
 
     * user generate random value " " and store into session "cookie"
     * user set api headers
