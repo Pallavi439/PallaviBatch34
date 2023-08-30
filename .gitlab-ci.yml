@@ -1,4 +1,12 @@
 include:
-  -
+
   - project: 'qa/templates'
     file: '/suite/flutter/.prod-sanity-suite-1.yml'
+
+  - project: 'qa/templates'
+    file: '/suite/flutter/.prod-performance-test-1.yml'
+
+  - project: 'qa/templates'
+    file: '/suite/flutter/.prod-performance-test-2.yml'
+
+

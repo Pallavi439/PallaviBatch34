@@ -26,9 +26,17 @@
         <mobile.app.activity>run.er.ecom.assist.MainActivity</mobile.app.activity>
         <mobile.uuid>emulator-5554</mobile.uuid>
         <isRealDevice></isRealDevice>
+
+        <!-- BROWSER STACK PROPERTIES START-->
+        <!--https://pratikkajale_gR2T7J:hwsUVzVNGyvxLuApS5ss@hub.browserstack.com/wd/hub
+        bs://c925cda62e1aea95363699f18e53b89c1bfdc227-->
         <browser-stack></browser-stack>
-        <!-- <bs.device.name></bs.device.name>
-         <bs.os.version></bs.os.version>-->
+        <bs.hub></bs.hub>
+        <bs.app></bs.app>
+        <bs.device.name></bs.device.name>
+        <bs.os.version></bs.os.version>
+        <!-- BROWSER STACK PROPERTIES END-->
+
         <test.env>$(test.env)</test.env>
         <tags>$(tags)</tags>
         <parallel.test.count>1</parallel.test.count>
@@ -41,7 +49,7 @@
         <email.sentToList>qa_auto_mates@elastic.run</email.sentToList>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <er.automation.engine.version>4.0.3</er.automation.engine.version>
+        <er.automation.engine.version>4.0.4</er.automation.engine.version>
         <appium.version>8.3.0</appium.version>
         <selenium.version>4.3.0</selenium.version>
         <webdriver.manager.version>5.3.2</webdriver.manager.version>
