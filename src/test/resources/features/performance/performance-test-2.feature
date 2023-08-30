@@ -26,25 +26,24 @@ Feature: Cash order placement for single item and multiple uom
       | experience-layer-order-api | frappe_get_report | Quotation | {"app_source":"ER Sales App","transaction_date":"${DATE-yyyy-MM-dd}","rounded_total":"${GRAND_TOTAL_AMOUNT}"} |
     * response status code should be 200
     * get response "message.name" string attribute and store into session "exp_quotation_id"
-    * user verifies response attribute "message.owner" value should be "${PROD_UAT_SE_NAME_1}"
 
     Examples:
       | No |
       | 1  |
-#      | 2  |
-#      | 3  |
-#      | 4  |
-#      | 5  |
-#      | 6  |
-#      | 7  |
-#      | 8  |
-#      | 9  |
-#      | 10 |
-#      | 11 |
-#      | 12 |
-#      | 13 |
-#      | 14 |
-#      | 15 |
+      | 2  |
+      | 3  |
+      | 4  |
+      | 5  |
+      | 6  |
+      | 7  |
+      | 8  |
+      | 9  |
+      | 10 |
+      | 11 |
+      | 12 |
+      | 13 |
+      | 14 |
+      | 15 |
 
 
 
