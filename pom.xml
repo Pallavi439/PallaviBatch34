@@ -41,7 +41,7 @@
         <email.sentToList>qa_auto_mates@elastic.run</email.sentToList>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <er.automation.engine.version>4.0.3</er.automation.engine.version>
+        <er.automation.engine.version>3.0.11</er.automation.engine.version>
         <appium.version>8.3.0</appium.version>
         <selenium.version>4.3.0</selenium.version>
         <webdriver.manager.version>5.3.2</webdriver.manager.version>
