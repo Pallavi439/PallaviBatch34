@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Package1.Five"/>
+      <class name="Annotation.Google_lauch"/>
+      <class name="Package1.One"/>
+      <class name="TestN1.Two"/>
+      <class name="Package1.Two"/>
+      <class name="Package1.Three"/>
+      <class name="Package1.Four"/>
+      <class name="TestN1.One1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
